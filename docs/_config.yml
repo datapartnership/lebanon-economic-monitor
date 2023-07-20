@@ -1,31 +1,31 @@
 # Book settings
 title:
-author: World Bank
+author: World Bank Development Data Group
 logo: docs/images/logo.png
+exclude_patterns: [_build, Thumbs.db, .DS_Store, "**.ipynb_checkpoints"]
 only_build_toc_files: true
 
 repository:
-  url: https://github.com/worldbank/template
-  branch: main
+    url: https://github.com/datapartnership/lebanon-economic-monitor
+    branch: main
 
-#######################################################################################
-# HTML-specific settings
 html:
-  home_page_in_navbar: false
-  extra_navbar: ""
-  use_edit_page_button: true
-  use_repository_button: true
-  use_issues_button: true
-  baseurl: https://worldbank.github.io/template
-  extra_footer: |
-    <div>
-        <b>All content (unless otherwise specified) is subject to the <a href="https://raw.githubusercontent.com/worldbank/template/main/LICENSE">World Bank Master Community License Agreement.</a></b>
-    </div>
+    home_page_in_navbar: false
+    extra_navbar: ""
+    use_edit_page_button: true
+    use_repository_button: true
+    use_issues_button: true
+    baseurl: https://datapartnership.github.io/datapartnership/lebanon-economic-monitor
+    extra_footer: |
+        <div>
+            <b>All content (unless otherwise specified) is subject to the <a href="https://raw.githubusercontent.com/worldbank/template/main/LICENSE">World Bank Master Community License Agreement.</a></b>
+        </div>
+    google_analytics_id: G-ETJ4QT0E4L
 
 #######################################################################################
 # Execution settings
 execute:
-  execute_notebooks: "off"
+    execute_notebooks: "off"
 
 #######################################################################################
 # Bibliography settings
@@ -35,6 +35,8 @@ bibtex_bibfiles:
 #######################################################################################
 # Sphinx settings
 sphinx:
-  config:
-    html_show_copyright: false
-    html_last_updated_fmt: "%b %d, %Y"
+    config:
+        bibtex_reference_style: author_year
+        mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+        html_last_updated_fmt: "%b %d, %Y"
+        html_show_copyright: false
