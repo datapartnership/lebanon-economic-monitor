@@ -2,20 +2,12 @@ format: jb-book
 root: README
 
 parts:
-  - caption: Examples
-    numbered: True
+  - caption: Understanding Lebanon's Economy though Alternative Data
     chapters:
-      - file: notebooks/world-bank-api.ipynb
-      - file: notebooks/world-bank-package.ipynb
-      - file: notebooks/nasa-apod.ipynb
-      - file: notebooks/bibliography.ipynb
-  - caption: Additional Resources
+      - file: docs/foundational_datasets_and_data_products
+  - caption: Data Products
     chapters:
-      - url: https://datapartnership.org
-        title: Development Data Partnership
-      - url: https://wbdatalab.org
-        title: World Bank Data Lab
-      - url: https://www.worldbank.org/en/about/unit/unit-dec
-        title: World Bank DEC
-      - url: https://www.worldbank.org/en/research/dime
-        title: World Bank DIME
+      - file: notebooks/ntl-analysis/README
+  - caption: Acknowledgements
+    chapters:
+      - file: docs/team
