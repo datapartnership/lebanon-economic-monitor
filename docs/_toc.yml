@@ -2,7 +2,10 @@ format: jb-book
 root: README
 
 parts:
-  - caption: Understanding Lebanon's Economy though Alternative Data
+  - caption: Introduction to Data Goods
+    chapters:
+      - file: docs/introduction_to_data_goods
+  - caption: Understanding Lebanon's Economy through Alternative Data
     chapters:
       - file: docs/foundational_datasets_and_data_products
   - caption: Data Products
