@@ -1,6 +1,6 @@
 # Night Time Lights in Lebanon
 
-Nighttime lights have become a commonly used resource to estimate changes in local economic activity. This section shows where nighttime lights are concentrated across Syria and observed changes over time.
+Nighttime lights have become a commonly used resource to estimate changes in local economic activity. This section shows where nighttime lights are concentrated across Lebanon and observed changes over time.
 
 ## Data
 
@@ -9,3 +9,11 @@ We use nighttime lights data from the VIIRS Black Marble dataset. Raw nighttime 
 For further information, please refer to {ref}`foundational_datasets`.
 
 ## Methodology
+
+```{figure} figures/ntl_2022.png
+---
+scale: 75%
+align: center
+---
+Map of Nighttime Lights in 2022
+```
