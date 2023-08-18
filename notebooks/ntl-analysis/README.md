@@ -10,10 +10,61 @@ For further information, please refer to {ref}`foundational_datasets`.
 
 ## Methodology
 
+## Results
+
+### Map of Nighttime Lights
+
 ```{figure} figures/ntl_2022.png
 ---
-scale: 75%
+scale: 40%
 align: center
 ---
 Map of Nighttime Lights in 2022
 ```
+
+### Trends in Nighttime Lights
+
+```{figure} figures/annual_trends_adm0.png
+---
+scale: 40%
+align: center
+---
+Annual Trends in Nighttime Lights: Country Level
+```
+
+```{figure} figures/annual_trends_adm1.png
+---
+scale: 40%
+align: center
+---
+Annual Trends in Nighttime Lights: ADM 1 Level
+```
+
+### Change in Nighttime Lights: 2019 to 2022
+
+```{figure} figures/pc_map_lbn_adm1.png
+---
+scale: 40%
+align: center
+---
+Percent Change in Nighttime Lights: ADM 1
+```
+
+```{figure} figures/pc_map_lbn_adm2.png
+---
+scale: 40%
+align: center
+---
+Percent Change in Nighttime Lights: ADM 2
+```
+
+```{figure} figures/pc_map_lbn_adm3.png
+---
+scale: 40%
+align: center
+---
+Percent Change in Nighttime Lights: ADM 3
+```
+
+
+

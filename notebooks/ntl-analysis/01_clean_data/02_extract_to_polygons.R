@@ -1,5 +1,13 @@
 # Extract Nighttime Lights to Polygons
 
+# Loop through different polygon types. For each polygon type
+# 1. Make directories for where to save data
+# 2. Aggregate annual data, both 
+# -- (a) VIIRS Black Marble [2012 - 2022]
+# -- (b) DMSP [1992 - 2013]
+# -- (c) Simulated DMSP (from VIIRS) [2014 - 2021]
+# 3. Aggregate monthly data, VIIRS Black Marble only [2012 - present]
+
 for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   # Make Directories -------------------------------------------------------------

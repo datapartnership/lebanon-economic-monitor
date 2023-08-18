@@ -1,6 +1,6 @@
 # Percent Change Maps
 
-roi_name <- "lbn_adm2"
+roi_name <- "lbn_adm3"
 
 # Load data --------------------------------------------------------------------
 ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", roi_name, 
