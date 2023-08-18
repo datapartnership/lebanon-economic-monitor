@@ -20,6 +20,21 @@ align: center
 Harmonizing VIIRS and DMSP
 ```
 
+## Code and Clean Data
+
+The following code cleans the data:
+
+* [Download VIIRS Black Marble data](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/01_download_blackmarble.R)
+* [Aggregate Nighttime Lights to Polygons](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/02_extract_to_polygons.R) The code creates analysis-ready code files, in OneDrive in `Data/night-time-lights/aggregated-to-polygons`
+
+The following code produces the figures
+
+* [NTL 2022 Map](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/map_ntl_annual_2022.R)
+* [Annual Trends in NTL](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/annual_trends.R)
+* [Monthly Trends in NTL](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/monthly_trends.R)
+* [Percent Change Maps](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/percent_change_adm.R)
+* [VIIRS and DMSP Comparison](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/viirs_dmsp.R)
+
 ## Results
 
 ### Map of Nighttime Lights
