@@ -18,6 +18,7 @@ figures_dir   <- file.path(git_dir, "notebooks", "ntl-analysis", "figures")
 
 library(tidyverse)
 library(janitor)
+library(scales)
 library(readxl)
 library(lubridate)
 library(ggpubr)

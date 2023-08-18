@@ -132,7 +132,7 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
                full.names = T) %>%
     map_df(readRDS)
   
-  saveRDS(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "monthly_ntl.Rds")))
+  saveRDS(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.Rds")))
   write_csv(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.csv")))
   
 }
