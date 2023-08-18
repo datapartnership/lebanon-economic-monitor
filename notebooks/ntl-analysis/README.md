@@ -66,5 +66,11 @@ align: center
 Percent Change in Nighttime Lights: ADM 3
 ```
 
-
+```{figure} figures/pc_map_lbn_adm4.png
+---
+scale: 40%
+align: center
+---
+Percent Change in Nighttime Lights: ADM 4 in Beirut
+```
 
