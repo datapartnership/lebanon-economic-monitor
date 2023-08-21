@@ -1,3 +1,4 @@
+name: lebanon-economic-monitor
 channels:
   - conda-forge
   - defaults
