@@ -9,8 +9,6 @@ parts:
     chapters:
       - file: docs/foundational_datasets_and_data_products
   - caption: Foundational Data
-    chapters:
-      - file: notebooks/foundational-data/population.ipynb
   - caption: Data Products
     chapters:
       - file: notebooks/foundational-data/population.ipynb
