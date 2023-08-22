@@ -10,9 +10,6 @@ The MEMA MTI team is leading two analytical projects on Lebanon, Lebanon Country
 
 ## Contents
 
-```{tableofcontents}
-```
-
 ## Data
 
 ### Data Availability Statement
