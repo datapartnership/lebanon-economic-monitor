@@ -13,6 +13,7 @@ parts:
       - file: notebooks/foundational-data/population.ipynb
   - caption: Data Products
     chapters:
+      - file: notebooks/foundational-data/population.ipynb
       - file: notebooks/ntl-analysis/README
       - file: notebooks/conflict/acled.ipynb
   - caption: Acknowledgements

@@ -16,9 +16,9 @@ def convert_to_gdf(df):
 def get_acled_by_admin(adm, acled, columns = ['ADM4_EN','ADM3_EN','ADM2_EN', 'ADM1_EN'], nearest=False):
     acled_adm2 = convert_to_gdf(acled)
     if nearest == True:
-        acled_adm2 = adm.sjoin_nearest(acled_adm2, max_distance=2000)[[ 'event_date', 'fatalities', 'event_type' ]+columns].groupby([pd.Grouper(key='event_date', freq='M')]+columns)['fatalities'].agg(['sum', 'count']).reset_index()
+        acled_adm2 = adm.sjoin_nearest(acled_adm2, max_distance=2000)[[ 'event_date', 'fatalities' ]+columns].groupby([pd.Grouper(key='event_date', freq='M')]+columns)['fatalities'].agg(['sum', 'count']).reset_index()
     else:
-        acled_adm2 = adm.sjoin(acled_adm2)[[ 'event_date', 'fatalities', 'event_type' ]+columns].groupby([pd.Grouper(key='event_date', freq='M')]+columns)['fatalities'].agg(['sum', 'count']).reset_index()
+        acled_adm2 = adm.sjoin(acled_adm2)[[ 'event_date', 'fatalities', ]+columns].groupby([pd.Grouper(key='event_date', freq='M')]+columns)['fatalities'].agg(['sum', 'count']).reset_index()
     acled_adm2.rename(columns = {'sum':'fatalities', 'count':'nrEvents'}, inplace=True)
     acled_adm2['conflictIndex'] = acled_adm2.apply(lambda row: gmean([row['nrEvents'], row['fatalities']]), axis=1)
     acled_adm2['conflictIndexLog'] = np.log(acled_adm2['conflictIndex'])
