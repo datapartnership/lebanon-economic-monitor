@@ -8,9 +8,12 @@ parts:
   - caption: Understanding Lebanon's Economy through Alternative Data
     chapters:
       - file: docs/foundational_datasets_and_data_products
+  - caption: Foundational Data
+      - file: notebooks/foundational-data/population.ipynb
   - caption: Data Products
     chapters:
       - file: notebooks/ntl-analysis/README
+      - file: notebooks/conflict/acled.ipynb
   - caption: Acknowledgements
     chapters:
       - file: docs/team

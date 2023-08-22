@@ -1,6 +1,6 @@
 # Understanding Lebanon's Economy through Alternative Data
 
-> Using Alternative Data to Understand Changing Trends in Trade and Economic Activity
+The MEMA MTI team is leading two analytical projects on Lebanon, Lebanon Country Economic Memorandum (CEM) (P178305) and 'Revisiting the Syrian Conflict's Impact on Lebanon (P178302). Data constraints are a major concern for both projects. The team seeks collaborations with the Data Lab on alternative data sources that could support analysis of Lebanon's economic growth, conflict, and population and refugee dynamics.
 
 ## Challenge
 
