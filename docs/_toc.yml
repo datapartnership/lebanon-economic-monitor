@@ -9,11 +9,13 @@ parts:
     chapters:
       - file: docs/foundational_datasets_and_data_products
   - caption: Foundational Data
-  - caption: Data Products
     chapters:
       - file: notebooks/foundational-data/population.ipynb
+  - caption: Data Products
+    chapters:
       - file: notebooks/ntl-analysis/README
       - file: notebooks/conflict/acled.ipynb
+      - file: notebooks/movement/movement-range.ipynb
   - caption: Acknowledgements
     chapters:
       - file: docs/team
