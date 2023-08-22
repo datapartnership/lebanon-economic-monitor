@@ -41,7 +41,7 @@ The following code produces the figures
 
 ```{figure} figures/ntl_2022.png
 ---
-scale: 40%
+scale: 15%
 align: center
 ---
 Map of Nighttime Lights in 2022
