@@ -11,6 +11,10 @@ ntl_dir       <- file.path(data_dir, "night-time-lights")
 gas_flare_dir <- file.path(data_dir, "gas-flaring")
 admin_bnd_dir <- file.path(data_dir, "shapefiles")
 
+git_ntl_dir          <- file.path(git_dir, "notebooks", "ntl-analysis")
+git_ntl_clean_dir    <- file.path(git_ntl_dir, "01_clean_data")
+git_ntl_analysis_dir <- file.path(git_ntl_dir, "02_analysis")
+
 figures_dir   <- file.path(git_dir, "notebooks", "ntl-analysis", "figures")
 
 # Packages ---------------------------------------------------------------------
@@ -18,6 +22,7 @@ figures_dir   <- file.path(git_dir, "notebooks", "ntl-analysis", "figures")
 
 library(tidyverse)
 library(janitor)
+library(scales)
 library(readxl)
 library(lubridate)
 library(ggpubr)
@@ -25,3 +30,17 @@ library(sf)
 library(raster)
 library(exactextractr)
 library(blackmarbler)
+
+# Code -------------------------------------------------------------------------
+
+#### Clean data
+source(file.path(git_ntl_clean_dir, "01_download_blackmarble.R"))
+source(file.path(git_ntl_clean_dir, "02_extract_to_polygons.R"))
+
+#### Analysis (figures)
+source(file.path(git_ntl_analysis_dir, "map_ntl_annual_2022.R"))
+source(file.path(git_ntl_analysis_dir, "annual_trends.R"))
+source(file.path(git_ntl_analysis_dir, "monthly_trends.R"))
+source(file.path(git_ntl_analysis_dir, "percent_change_adm.R"))
+source(file.path(git_ntl_analysis_dir, "viirs_dmsp.R"))
+
