@@ -43,15 +43,15 @@ bokeh.core.validation.silence(EMPTY_LAYOUT, True)
 
 bokeh.core.validation.silence(EMPTY_LAYOUT, True)
 
-def get_line_plot(ooklaUsers,title, source, earthquakes=False, subtitle=None, measure = 'conflictIndex', category = 'DT'):
+def get_line_plot(ooklaUsers,title, source, earthquakes=False, subtitle=None, measure = 'conflictIndex', category = 'DT', event_date='event_date'):
 
     p2 = figure(x_axis_type = 'datetime', width = 800, height = 500, toolbar_location='above')
-    
+
     p2.add_layout(Legend(), "right")
 
     for id, adm2 in enumerate(ooklaUsers[category].unique()):
-        df = ooklaUsers[ooklaUsers[category]==adm2][['event_date', measure]].reset_index(drop=True)
-        p2.line(df['event_date'], df[measure], line_width=2, line_color = color_palette[id], legend_label=adm2)
+        df = ooklaUsers[ooklaUsers[category]==adm2][[event_date, measure]].reset_index(drop=True)
+        p2.line(df[event_date], df[measure], line_width=2, line_color = color_palette[id], legend_label=adm2)
 
     p2.legend.click_policy='hide'
     if subtitle is not None:
