@@ -45,7 +45,8 @@ bokeh.core.validation.silence(EMPTY_LAYOUT, True)
 
 def get_line_plot(ooklaUsers,title, source, earthquakes=False, subtitle=None, measure = 'conflictIndex', category = 'DT'):
 
-    p2 = figure(x_axis_type = 'datetime', width = 1000, height = 500, toolbar_location='above')
+    p2 = figure(x_axis_type = 'datetime', width = 800, height = 500, toolbar_location='above')
+    
     p2.add_layout(Legend(), "right")
 
     for id, adm2 in enumerate(ooklaUsers[category].unique()):
