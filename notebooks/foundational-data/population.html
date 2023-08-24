@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Population and Relative Wealth Index in Lebanon</title>
+    <title>Demographics of Lebanon</title>
   
   
   
@@ -164,15 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../docs/foundational_datasets_and_data_products.html">Foundational Datasets, Data Products, &amp; Sample Indicators</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Foundational Data</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Population and Relative Wealth Index in Lebanon</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Products</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Demographics of Lebanon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ntl-analysis/README.html">Night Time Lights in Lebanon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../conflict/acled.html">Armed Conflict Location &amp; Event Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../movement/movement-range.html">Commuting Zones in Lebanon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflict/acled.html">Conflict in Lebanon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements</span></p>
 <ul class="nav bd-sidenav">
@@ -377,7 +373,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Population and Relative Wealth Index in Lebanon</h1>
+    <h1>Demographics of Lebanon</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -387,12 +383,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unhcr-refugee-population-trend">UNHCR Refugee Population Trend</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-wealth-index">Relative Wealth Index</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Observations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-resolution-population-density">High Resolution Population Density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-wealth-index">Relative Wealth Index</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation">Methodology and Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findings">Findings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Findings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
         </div>
@@ -404,17 +407,38 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="population-and-relative-wealth-index-in-lebanon">
-<h1>Population and Relative Wealth Index in Lebanon<a class="headerlink" href="#population-and-relative-wealth-index-in-lebanon" title="Permalink to this heading">#</a></h1>
-<p>The last census been conducted in Lebanon is in <a class="reference external" href="https://www.thenation.com/article/archive/lebanon-census/">1932</a>. This was before Lebanon declared independence from France. To circumvent this, we attempt to use algorithmically generated data such as that released by <a class="reference external" href="https://dataforgood.facebook.com/dfg/docs/methodology-high-resolution-population-density-maps">Meta</a>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LEBANON_ADM1</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;../../data/shapefiles/lbn_adm_cdr_20200810/lbn_admbnda_adm1_cdr_20200810.shp&#39;</span><span class="p">)</span>
-<span class="n">LEBANON_ADM2</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s1">&#39;../../data/shapefiles/lbn_adm_cdr_20200810/lbn_admbnda_adm2_cdr_20200810.shp&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="demographics-of-lebanon">
+<h1>Demographics of Lebanon<a class="headerlink" href="#demographics-of-lebanon" title="Permalink to this heading">#</a></h1>
+<section id="assignment">
+<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h2>
+<p>Lebanon has limited access to official demographic statistics. The last census been conducted in Lebanon is in <a class="reference external" href="https://www.thenation.com/article/archive/lebanon-census/">1932</a>. This was before Lebanon declared independence from France. This leaves a large gap in the official demographic statistics of Lebanon. Therefore, the team turned to private sector datasources to bridge this gap. The Data Lab used algorithmically generated data such as that released by <a class="reference external" href="https://dataforgood.facebook.com/dfg/docs/methodology-high-resolution-population-density-maps">Meta</a>.</p>
+<p>Additionally, the team also extracted the <a class="reference external" href="https://dataforgood.facebook.com/dfg/tools/relative-wealth-index">Relative Wealth Index</a> data from Meta which helps identify differences in standard of living in the population.</p>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<section id="high-resolution-population-density">
+<h3>High Resolution Population Density<a class="headerlink" href="#high-resolution-population-density" title="Permalink to this heading">#</a></h3>
+<p>In partnership with the Center for International Earth Science Information Network (CIESIN) at Columbia University, Meta use state-of-the-art computer vision techniques to identify buildings from publicly accessible mapping services to create these population datasets. These maps are available at 30-meter resolution. These maps aren’t built using Facebook data and instead rely on combining the power of machine vision AI with satellite imagery and census information. This data is publicly accessible on their <a class="reference external" href="https://registry.opendata.aws/dataforgood-fb-hrsl/">AWS Server</a> and detailed documentation can be found <a class="reference external" href="https://dataforgood.facebook.com/dfg/docs/methodology-high-resolution-population-density-maps">here</a>.</p>
+<p>The Population Data is demographically disaggregated into the following categories</p>
+<ul class="simple">
+<li><p>Men</p></li>
+<li><p>Women</p></li>
+<li><p>Children under 5</p></li>
+<li><p>Elderly</p></li>
+<li><p>Women of Reproductive Age (15-49)</p></li>
+<li><p>Youth (15-24)</p></li>
+<li><p>Senior</p></li>
+</ul>
+</section>
+<section id="relative-wealth-index">
+<h3>Relative Wealth Index<a class="headerlink" href="#relative-wealth-index" title="Permalink to this heading">#</a></h3>
+<p>The Relative Wealth Index predicts the relative standard of living within countries using privacy protecting connectivity data, satellite imagery, and other novel data sources. To calculate this index, the team uses measurements of household wealth collected through <em>face-to-face surveys conducted by the United States Agency for International Development</em> with 1,457,315 unique households living in 66,819 villages in 56 different LMICs around the world. Following this, they use spatial markers to link villages to non-traditional data sources , including satellite imagery, cellular network data, topographic maps, and <em>privacy protecting connectivity data from Facebook</em>. They process the non-traditional data using deep learning and other computational algorithms, which convert the raw data to a set of quantitative features for each village. They use these features to train a supervised machine learning model that predicts the relative wealth of each populated 2.4km2 grid cell on the planet, even in regions where no ground truth data exists (Chi et. al., 2022).</p>
+<p>The Relative Wealth Index is a number that compared the wealth within the country where negative RWI implies poorer areas and positive RWI implies richer areas.</p>
+</section>
+</section>
+<section id="methodology-and-implementation">
+<h2>Methodology and Implementation<a class="headerlink" href="#methodology-and-implementation" title="Permalink to this heading">#</a></h2>
+<p>The data extracted from Meta was then aggregated to different admin levels using the shapefiles available on <a class="reference external" href="https://data.humdata.org/dataset/cod-ab-lbn?">HdX</a>. These datasets are made available on <a class="reference external" href="https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&amp;web=1&amp;e=Yvwh8r&amp;cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&amp;FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&amp;id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Fpopulation%2Fmeta%2Dhigh%2Dresolution%2Dpopulation%2Ddensity%2F2023&amp;viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5">SharePoint</a>.</p>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -427,62 +451,69 @@ document.write(`
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
 <span class="n">hrsl_lebanon3</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;population&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span><span class="n">vmax</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Total population by admin 3 region&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="n">subtitle_text</span> <span class="o">=</span> <span class="s2">&quot;Source: Population estimates from Meta&#39;s HRSL aggregated to admin regions from HdX&quot;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">subtitle_text</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(-0.25, -0.05, &quot;Source: Population estimates from Meta&#39;s HRSL aggregated to admin regions from HdX&quot;)
 </pre></div>
 </div>
-<img alt="../../_images/8f934aafc9c5d752323bc2c7888f22d739da4f64581c16967bc7038f1bf27261.png" src="../../_images/8f934aafc9c5d752323bc2c7888f22d739da4f64581c16967bc7038f1bf27261.png" />
+<img alt="../../_images/e474d47afecf466735a3477b2e885c9bffc604bded6b99c891fd1391c42bfa80.png" src="../../_images/e474d47afecf466735a3477b2e885c9bffc604bded6b99c891fd1391c42bfa80.png" />
 </div>
 </div>
-<section id="observations">
-<h2>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h2>
+<section id="findings">
+<h3>Findings<a class="headerlink" href="#findings" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li><p>The area around Beirut is way more populated than the rest of the country</p></li>
+<li><p>The area around Beirut is way more populated than the rest of the country.</p></li>
+<li><p>The areas sharing a border with Syria also have a high population.</p></li>
 </ul>
-</section>
-<section id="unhcr-refugee-population-trend">
-<h2>UNHCR Refugee Population Trend<a class="headerlink" href="#unhcr-refugee-population-trend" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">refugee_annual</span><span class="p">[</span><span class="n">refugee_annual</span><span class="p">[</span><span class="s1">&#39;Country of asylum&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lebanon&#39;</span><span class="p">][[</span><span class="s2">&quot;Refugees under UNHCR&#39;s mandate&quot;</span><span class="p">,</span> <span class="s2">&quot;Year&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: xlabel=&#39;Year&#39;&gt;
-</pre></div>
-</div>
-<img alt="../../_images/0e43997179bc912d23a03166cd0da6618c4e3bdc3b3967ed9d1046693745e3ff.png" src="../../_images/0e43997179bc912d23a03166cd0da6618c4e3bdc3b3967ed9d1046693745e3ff.png" />
-</div>
-</div>
-</section>
-<section id="relative-wealth-index">
-<h2>Relative Wealth Index<a class="headerlink" href="#relative-wealth-index" title="Permalink to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-<span class="n">rw</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;rwi&#39;</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">rw</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;rwi&#39;</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Relative Wealth Index at 2.4sq km grids&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="n">subtitle_text</span> <span class="o">=</span> <span class="s2">&quot;Source: Meta&quot;</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">subtitle_text</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(-0.25, -0.05, &#39;Source: Meta&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/637bb9e9acfd81e3d27e417b114f009e0756b0df7527bca927b1b82dbafabb89.png" src="../../_images/637bb9e9acfd81e3d27e417b114f009e0756b0df7527bca927b1b82dbafabb89.png" />
+<img alt="../../_images/ef5e95be56a9c362a4862f883aac16f785384019bb34a6e7dc20b53295df793c.png" src="../../_images/ef5e95be56a9c362a4862f883aac16f785384019bb34a6e7dc20b53295df793c.png" />
 </div>
 </div>
+</section>
 <section id="id1">
-<h3>Observations<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3>Findings<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The northern border shared with Syria is some of the poorest region in the country</p></li>
+<li><p>The area around Beirut is the wealthiest in the country</p></li>
 </ul>
 </section>
+</section>
+<section id="limitations">
+<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">#</a></h2>
+<p>The Meta datasets are using deep learning algorithms on existing data/last avalable data, especially for the population numbers. Given the underlying numbers are quite outdated, that could reflect the confidence placed in the numbers derived from it.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<p>Chi, Guanghua, Han Fang, Sourav Chatterjee, and Joshua E. Blumenstock. “Microestimates of wealth for all low-and middle-income countries.” Proceedings of the National Academy of Sciences 119, no. 3 (2022): e2113658119.</p>
 </section>
 </section>
 
@@ -553,12 +584,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unhcr-refugee-population-trend">UNHCR Refugee Population Trend</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-wealth-index">Relative Wealth Index</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Observations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-resolution-population-density">High Resolution Population Density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-wealth-index">Relative Wealth Index</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation">Methodology and Implementation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findings">Findings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Findings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
 
