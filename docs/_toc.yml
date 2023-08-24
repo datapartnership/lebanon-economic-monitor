@@ -7,15 +7,12 @@ parts:
       - file: docs/introduction_to_data_goods
   - caption: Understanding Lebanon's Economy through Alternative Data
     chapters:
-      - file: docs/foundational_datasets_and_data_products
-  - caption: Foundational Data
-    chapters:
-      - file: notebooks/foundational-data/population.ipynb
+      - file: docs/foundational_datasets_and_data_products   
   - caption: Data Products
     chapters:
+      - file: notebooks/foundational-data/population.ipynb
       - file: notebooks/ntl-analysis/README
       - file: notebooks/conflict/acled.ipynb
-      - file: notebooks/movement/movement-range.ipynb
   - caption: Acknowledgements
     chapters:
       - file: docs/team
