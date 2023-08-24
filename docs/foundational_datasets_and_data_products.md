@@ -23,7 +23,7 @@ Where feasible, all datasets that can be obtained through the Development Data H
 | 4      | Nighttime Lights                              | Open                   | Nighttime lights from VIIRS/Black Marble                                                                              | Monthly (daily possible)                                          | [Project SharePoint]();                                               | [Robert Marty](mailto:rmarty@worldbank.org),   DIME |
 | 5      | AIS Data                                      | Proprietary            | Ship location data aggregated by Spire made available through a UN collaboration. (Available from 1 Dec 2018 - 31 Aug 2022)                                    | Updated Daily                             | [Project SharePoint]()                                                                    | [Andres Chamorro](mailto:achamorroelizond@worldbank.org), GOST                        |
 | 6      | Population Data                               | Open   |   High Resolution Population Density Maps from Meta                        |                            No update frequency available                          | [Project SharePoint](https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=Yvwh8r&cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Fpopulation%2Fmeta%2Dhigh%2Dresolution%2Dpopulation%2Ddensity%2F2023&viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5);                                         | [Sahiti Sarva](mailto:ssarva@worldbank.org), Data Lab                     |               
-
+```
 
 ## Data Products Summary
 
@@ -38,7 +38,7 @@ Following is a summary of Data Products used in this Data Good:
 |---------------|-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------|
 |     A         |     Changes in Observed Nighttime Lights                                                              |     Yearly and monthly aggregated remote   sensing data used to derive changes in observed nighttime lights                  |     Results reflect data from NASA’s   nighttime lights data                                                                                                                                            |     5                          |
 |     B         |     Changes in Observed Conflict                                                               |     Geospatial analysis of conflict overlayed with demographic data                                                 |     Results are based on conflict data that is crowd sourced                                                                                         |     2,3,6                        |
-
+```
 
 ## Sample Indicators
 
