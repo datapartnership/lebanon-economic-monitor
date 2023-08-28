@@ -165,9 +165,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Products</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="notebooks/foundational-data/population.html">Demographics of Lebanon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/ntl-analysis/README.html">Night Time Lights in Lebanon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks/conflict/acled.html">Conflict in Lebanon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/conflict/conflict.html">Conflict in Lebanon</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements</span></p>
 <ul class="nav bd-sidenav">
@@ -382,7 +381,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-availability-statement">Data Availability Statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 </ul>
@@ -401,8 +402,30 @@ document.write(`
 <p>The MENA MTI team is leading two analytical projects for Lebanon – the Lebanon Country Economic Memorandum (CEM) (P178305) and ‘Revisiting the Syrian Conflict’s Impact on Lebanon (P178302). Data constraints are a major concern for both projects. This repository includes an exploration of alternative data sources that could support analysis of Lebanon’s economic growth, conflict, demographics, and refugee dynamics.</p>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h2>
-<div class="highlight-{% notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Data Goods</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/introduction_to_data_goods.html">Introduction to Data Goods</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Understanding Lebanon's Economy through Alternative Data</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/foundational_datasets_and_data_products.html">Foundational Datasets, Data Products, &amp; Sample Indicators</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Products</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/ntl-analysis/README.html">Night Time Lights in Lebanon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/conflict/conflict.html">Conflict in Lebanon</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="docs/team.html">Data Goods Team and Acknowledgements</a></li>
+</ul>
 </div>
 </section>
 <section id="data-availability-statement">
@@ -413,14 +436,6 @@ document.write(`
 <h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
 <p>The repository is licensed under the <a class="reference external" href="https://raw.githubusercontent.com/worldbank/template/main/LICENSE">World Bank Master Community License Agreement</a>.</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -481,7 +496,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-availability-statement">Data Availability Statement</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
 </ul>
@@ -509,7 +526,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 24, 2023.
+  Last updated on Aug 28, 2023.
   <br/>
 </p>
   </div>

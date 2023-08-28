@@ -68,8 +68,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/conflict/acled';</script>
-    <link rel="canonical" href="https://datapartnership.github.io/datapartnership/lebanon-economic-monitor/notebooks/conflict/acled.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/conflict/conflict';</script>
+    <link rel="canonical" href="https://datapartnership.github.io/datapartnership/lebanon-economic-monitor/notebooks/conflict/conflict.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Data Goods Team and Acknowledgements" href="../../docs/team.html" />
@@ -166,7 +166,6 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Products</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../foundational-data/population.html">Demographics of Lebanon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ntl-analysis/README.html">Night Time Lights in Lebanon</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Conflict in Lebanon</a></li>
 </ul>
@@ -244,7 +243,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/edit/main/notebooks/conflict/acled.ipynb" target="_blank"
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/edit/main/notebooks/conflict/conflict.ipynb" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -261,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/issues/new?title=Issue%20on%20page%20%2Fnotebooks/conflict/acled.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/issues/new?title=Issue%20on%20page%20%2Fnotebooks/conflict/conflict.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -291,7 +290,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/notebooks/conflict/acled.ipynb" target="_blank"
+      <li><a href="../../_sources/notebooks/conflict/conflict.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -408,7 +407,7 @@ document.write(`
 <h1>Conflict in Lebanon<a class="headerlink" href="#conflict-in-lebanon" title="Permalink to this heading">#</a></h1>
 <section id="assignment">
 <h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h2>
-<p>Lebanon has seen multiple conflicts since before its <a class="reference external" href="https://www.cfr.org/global-conflict-tracker/conflict/political-instability-lebanon">inception</a>. The task at hand is to observe the trends in conflict from two datasources. Following this, they intend to borrow some analysis already done by Novta &amp; Pugacheva, 2020 to estimate the cost of conflict.</p>
+<p>Lebanon has seen multiple conflicts since before its <a class="reference external" href="https://www.cfr.org/global-conflict-tracker/conflict/political-instability-lebanon">inception</a>. The assignment is to observe conflict trends using at least two datasources. Following this, the team will research completed by Novta &amp; Pugacheva, 2020, to estimate the cost of conflict.</p>
 </section>
 <section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
@@ -418,12 +417,12 @@ document.write(`
 </section>
 <section id="ucdp-conflict-data">
 <h3>UCDP Conflict Data<a class="headerlink" href="#ucdp-conflict-data" title="Permalink to this heading">#</a></h3>
-<p>The team used a secondary conflict dataset based on <a class="reference external" href="https://www.pcr.uu.se/research/ucdp/methodology/">UCDP Conflict Analysis</a>. This data is currently available on <a class="reference external" href="https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&amp;web=1&amp;e=Yvwh8r&amp;cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&amp;FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&amp;id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Fconflicts&amp;viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5">SharePoint</a>.</p>
+<p>The team used a secondary conflict dataset based on <a class="reference external" href="https://www.pcr.uu.se/research/ucdp/methodology/">UCDP Conflict Analysis</a>, which primarily uses news data to generate geospatially-located conflict statistics. These are available on <a class="reference external" href="https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&amp;web=1&amp;e=Yvwh8r&amp;cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&amp;FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&amp;id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Fconflicts&amp;viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5">SharePoint</a>.</p>
 </section>
 </section>
 <section id="methodology-and-implementation">
 <h2>Methodology and Implementation<a class="headerlink" href="#methodology-and-implementation" title="Permalink to this heading">#</a></h2>
-<p>ACLED and UCDP data was analysed and aggregated to admin levels gathered from HdX. The number of fatalities and conflicts were then shown by different event types and different admin regions. The results from both the sources was compared.</p>
+<p>ACLED and UCDP data were analysed and aggregated to admin levels gathered from <a class="reference external" href="https://data.humdata.org/">HdX</a>. The number of fatalities and conflicts were then shown by different event types and different admin regions. The results from both the sources was compared.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_notebook</span><span class="p">()</span>
@@ -1768,11 +1767,12 @@ if (force === true) {
 <section id="findings">
 <h2>Findings<a class="headerlink" href="#findings" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>The Beirut explosion occured in 2020</p></li>
-<li><p>In 2021, two power stations shut down due to fuel shortage resulting in a powercut</p></li>
-<li><p>However, the number of deaths were higher in 2017</p></li>
-<li><p>Mount Lebanon, which is near Beirut also saw a higher number of conflicts compred to the other admin regions</p></li>
-<li><p>The deaths were highest in the baalbek el hermel province which could be because of clan violence that occured in the region before 2018.</p></li>
+<li><p>The UNCDP and ACLED datasets cover different time periods and types of events. ACELD data also includes protests, which are not included in the UNCDP data, which may explain why the total number of events to not appear comparable. Further analysis is needed to determine whether the datasets are more comparable when ACLED data are filtered for violent conflict.</p></li>
+<li><p>The Beirut explosion occured in 2020, which is reflected by the protest spikes in the ACLED data.</p></li>
+<li><p>In 2021, two power stations shut down due to fuel shortage resulting in a powercut, which is reflected by protest and riot spikes in the ACLED data.</p></li>
+<li><p>Conflict-related fatalities were highest in 2017, resulting from “battle”.</p></li>
+<li><p>Mount Lebanon, which is near Beirut, also saw a higher number of conflicts compared to the other admin regions.</p></li>
+<li><p>The number of deaths from conflict were highest in the Baalbek el Hermel province, which could be because of clan violence that occured in the region before 2018.</p></li>
 </ul>
 </section>
 <section id="limitations">
@@ -1887,7 +1887,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 24, 2023.
+  Last updated on Aug 28, 2023.
   <br/>
 </p>
   </div>
