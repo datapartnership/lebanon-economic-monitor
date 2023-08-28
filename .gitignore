@@ -92,3 +92,4 @@ _build/
 .env
 
 /data
+.virtual_documents
