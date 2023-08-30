@@ -32,4 +32,4 @@ ntl_long_df %>%
   theme_classic2() 
 
 ggsave(filename = file.path(figures_dir, "viirs_dmsp_adm0.png"),
-       height = 2, width = 4.5)
+       height = 2.25, width = 6)

@@ -30,17 +30,22 @@ library(sf)
 library(raster)
 library(exactextractr)
 library(blackmarbler)
+library(ggrepel)
+library(gt)
+library(gtExtras)
 
 # Code -------------------------------------------------------------------------
-
-#### Clean data
-source(file.path(git_ntl_clean_dir, "01_download_blackmarble.R"))
-source(file.path(git_ntl_clean_dir, "02_extract_to_polygons.R"))
-
-#### Analysis (figures)
-source(file.path(git_ntl_analysis_dir, "map_ntl_annual_2022.R"))
-source(file.path(git_ntl_analysis_dir, "annual_trends.R"))
-source(file.path(git_ntl_analysis_dir, "monthly_trends.R"))
-source(file.path(git_ntl_analysis_dir, "percent_change_adm.R"))
-source(file.path(git_ntl_analysis_dir, "viirs_dmsp.R"))
-
+if(F){
+  
+  #### Clean data
+  source(file.path(git_ntl_clean_dir, "01_download_blackmarble.R"))
+  source(file.path(git_ntl_clean_dir, "02_extract_to_polygons.R"))
+  
+  #### Analysis (figures)
+  source(file.path(git_ntl_analysis_dir, "map_ntl_annual_2022.R"))
+  source(file.path(git_ntl_analysis_dir, "annual_trends.R"))
+  source(file.path(git_ntl_analysis_dir, "monthly_trends.R"))
+  source(file.path(git_ntl_analysis_dir, "percent_change_adm.R"))
+  source(file.path(git_ntl_analysis_dir, "viirs_dmsp.R"))
+  
+}
