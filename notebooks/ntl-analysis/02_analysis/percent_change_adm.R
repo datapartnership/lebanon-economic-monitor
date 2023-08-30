@@ -44,6 +44,8 @@ for(roi_name in c("lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   #roi_sf$pc[is.na(roi_sf$pc)] <- 0
   
   # Map --------------------------------------------------------------------------
+  city_df <- data.frame(lat = 33.898316, lon = 35.505696, name = "Beirut")
+  
   p <- ggplot() +
     geom_sf(data = roi_sf, 
             aes(fill = pc,
@@ -55,8 +57,44 @@ for(roi_name in c("lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
     scale_fill_distiller(palette = "YlOrRd", direction = -1) +
     scale_color_distiller(palette = "YlOrRd", direction = -1)
   
+  if(roi_name != "lbn_adm4"){
+    p <- p +
+      geom_point(data = city_df,
+                 aes(x = lon, y = lat)) +
+      geom_text_repel(data = city_df,
+                      aes(x = lon, y = lat, label = name),
+                      seed = 42) 
+  }
+  
   ggsave(p,
          filename = file.path(figures_dir, paste0("pc_map_",roi_name,".png")),
-         height = 5, width = 3.5)
+         height = 4, width = 3.5)
+  
+  # Table ----------------------------------------------------------------------
+  if(roi_name == "lbn_adm1") roi_sf <- roi_sf %>% dplyr::mutate(name = admin1Name)
+  if(roi_name == "lbn_adm2") roi_sf <- roi_sf %>% dplyr::mutate(name = admin2Name)
+  if(roi_name == "lbn_adm3") roi_sf <- roi_sf %>% dplyr::mutate(name = admin3Name)
+  if(roi_name == "lbn_adm4") roi_sf <- roi_sf %>% dplyr::mutate(name = Sector)
+  
+  roi_sf %>%
+    st_drop_geometry() %>%
+    dplyr::select(name, yr2019, yr2022, pc) %>%
+    dplyr::filter(pc < 0) %>%
+    arrange(-yr2019) %>%
+    head(30) %>%
+    dplyr::mutate(yr2019 = round(yr2019, 2),
+                  yr2022 = round(yr2022, 2),
+                  pc = round(pc,1)) %>%
+    dplyr::rename("Name" = name,
+                  "NTL: 2019" = yr2019,
+                  "NTL: 2022" = yr2022,
+                  "Percent Change" = pc) %>%
+    gt() %>%
+    #gt_hulk_col_numeric(`NTL: 2019`, trim = TRUE) %>%
+    #gt_hulk_col_numeric(`NTL: 2022`, trim = TRUE)  %>%
+    gt_color_rows(`Percent Change`, 
+                  palette = "Reds",
+                  reverse = T) %>%
+    gtsave(filename = file.path(figures_dir, paste0("pc_table_",roi_name,".png")))
   
 }
