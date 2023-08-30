@@ -385,12 +385,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-and-clean-data">Code and Clean Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-of-nighttime-lights">Map of Nighttime Lights</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trends-in-nighttime-lights-annual">Trends in Nighttime Lights: Annual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trends-in-nighttime-lights-monthly">Trends in Nighttime Lights: Monthly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-in-nighttime-lights-2019-to-2022">Change in Nighttime Lights: 2019 to 2022</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-in-nighttime-lights-2019-to-2022">Change in Nighttime Lights: 2019 to 2022</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maps">Maps</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">Tables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -409,32 +411,30 @@ document.write(`
 <p>Nighttime lights have become a commonly used resource to estimate changes in local economic activity. This section shows where nighttime lights are concentrated across Lebanon and observed changes over time.</p>
 <section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
-<p>We use nighttime lights data from two sources: for data from 1992 to 2012, we use data from DMSP-OLS; for data from 2013 to present, we use VIIRS Black Marble data. Raw nighttime lights data requires correction due to cloud cover and stray light, such as lunar light. Both nighttime lights dataset apply algorithms to correct raw nighttime light values and calibrate data so that trends in lights over time can be meaningfully analyzed.</p>
+<p>We use nighttime lights data from two sources: for data from 1992 to 2012, we use data from DMSP-OLS; for data from 2013 to present, we use VIIRS Black Marble data. Raw nighttime lights data requires correction due to cloud cover and stray light, such as lunar light. Both nighttime lights datasets apply algorithms to correct raw nighttime light values and calibrate data so that trends in lights over time can be meaningfully analyzed.</p>
+<p>The raw values of nighttime lights are radiance of lights, and the values themselves are not readily interpretable in an economic context. Nighttime light values should be viewed as an index, with larger values reflecting brighter lights—and more economic activity.</p>
 <p>For further information, please refer to <span class="xref std std-ref">foundational_datasets</span>.</p>
 </section>
 <section id="methodology">
 <h2>Methodology<a class="headerlink" href="#methodology" title="Permalink to this heading">#</a></h2>
-<p>We create a consistent time series from DMSP data and VIIRS data. Both data sources provide data in 2013. We scale find the difference between DMSP and VIIRs in 2013, and apply this scaling factor across DMSP data to merge the two time series. The below figure shows the individual VIIRS and DMSP series and the harmonized series.</p>
+<p>We create a harmonized time series from DMSP data and VIIRS data. Both data sources provide data in 2013. We scale find the difference between DMSP and VIIRs in 2013, and apply this scaling factor across DMSP data to merge the two time series. The below figure shows the individual VIIRS and DMSP series and the harmonized series.</p>
 <figure class="align-center" id="id1">
-<a class="reference internal image-reference" href="../../_images/viirs_dmsp_adm0.png"><img alt="../../_images/viirs_dmsp_adm0.png" src="../../_images/viirs_dmsp_adm0.png" style="width: 540.0px; height: 240.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/viirs_dmsp_adm0.png"><img alt="../../_images/viirs_dmsp_adm0.png" src="../../_images/viirs_dmsp_adm0.png" style="width: 720.0px; height: 270.0px;" /></a>
 <figcaption>
 <p><span class="caption-number">Fig. 1 </span><span class="caption-text">Harmonizing VIIRS and DMSP</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-</section>
-<section id="code-and-clean-data">
-<h2>Code and Clean Data<a class="headerlink" href="#code-and-clean-data" title="Permalink to this heading">#</a></h2>
 <p>The following code cleans the data:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/01_download_blackmarble.R">Download VIIRS Black Marble data</a></p></li>
-<li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/02_extract_to_polygons.R">Aggregate Nighttime Lights to Polygons</a> The code creates analysis-ready code files, in OneDrive in <code class="docutils literal notranslate"><span class="pre">Data/night-time-lights/aggregated-to-polygons</span></code></p></li>
+<li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/01_download_blackmarble.R">Download VIIRS Black Marble data</a> Downloads nighttime light BlackMarble data as raster files.</p></li>
+<li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/02_extract_to_polygons.R">Aggregate Nighttime Lights to Polygons</a> The code creates analysis-ready code files, in OneDrive in <code class="docutils literal notranslate"><span class="pre">Data/night-time-lights/aggregated-to-polygons</span></code>. Data are aggregated to different administrative zones.</p></li>
 </ul>
-<p>The following code produces the figures</p>
+<p>The following code produces the figures:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/map_ntl_annual_2022.R">NTL 2022 Map</a></p></li>
 <li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/annual_trends.R">Annual Trends in NTL</a></p></li>
 <li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/monthly_trends.R">Monthly Trends in NTL</a></p></li>
-<li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/percent_change_adm.R">Percent Change Maps</a></p></li>
+<li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/percent_change_adm.R">Percent Change Maps and Tables</a></p></li>
 <li><p><a class="reference external" href="https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/02_analysis/viirs_dmsp.R">VIIRS and DMSP Comparison</a></p></li>
 </ul>
 </section>
@@ -442,15 +442,17 @@ document.write(`
 <h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
 <section id="map-of-nighttime-lights">
 <h3>Map of Nighttime Lights<a class="headerlink" href="#map-of-nighttime-lights" title="Permalink to this heading">#</a></h3>
+<p>The below figure shows nighttime lights in 2019 and 2022, illustrating the notable reduction in nighttime lights throughout the country.</p>
 <figure class="align-center" id="id2">
-<a class="reference internal image-reference" href="../../_images/ntl_2022.png"><img alt="../../_images/ntl_2022.png" src="../../_images/ntl_2022.png" style="width: 525.0px; height: 750.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/ntl_19_22.png"><img alt="../../_images/ntl_19_22.png" src="../../_images/ntl_19_22.png" style="width: 525.0px; height: 600.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Map of Nighttime Lights in 2022</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Map of Nighttime Lights in 2019 and 2022</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="trends-in-nighttime-lights-annual">
 <h3>Trends in Nighttime Lights: Annual<a class="headerlink" href="#trends-in-nighttime-lights-annual" title="Permalink to this heading">#</a></h3>
+<p>The below figures show trends in nighttime lights across the country (top figure) and at the first administrative division level (bottom figure). The figures show nighttime lights increasing across the country from 2015 to 2019, where nighttime lights then started to notably decline each year since.</p>
 <figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="../../_images/annual_trends_adm0.png"><img alt="../../_images/annual_trends_adm0.png" src="../../_images/annual_trends_adm0.png" style="width: 540.0px; height: 240.0px;" /></a>
 <figcaption>
@@ -460,51 +462,67 @@ document.write(`
 <figure class="align-center" id="id4">
 <a class="reference internal image-reference" href="../../_images/annual_trends_adm1.png"><img alt="../../_images/annual_trends_adm1.png" src="../../_images/annual_trends_adm1.png" style="width: 720.0px; height: 480.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Annual Trends in Nighttime Lights: ADM 1 Level</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="trends-in-nighttime-lights-monthly">
-<h3>Trends in Nighttime Lights: Monthly<a class="headerlink" href="#trends-in-nighttime-lights-monthly" title="Permalink to this heading">#</a></h3>
-<figure class="align-center" id="id5">
-<a class="reference internal image-reference" href="../../_images/monthly_trends_adm0.png"><img alt="../../_images/monthly_trends_adm0.png" src="../../_images/monthly_trends_adm0.png" style="width: 540.0px; height: 240.0px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Monthly Trends in Nighttime Lights: Country Level</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-center" id="id6">
-<a class="reference internal image-reference" href="../../_images/monthly_trends_adm1.png"><img alt="../../_images/monthly_trends_adm1.png" src="../../_images/monthly_trends_adm1.png" style="width: 720.0px; height: 480.0px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Monthly Trends in Nighttime Lights: ADM 1 Level</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 4 </span><span class="caption-text">Annual Trends in Nighttime Lights: Governorate Level</span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="change-in-nighttime-lights-2019-to-2022">
 <h3>Change in Nighttime Lights: 2019 to 2022<a class="headerlink" href="#change-in-nighttime-lights-2019-to-2022" title="Permalink to this heading">#</a></h3>
-<figure class="align-center" id="id7">
-<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm1.png"><img alt="../../_images/pc_map_lbn_adm1.png" src="../../_images/pc_map_lbn_adm1.png" style="width: 420.0px; height: 600.0px;" /></a>
+<p>This section shows the percent change in nighttime lights from 2019 to 2022 at different administrative levels. The first set of figures show maps of the percent change, and the second set show tables of percent change. The maps and tables show that administrative regions throughout Lebanaon experienced a sharp reduction in nighttime lights from 2019 to 2022. At the first administrative 1 level, the smallest reduction in nighttime lights was about 60% (in the South)—while the largest was a 90% reduction (in Akkar). Lebanon’s two largest cities—Beirut and Tripoli—saw over a 70% reduction in nighttime lights.</p>
+<section id="maps">
+<h4>Maps<a class="headerlink" href="#maps" title="Permalink to this heading">#</a></h4>
+<figure class="align-center" id="id5">
+<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm1.png"><img alt="../../_images/pc_map_lbn_adm1.png" src="../../_images/pc_map_lbn_adm1.png" style="width: 420.0px; height: 480.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 1</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 1</span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id6">
+<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm2.png"><img alt="../../_images/pc_map_lbn_adm2.png" src="../../_images/pc_map_lbn_adm2.png" style="width: 420.0px; height: 480.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 2</span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id7">
+<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm3.png"><img alt="../../_images/pc_map_lbn_adm3.png" src="../../_images/pc_map_lbn_adm3.png" style="width: 420.0px; height: 480.0px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 3</span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id8">
-<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm2.png"><img alt="../../_images/pc_map_lbn_adm2.png" src="../../_images/pc_map_lbn_adm2.png" style="width: 420.0px; height: 600.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm4.png"><img alt="../../_images/pc_map_lbn_adm4.png" src="../../_images/pc_map_lbn_adm4.png" style="width: 420.0px; height: 480.0px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 2</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 4 in Beirut</span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+</section>
+<section id="tables">
+<h4>Tables<a class="headerlink" href="#tables" title="Permalink to this heading">#</a></h4>
 <figure class="align-center" id="id9">
-<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm3.png"><img alt="../../_images/pc_map_lbn_adm3.png" src="../../_images/pc_map_lbn_adm3.png" style="width: 420.0px; height: 600.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pc_table_lbn_adm1.png"><img alt="../../_images/pc_table_lbn_adm1.png" src="../../_images/pc_table_lbn_adm1.png" style="width: 364.0px; height: 257.6px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 3</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 1 - Ordered by Nighttime Lights in 2019</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <figure class="align-center" id="id10">
-<a class="reference internal image-reference" href="../../_images/pc_map_lbn_adm4.png"><img alt="../../_images/pc_map_lbn_adm4.png" src="../../_images/pc_map_lbn_adm4.png" style="width: 420.0px; height: 600.0px;" /></a>
+<a class="reference internal image-reference" href="../../_images/pc_table_lbn_adm2.png"><img alt="../../_images/pc_table_lbn_adm2.png" src="../../_images/pc_table_lbn_adm2.png" style="width: 355.20000000000005px; height: 761.6px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 4 in Beirut</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 2 - Ordered by Nighttime Lights in 2019</span><a class="headerlink" href="#id10" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="../../_images/pc_table_lbn_adm3.png"><img alt="../../_images/pc_table_lbn_adm3.png" src="../../_images/pc_table_lbn_adm3.png" style="width: 511.20000000000005px; height: 873.6px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 3 - Ordered by Nighttime Lights in 2019. The 30 locations with the largest nighttime lights in 2019 are shown.</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="../../_images/pc_table_lbn_adm4.png"><img alt="../../_images/pc_table_lbn_adm4.png" src="../../_images/pc_table_lbn_adm4.png" style="width: 370.40000000000003px; height: 873.6px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Percent Change in Nighttime Lights: ADM 4 in Beirut - Ordered by Nighttime Lights in 2019</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
 </section>
 </section>
 </section>
@@ -578,12 +596,14 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-and-clean-data">Code and Clean Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-of-nighttime-lights">Map of Nighttime Lights</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trends-in-nighttime-lights-annual">Trends in Nighttime Lights: Annual</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trends-in-nighttime-lights-monthly">Trends in Nighttime Lights: Monthly</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-in-nighttime-lights-2019-to-2022">Change in Nighttime Lights: 2019 to 2022</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#change-in-nighttime-lights-2019-to-2022">Change in Nighttime Lights: 2019 to 2022</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#maps">Maps</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">Tables</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -611,7 +631,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Aug 28, 2023.
+  Last updated on Aug 30, 2023.
   <br/>
 </p>
   </div>
