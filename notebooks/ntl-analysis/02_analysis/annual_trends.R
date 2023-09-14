@@ -31,7 +31,7 @@ ntl_df %>%
            fill = "gray30") +
   labs(x = NULL,
        y = "Nighttime Lights",
-       title = "Annual Nighttime Lights: Monthly Level") +
+       title = "Annual Nighttime Lights: Governorate Level") +
   scale_x_continuous(breaks = seq(2005, 2022, 5)) +
   theme_classic2() +
   theme(strip.background = element_blank(),
