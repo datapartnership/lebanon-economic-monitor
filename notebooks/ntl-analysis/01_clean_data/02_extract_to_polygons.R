@@ -60,8 +60,24 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
         dmsp_r <- raster()
       }
       
-      roi_sf$ntl_bm_mean   <- exact_extract(bm_r, roi_sf, 'mean')
-      roi_sf$ntl_dmsp_mean <- exact_extract(dmsp_r, roi_sf, 'mean')
+      roi_sf$ntl_bm_mean  <- exact_extract(bm_r, roi_sf, 'mean')
+      roi_sf$ntl_bm_q5    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.5))
+      roi_sf$ntl_bm_q6    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.6))
+      roi_sf$ntl_bm_q7    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.7))
+      roi_sf$ntl_bm_q8    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.8))
+      roi_sf$ntl_bm_q9    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.9))
+      roi_sf$ntl_bm_q95   <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.95))
+      roi_sf$ntl_bm_q99   <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.99))
+      
+      roi_sf$ntl_dmsp_mean  <- exact_extract(dmsp_r, roi_sf, 'mean')
+      roi_sf$ntl_dmsp_q5    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.5))
+      roi_sf$ntl_dmsp_q6    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.6))
+      roi_sf$ntl_dmsp_q7    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.7))
+      roi_sf$ntl_dmsp_q8    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.8))
+      roi_sf$ntl_dmsp_q9    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.9))
+      roi_sf$ntl_dmsp_q95   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.95))
+      roi_sf$ntl_dmsp_q99   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.99))
+      
       roi_sf$year <- year
       
       roi_df <- roi_sf
@@ -82,12 +98,42 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   ntl_annual_df <- map_df(unique(ntl_annual_df$adm_id), function(id){
     
     ntl_annual_df[ntl_annual_df$adm_id %in% id,] %>%
-      mutate(dmsp_scale_factor = ntl_bm_mean[year == 2012] - ntl_dmsp_mean[year == 2012]) %>%
-      mutate(ntl_dmsp_mean_scale = ntl_dmsp_mean + dmsp_scale_factor) %>%
-      mutate(ntl_mean = case_when(
-        year < 2012 ~ ntl_dmsp_mean_scale,
+      mutate(dmsp_scale_factor_add_2012base = ntl_bm_mean[year == 2012] - ntl_dmsp_mean[year == 2012],
+             dmsp_scale_factor_add_2013base = ntl_bm_mean[year == 2013] - ntl_dmsp_mean[year == 2013],
+             dmsp_scale_factor_div_2012base = ntl_bm_mean[year == 2012] / ntl_dmsp_mean[year == 2012],
+             dmsp_scale_factor_div_2013base = ntl_bm_mean[year == 2013] / ntl_dmsp_mean[year == 2013]) %>%
+      mutate(ntl_dmsp_mean_scale_add_2012base = ntl_dmsp_mean + dmsp_scale_factor_add_2012base,
+             ntl_dmsp_mean_scale_add_2013base = ntl_dmsp_mean + dmsp_scale_factor_add_2013base,
+             
+             ntl_dmsp_mean_scale_div_2012base = ntl_dmsp_mean * dmsp_scale_factor_div_2012base,
+             ntl_dmsp_mean_scale_div_2013base = ntl_dmsp_mean * dmsp_scale_factor_div_2013base) %>%
+      
+      mutate(ntl_mean_add_2012base = case_when(
+        year < 2012 ~ ntl_dmsp_mean_scale_add_2012base,
         year >= 2012 ~ ntl_bm_mean
-      ))
+      )) %>%
+      mutate(ntl_mean_add_2013base = case_when(
+        year < 2013 ~ ntl_dmsp_mean_scale_add_2013base,
+        year >= 2013 ~ ntl_bm_mean
+      )) %>%
+      mutate(ntl_mean_div_2012base = case_when(
+        year < 2012 ~ ntl_dmsp_mean_scale_div_2012base,
+        year >= 2012 ~ ntl_bm_mean
+      )) %>%
+      mutate(ntl_mean_div_2013base = case_when(
+        year < 2013 ~ ntl_dmsp_mean_scale_div_2013base,
+        year >= 2013 ~ ntl_bm_mean
+      )) %>%
+      
+      dplyr::select(-c(dmsp_scale_factor_add_2012base,
+                       dmsp_scale_factor_add_2013base,
+                       dmsp_scale_factor_div_2012base,
+                       dmsp_scale_factor_div_2013base,
+                       
+                       ntl_dmsp_mean_scale_add_2012base,
+                       ntl_dmsp_mean_scale_add_2013base,
+                       ntl_dmsp_mean_scale_div_2012base,
+                       ntl_dmsp_mean_scale_div_2013base))
     
   })
   
