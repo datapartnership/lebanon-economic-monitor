@@ -8,7 +8,7 @@
 # -- (c) Simulated DMSP (from VIIRS) [2014 - 2021]
 # 3. Aggregate monthly data, VIIRS Black Marble only [2012 - present]
 
-for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
+for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   # Make Directories -------------------------------------------------------------
   dir.create(file.path(ntl_dir, "aggregated-to-polygons", roi_name))
@@ -34,6 +34,10 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   if(roi_name == "lbn_adm4"){
     roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_beirut_adm4_mapaction_pcoded", "lbn_beirut_adm4_MapAction_Pcoded.shp"))
+  } 
+  
+  if(roi_name == "cadaster"){
+    roi_sf <- read_sf(file.path(admin_bnd_dir, "cad_shp", "cadaster.shp"))
   } 
   
   roi_sf$adm_id <- 1:nrow(roi_sf)
@@ -141,6 +145,7 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   saveRDS(ntl_annual_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_annual_ntl.Rds")))
   write_csv(ntl_annual_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_annual_ntl.csv")))
+  write_dta(ntl_annual_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_annual_ntl.dta")))
   
   # Aggregate monthly ------------------------------------------------------------
   monthly_rasters <- file.path(ntl_dir, "ntl-rasters", "blackmarble", "monthly") %>%
@@ -180,6 +185,7 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   saveRDS(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.Rds")))
   write_csv(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.csv")))
+  write_dta(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.dta")))
   
 }
 

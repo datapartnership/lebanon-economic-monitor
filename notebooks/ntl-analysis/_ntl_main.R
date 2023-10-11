@@ -33,6 +33,7 @@ library(blackmarbler)
 library(ggrepel)
 library(gt)
 library(gtExtras)
+library(haven)
 
 # Code -------------------------------------------------------------------------
 if(F){
