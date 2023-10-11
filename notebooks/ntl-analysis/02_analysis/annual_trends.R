@@ -4,12 +4,6 @@
 ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0", 
                             paste0("lbn_adm0", "_annual_ntl.Rds")))
 
-# ntl_df %>%
-#   ggplot(aes(x = year,
-#              y = ntl_dmsp_mean)) + 
-#   geom_col() +
-#   scale_x_continuous(breaks = seq(1992, 2022, 4)) 
-
 ntl_df %>%
   filter(year >= 1992) %>%
   ggplot() +
