@@ -34,6 +34,7 @@ library(ggrepel)
 library(gt)
 library(gtExtras)
 library(haven)
+library(WDI)
 
 # Code -------------------------------------------------------------------------
 if(F){

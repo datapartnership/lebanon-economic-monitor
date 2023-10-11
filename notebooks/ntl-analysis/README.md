@@ -59,7 +59,7 @@ The below figures show trends in nighttime lights across the country (top figure
 scale: 40%
 align: center
 ---
-Annual Trends in Nighttime Lights: Country Level
+Annual Trends in GDP Nighttime Lights: Country Level
 ```
 
 ```{figure} figures/annual_trends_adm1.png
