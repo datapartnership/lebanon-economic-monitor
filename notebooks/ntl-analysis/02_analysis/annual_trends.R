@@ -38,7 +38,7 @@ ntl_df %>%
   labs(x = NULL,
        y = "Nighttime Lights",
        title = "Annual Nighttime Lights: Governorate Level") +
-  scale_x_continuous(breaks = seq(1992, 2022, 4)) +
+  scale_x_continuous(breaks = seq(1992, 2022, 8)) +
   theme_classic2() +
   theme(strip.background = element_blank(),
         strip.text = element_text(face = "bold")) +
