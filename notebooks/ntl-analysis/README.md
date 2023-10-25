@@ -23,6 +23,19 @@ align: center
 Harmonizing VIIRS and DMSP
 ```
 
+While we rely on VIIRS data from BlackMarble, there are other sources of VIIRS data, specifically. Trends between all sources look similar.
+
+* [VIIRS Raw](https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMCFG), available from April 2012 to present
+* [VIIRS Corrected](https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMSLCFG), available January 2014 to present.
+
+```{figure} figures/viirs_diff_sources.png
+---
+scale: 40%
+align: center
+---
+VIIRS Data from Different Sources
+```
+
 The following code cleans the data:
 
 * [Download VIIRS Black Marble data](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/01_download_blackmarble.R) Downloads nighttime light BlackMarble data as raster files.
@@ -68,6 +81,26 @@ scale: 40%
 align: center
 ---
 Annual Trends in Nighttime Lights: Governorate Level
+```
+
+### Trends in Nighttime Lights: Monthly
+
+The below figures show trends in nighttime lights across the country (top figure) and at the first administrative division level (bottom figure). The figures show nighttime lights increasing across the country from 2015 to 2019, where nighttime lights then started to notably decline each year since.
+
+```{figure} figures/monthly_trends_adm0.png
+---
+scale: 40%
+align: center
+---
+Monthly Trends in GDP Nighttime Lights: Country Level
+```
+
+```{figure} figures/monthly_trends_adm1.png
+---
+scale: 40%
+align: center
+---
+Monthly Trends in Nighttime Lights: Governorate Level
 ```
 
 ### Change in Nighttime Lights

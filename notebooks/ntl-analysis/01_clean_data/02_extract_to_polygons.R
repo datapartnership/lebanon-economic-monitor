@@ -52,8 +52,16 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
       
       if(year >= 2012){
         bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", paste0("VNP46A4_t",year,".tif")))
+        viirs_r_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_mean_",year,".tif")))
       } else{
-        bm_r <- raster()
+        bm_r     <- raster()
+        viirs_r_r <- raster()
+      }
+      
+      if(year >= 2014){
+        viirs_c_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_corrected_mean_",year,".tif")))
+      } else{
+        viirs_c_r <- raster()
       }
       
       if(year %in% 1992:2013){
@@ -81,6 +89,9 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
       roi_sf$ntl_dmsp_q9    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.9))
       roi_sf$ntl_dmsp_q95   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.95))
       roi_sf$ntl_dmsp_q99   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.99))
+      
+      roi_sf$ntl_viirs_c_mean <- exact_extract(viirs_c_r, roi_sf, 'mean')
+      roi_sf$ntl_viirs_r_mean <- exact_extract(viirs_r_r, roi_sf, 'mean')
       
       roi_sf$year <- year
       
