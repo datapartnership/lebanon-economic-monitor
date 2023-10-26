@@ -17,6 +17,7 @@ parts:
           - file: notebooks/population/movement-range.ipynb
           - file: notebooks/population/population-density-estimation.ipynb
           - file: notebooks/population/population-displacement-estimation.ipynb
+          - file: notebooks/movement/movement-range.ipynb
       - file: notebooks/ntl-analysis/README
       - file: notebooks/conflict/conflict.ipynb
   - caption: Acknowledgements
