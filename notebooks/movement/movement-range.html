@@ -1,0 +1,755 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Commuting Zones in Lebanon</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=c5ced968eda925caa686" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=c5ced968eda925caa686"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-ETJ4QT0E4L"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-ETJ4QT0E4L');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/movement/movement-range';</script>
+    <link rel="canonical" href="https://datapartnership.github.io/datapartnership/lebanon-economic-monitor/notebooks/movement/movement-range.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Night Time Lights in Lebanon" href="../ntl-analysis/README.html" />
+    <link rel="prev" title="Estimating Population Displacement based on Mobility Data" href="../population/population-displacement-estimation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Oct 26, 2023"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Data Goods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/introduction_to_data_goods.html">Introduction to Data Goods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Understanding Lebanon's Economy through Alternative Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/foundational_datasets_and_data_products.html">Foundational Datasets, Data Products, &amp; Sample Indicators</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Products</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../population/README.html">Population and Demographics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../population/population.html">Demographics of Lebanon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../population/refugee-estimates.html">National Refugee Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../population/population-density-estimation.html">Estimating Population Density based on Mobility Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../population/population-displacement-estimation.html">Estimating Population Displacement based on Mobility Data</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Commuting Zones in Lebanon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ntl-analysis/README.html">Night Time Lights in Lebanon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflict/conflict.html">Conflict in Lebanon</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/team.html">Data Goods Team and Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/edit/main/notebooks/movement/movement-range.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/issues/new?title=Issue%20on%20page%20%2Fnotebooks/movement/movement-range.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/movement/movement-range.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Commuting Zones in Lebanon</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-commuting-zones-maps">Features of Commuting Zones maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-of-columns">Descriptions of columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="commuting-zones-in-lebanon">
+<h1>Commuting Zones in Lebanon<a class="headerlink" href="#commuting-zones-in-lebanon" title="Permalink to this heading">#</a></h1>
+<p>Commuting zones represent the areas where people spend most of their time and conduct most of their economic activity. These areas of economic integration are independent from political boundaries and can illustrate how economic communities and commute patterns transcend regional boundaries.</p>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<section id="features-of-commuting-zones-maps">
+<h3>Features of Commuting Zones maps<a class="headerlink" href="#features-of-commuting-zones-maps" title="Permalink to this heading">#</a></h3>
+<p>Updated several times a year using dynamic data from aggregated Facebook user home and work locations, and thus not limited by new census data results
+Built using a standard approach/methodology for the entire globe
+Contains metrics calculated to yield basic demographic, infrastructure and economic measures for each commuting zone
+Created using well-researched graph-theory methods such as Louvain algorithm clustering and Voronoi shapes
+Available as full polygon shapefiles so that they can be used for a wide range of geospatial analyses
+Agnostic of traditional administrative boundaries (except for sensitive countries, which are removed manually)</p>
+<p><strong>Population sample</strong>: Commuting Zones draws from a sample of people who use the Facebook mobile app and have enabled the Location Services setting. More info on Location Services on Facebook can be found here.</p>
+<p><strong>Spatial methods</strong>: The Commuting Zones spatial shapes are built by defining a community network. We start with a node for each city or town where people who use Facebook live. We define the edges of the graph using this formula:</p>
+<p>(#residents moving from i to j + #residents moving from j to i) / (#residents in i + #residents in j)</p>
+<p>We then reduce the complexity of this graph using a Louvain clustering algorithm. Once we have a simplified network/graph, we use Voronoi shapes to define the polygon for the commuting zone. Here is a more detailed walk-through of how commuting zones are generated.</p>
+<p><strong>Temporal span</strong>: Commuting zones are rebuilt at most every 3 months, when the commuting zone shapes are generated using the previous few weeks of Location Services data.</p>
+<p><strong>Minimum counts/size</strong>: To generate a commuting zone, there must be at least 50 people estimated to live within its boundary and a minimum size of at least 1 kilometer by 1 kilometer.</p>
+</section>
+<section id="descriptions-of-columns">
+<h3>Descriptions of columns<a class="headerlink" href="#descriptions-of-columns" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Estimated population (win_population)</strong>: Estimated population within the zone (calculated from the publicly available Facebook High-Resolution Population Density Maps or WorldPop estimates). These population estimates are provided as counts per grid tile on the earth’s surface. We map each of these tiles to a commuting zone, then aggregate population by taking the sum of all the tiles within the commuting zone polygon defined in the geometry field. We then winsorizethe bottom and top 5% of commuting zones. This means that the population counts per commuting zone below the 5% percentile are replaced by the 5% percentile value, and those above the 95% percentile are replaced by the 95% percentile value. All commuting zones have a population of at least 50.</p></li>
+<li><p><strong>Estimated road length (win_roads_km)</strong>: Estimated length of roads within the zone in kilometers (calculated from the publicly available OpenStreetMap and roads we’ve detected that are missing from it). We calculate this value by taking the sum of the length of all roads within the commuting zone polygon defined in the geometry field. We then winsorize the bottom and top 5% of commuting zones. This means that the road length counts per commuting zone below the 5% percentile are replaced by the 5% percentile value, and those above the 95% percentile are replaced by the 95% percentile value.</p></li>
+<li><p><strong>Area (area)</strong>: Area of commuting zone in square kilometers. All commuting zones are at least 1 kilometer by 1 kilometer.</p></li>
+<li><p><strong>Restaurant/Bar count (restaurant_bar_count)</strong>: A scaled score of 1-1,000 calculated by counting all the Facebook Pages of this type within each commuting zone globally. We then winsorize those values. This means that the Page counts per commuting zone below the 2.5% percentile are replaced by the 2.5% percentile value, and those above the 97.5% percentile are replaced by the 97.5% percentile value. The winsorized count of Pages in each commuting zone is then scaled between 0 and 1,000. That means that the smallest winsorized value is given a score of 0 and the highest is given a score of 1,000, with all intermediate values assigned linearly.</p></li>
+<li><p><strong>Library count (library_count)</strong>: A scaled score of 1-1,000 calculated by counting all the Facebook Pages of this type within each commuting zone globally. We then winsorize those values. This means that the Page counts per commuting zone below the 2.5% percentile are replaced by the 2.5% percentile value, and those above the 97.5% percentile are replaced by the 97.5% percentile value. The winsorized count of Pages in each commuting zone is then scaled between 0 and 1,000. That means that the smallest winsorized value is given a score of 0 and the highest is given a score of 1,000, with all intermediate values assigned linearly.</p></li>
+<li><p><strong>Grocery/Food count (grocery_food_count)</strong>: A scaled score of 1-1,000 calculated by counting all the Facebook Pages of this type within each commuting zone globally. We then winsorize those values. This means that the Page counts per commuting zone below the 2.5% percentile are replaced by the 2.5% percentile value, and those above the 97.5% percentile are replaced by the 97.5% percentile value. The winsorized count of Pages in each commuting zone is then scaled between 0 and 1,000. That means that the smallest winsorized value is given a score of 0 and the highest is given a score of 1,000, with all intermediate values assigned linearly.</p></li>
+<li><p><strong>Education count (education_count)</strong>: A scaled score of 1-1,000 calculated by counting all the Facebook Pages of this type within each commuting zone globally. We then winsorize those values. This means that the Page counts per commuting zone below the 2.5% percentile are replaced by the 2.5% percentile value, and those above the 97.5% percentile are replaced by the 97.5% percentile value. The winsorized count of Pages in each commuting zone is then scaled between 0 and 1,000. That means that the smallest winsorized value is given a score of 0 and the highest is given a score of 1,000, with all intermediate values assigned linearly.</p></li>
+<li><p><strong>Local business count (local_business_locations_count)</strong>: A scaled score of 1-1,000 calculated by counting all the Facebook Pages of this type within each commuting zone globally. We then winsorize those values. This means that the Page counts per commuting zone below the 2.5% percentile are replaced by the 2.5% percentile value, and those above the 97.5% percentile are replaced by the 97.5% percentile value. The winsorized count of Pages in each commuting zone is then scaled between 0 and 1,000. That means that the smallest winsorized value is given a score of 0 and the highest is given a score of 1,000, with all intermediate values assigned linearly.</p></li>
+<li><p><strong>Parks count (parks_count)</strong>: A scaled score of 1-1,000 calculated by counting all the Facebook Pages of this type within each commuting zone globally. We then winsorize those values. This means that the Page counts per commuting zone below the 2.5% percentile are replaced by the 2.5% percentile value, and those above the 97.5% percentile are replaced by the 97.5% percentile value. The winsorized count of Pages in each commuting zone is then scaled between 0 and 1,000. That means that the smallest winsorized value is given a score of 0 and the highest is given a score of 1,000, with all intermediate values assigned linearly.</p></li>
+<li><p><strong>Health services count (health_services_count)</strong>: A scaled score of 1-1,000 calculated by counting all the Facebook Pages of this type within each commuting zone globally. We then winsorize those values. This means that the Page counts per commuting zone below the 2.5% percentile are replaced by the 2.5% percentile value, and those above the 97.5% percentile are replaced by the 97.5% percentile value. The winsorized count of Pages in each commuting zone is then scaled between 0 and 1,000. That means that the smallest winsorized value is given a score of 0 and the highest is given a score of 1,000, with all intermediate values assigned linearly.</p></li>
+</ul>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">,</span> <span class="mi">2023</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="nb">id</span> <span class="o">!=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">legend_bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">legend_bool</span> <span class="o">=</span><span class="mi">2</span>
+    <span class="n">commuting_zones</span><span class="p">[</span><span class="n">commuting_zones</span><span class="p">[</span><span class="s1">&#39;cz_gen_ds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">==</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;win_population&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">4500000</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="n">legend_bool</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Estimated population counts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Estimated population counts&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/77963c8e67336f3e3213dead7c029d5e2c9356935bf942d790367b420da845bf.png" src="../../_images/77963c8e67336f3e3213dead7c029d5e2c9356935bf942d790367b420da845bf.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">commuting_zones</span><span class="p">[[</span><span class="s1">&#39;cz_gen_ds&#39;</span><span class="p">,</span> <span class="s1">&#39;win_population&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;cz_gen_ds&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>win_population</th>
+    </tr>
+    <tr>
+      <th>cz_gen_ds</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2020-04-10</th>
+      <td>67239</td>
+    </tr>
+    <tr>
+      <th>2021-03-01</th>
+      <td>1881941</td>
+    </tr>
+    <tr>
+      <th>2021-04-07</th>
+      <td>6925978</td>
+    </tr>
+    <tr>
+      <th>2022-08-07</th>
+      <td>6970833</td>
+    </tr>
+    <tr>
+      <th>2023-03-05</th>
+      <td>11366693</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="nb">id</span><span class="p">,</span> <span class="n">year</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">2022</span><span class="p">,</span> <span class="mi">2023</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="nb">id</span> <span class="o">!=</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">legend_bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">legend_bool</span> <span class="o">=</span><span class="mi">2</span>
+    <span class="n">commuting_zones</span><span class="p">[</span><span class="n">commuting_zones</span><span class="p">[</span><span class="s1">&#39;cz_gen_ds&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span><span class="o">==</span><span class="n">year</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="s1">&#39;win_roads_km&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span> <span class="o">=</span> <span class="mi">11000</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="n">legend_bool</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;top&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;right&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_visible</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([])</span>
+    <span class="n">ax</span><span class="p">[</span><span class="nb">id</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Estimated road length in km&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.98, &#39;Estimated road length in km&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/68d3dddcb1e7f43497d0416714753082c9e50cf6b3095c2ed49ed037fa6018cb.png" src="../../_images/68d3dddcb1e7f43497d0416714753082c9e50cf6b3095c2ed49ed037fa6018cb.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;restaurant_bar_count&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;library_count&#39;</span><span class="p">,</span> <span class="s1">&#39;grocery_food_count&#39;</span><span class="p">,</span> <span class="s1">&#39;education_count&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;local_business_locations_count&#39;</span><span class="p">,</span> <span class="s1">&#39;health_services_count&#39;</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">idx</span><span class="o">==</span><span class="mi">5</span><span class="p">:</span>
+        <span class="n">legend_bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">legend_bool</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">commuting_zones</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">],</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">legend</span> <span class="o">=</span> <span class="n">legend_bool</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">type</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">capitalize</span><span class="p">())</span>
+    <span class="n">ax</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Number of Amenities in Commuting Zones&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/75f171c908a0ff859a90c84e25dc1ec06b538f73a3dfac8cb9a393cdf1247fa9.png" src="../../_images/75f171c908a0ff859a90c84e25dc1ec06b538f73a3dfac8cb9a393cdf1247fa9.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="observations">
+<h2>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The area close to the Syrian border appears to have a lot of economic activity and population</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/movement"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../population/population-displacement-estimation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Estimating Population Displacement based on Mobility Data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../ntl-analysis/README.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Night Time Lights in Lebanon</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-commuting-zones-maps">Features of Commuting Zones maps</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descriptions-of-columns">Descriptions of columns</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By World Bank Development Data Group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Oct 26, 2023.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+    <b>All content (unless otherwise specified) is subject to the <a href="https://raw.githubusercontent.com/worldbank/template/main/LICENSE">World Bank Master Community License Agreement.</a></b>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=c5ced968eda925caa686"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=c5ced968eda925caa686"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
