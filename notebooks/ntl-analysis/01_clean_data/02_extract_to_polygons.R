@@ -8,7 +8,7 @@
 # -- (c) Simulated DMSP (from VIIRS) [2014 - 2021]
 # 3. Aggregate monthly data, VIIRS Black Marble only [2012 - present]
 
-for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
+for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   # Make Directories -------------------------------------------------------------
   dir.create(file.path(ntl_dir, "aggregated-to-polygons", roi_name))
@@ -36,6 +36,10 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
     roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_beirut_adm4_mapaction_pcoded", "lbn_beirut_adm4_MapAction_Pcoded.shp"))
   } 
   
+  if(roi_name == "cadaster"){
+    roi_sf <- read_sf(file.path(admin_bnd_dir, "cad_shp", "cadaster.shp"))
+  } 
+  
   roi_sf$adm_id <- 1:nrow(roi_sf)
   
   # Aggregate annual -------------------------------------------------------------
@@ -48,8 +52,16 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
       
       if(year >= 2012){
         bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", paste0("VNP46A4_t",year,".tif")))
+        viirs_r_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_mean_",year,".tif")))
       } else{
-        bm_r <- raster()
+        bm_r     <- raster()
+        viirs_r_r <- raster()
+      }
+      
+      if(year >= 2014){
+        viirs_c_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_corrected_mean_",year,".tif")))
+      } else{
+        viirs_c_r <- raster()
       }
       
       if(year %in% 1992:2013){
@@ -77,6 +89,9 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
       roi_sf$ntl_dmsp_q9    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.9))
       roi_sf$ntl_dmsp_q95   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.95))
       roi_sf$ntl_dmsp_q99   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.99))
+      
+      roi_sf$ntl_viirs_c_mean <- exact_extract(viirs_c_r, roi_sf, 'mean')
+      roi_sf$ntl_viirs_r_mean <- exact_extract(viirs_r_r, roi_sf, 'mean')
       
       roi_sf$year <- year
       
@@ -141,6 +156,7 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   saveRDS(ntl_annual_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_annual_ntl.Rds")))
   write_csv(ntl_annual_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_annual_ntl.csv")))
+  write_dta(ntl_annual_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_annual_ntl.dta")))
   
   # Aggregate monthly ------------------------------------------------------------
   monthly_rasters <- file.path(ntl_dir, "ntl-rasters", "blackmarble", "monthly") %>%
@@ -180,6 +196,7 @@ for(roi_name in c("lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
   
   saveRDS(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.Rds")))
   write_csv(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.csv")))
+  write_dta(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.dta")))
   
 }
 

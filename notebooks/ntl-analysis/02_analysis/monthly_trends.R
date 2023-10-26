@@ -12,7 +12,7 @@ ntl_df %>%
   labs(x = NULL,
        y = "Nighttime Lights",
        title = "Monthly Nighttime Lights: Country Level") +
-  scale_x_date(date_breaks = "12 months", date_labels = "%Y") +  # Set breaks to every 6 months
+  scale_x_date(date_breaks = "24 months", date_labels = "%Y") +  # Set breaks to every 6 months
   theme_classic2()
 
 ggsave(filename = file.path(figures_dir, "monthly_trends_adm0.png"),
@@ -30,7 +30,7 @@ ntl_df %>%
   labs(x = NULL,
        y = "Nighttime Lights",
        title = "Monthly Nighttime Lights: ADM 1") +
-  scale_x_date(date_breaks = "12 months", date_labels = "%Y") +  # Set breaks to every 6 months
+  scale_x_date(date_breaks = "48 months", date_labels = "%Y") +  # Set breaks to every 6 months
   theme_classic2() +
   theme(strip.background = element_blank(),
         strip.text = element_text(face = "bold")) +
