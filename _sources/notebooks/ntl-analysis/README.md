@@ -23,6 +23,19 @@ align: center
 Harmonizing VIIRS and DMSP
 ```
 
+While we rely on VIIRS data from BlackMarble, there are other sources of VIIRS data, specifically. Trends between all sources look similar.
+
+* [VIIRS Raw](https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMCFG), available from April 2012 to present
+* [VIIRS Corrected](https://developers.google.com/earth-engine/datasets/catalog/NOAA_VIIRS_DNB_MONTHLY_V1_VCMSLCFG), available January 2014 to present.
+
+```{figure} figures/viirs_diff_sources.png
+---
+scale: 40%
+align: center
+---
+VIIRS Data from Different Sources
+```
+
 The following code cleans the data:
 
 * [Download VIIRS Black Marble data](https://github.com/datapartnership/lebanon-economic-monitor/blob/main/notebooks/ntl-analysis/01_clean_data/01_download_blackmarble.R) Downloads nighttime light BlackMarble data as raster files.
@@ -59,7 +72,7 @@ The below figures show trends in nighttime lights across the country (top figure
 scale: 40%
 align: center
 ---
-Annual Trends in Nighttime Lights: Country Level
+Annual Trends in GDP Nighttime Lights: Country Level
 ```
 
 ```{figure} figures/annual_trends_adm1.png
@@ -70,7 +83,48 @@ align: center
 Annual Trends in Nighttime Lights: Governorate Level
 ```
 
-### Change in Nighttime Lights
+### Trends in Nighttime Lights: Monthly
+
+The below figures show trends in nighttime lights across the country (top figure) and at the first administrative division level (bottom figure). The figures show nighttime lights increasing across the country from 2015 to 2019, where nighttime lights then started to notably decline each year since.
+
+```{figure} figures/monthly_trends_adm0.png
+---
+scale: 40%
+align: center
+---
+Monthly Trends in GDP Nighttime Lights: Country Level
+```
+
+```{figure} figures/monthly_trends_adm1.png
+---
+scale: 40%
+align: center
+---
+Monthly Trends in Nighttime Lights: Governorate Level
+```
+
+### Change in Nighttime Lights: Pixel Level
+
+This section shows changes at the 500 meter pixel level from 2012 to 2022.
+
+```{figure} figures/ntl_change_2012_2022_bin.png
+---
+scale: 40%
+align: center
+---
+Change in Nighttime Lights
+```
+
+```{figure} figures/ntl_change_2012_2022_percent.png
+---
+scale: 40%
+align: center
+---
+Percent Change in Nighttime Lights
+```
+
+
+### Change in Nighttime Lights: Different ADM Levels
 
 This section shows the percent change in nighttime lights from 2019, 2020, 2021 until 2022 at different administrative levels. The first set of figures show maps of the percent change, and the second set show tables of percent change. The maps and tables show that administrative regions throughout Lebanaon experienced a sharp reduction in nighttime lights from 2019 to 2022. At the first administrative 1 level, the smallest reduction in nighttime lights from 2019 to 2022 was about 60% (in the South)---while the largest was a 90% reduction (in Akkar). Lebanon's two largest cities---Beirut and Tripoli---saw over a 70% reduction in nighttime lights.
 
