@@ -105,7 +105,9 @@ Monthly Trends in Nighttime Lights: Governorate Level
 
 ### Change in Nighttime Lights: Pixel Level
 
-This section shows changes at the 500 meter pixel level from 2012 to 2022.
+#### 2012 to 2022
+
+The below figures show changes at the 500 meter pixel level from 2012 to 2022.
 
 ```{figure} figures/ntl_change_2012_2022_bin.png
 ---
@@ -123,6 +125,45 @@ align: center
 Percent Change in Nighttime Lights
 ```
 
+#### 2010 to 2012
+
+The below figures show changes at the 1 kilometer pixel level from 2010 to 2012.
+
+```{figure} figures/ntl_change_2010_2012_bin.png
+---
+scale: 40%
+align: center
+---
+Change in Nighttime Lights
+```
+
+```{figure} figures/ntl_change_2010_2012_pc.png
+---
+scale: 40%
+align: center
+---
+Change in Nighttime Lights
+```
+
+#### 2011 to 2012
+
+The below figures show changes at the 1 kilometer pixel level from 2011 to 2012.
+
+```{figure} figures/ntl_change_2011_2012_bin.png
+---
+scale: 40%
+align: center
+---
+Change in Nighttime Lights
+```
+
+```{figure} figures/ntl_change_2011_2012_pc.png
+---
+scale: 40%
+align: center
+---
+Change in Nighttime Lights
+```
 
 ### Change in Nighttime Lights: Different ADM Levels
 
