@@ -20,6 +20,7 @@ parts:
           - file: notebooks/movement/movement-range.ipynb
       - file: notebooks/ntl-analysis/README
       - file: notebooks/conflict/conflict.ipynb
+      - file: notebooks/air-pollution/air-pollution.ipynb
   - caption: Acknowledgements
     chapters:
       - file: docs/team
