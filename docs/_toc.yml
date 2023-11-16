@@ -21,6 +21,7 @@ parts:
       - file: notebooks/ntl-analysis/README
       - file: notebooks/conflict/conflict.ipynb
       - file: notebooks/air-pollution/air-pollution.ipynb
+      - file: notebooks/aviation-trends/aviation.ipynb
   - caption: Acknowledgements
     chapters:
       - file: docs/team
