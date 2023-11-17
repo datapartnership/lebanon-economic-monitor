@@ -22,6 +22,7 @@ parts:
       - file: notebooks/conflict/conflict.ipynb
       - file: notebooks/air-pollution/air-pollution.ipynb
       - file: notebooks/ais-analysis/README
+      - file: notebooks/aviation-trends/aviation.ipynb
   - caption: Acknowledgements
     chapters:
       - file: docs/team
