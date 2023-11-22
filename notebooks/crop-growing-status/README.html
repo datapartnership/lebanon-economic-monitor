@@ -1,0 +1,1320 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Monitoring crop growing status</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-ETJ4QT0E4L"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-ETJ4QT0E4L');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/crop-growing-status/README';</script>
+    <link rel="canonical" href="https://datapartnership.github.io/datapartnership/lebanon-economic-monitor/notebooks/crop-growing-status/README.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Data Goods Team and Acknowledgements" href="../../docs/team.html" />
+    <link rel="prev" title="Tourism, Air Travel and Hotel Occupancy in Lebanon" href="../aviation-trends/aviation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="Nov 22, 2023"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../README.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt=" - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt=" - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Data Goods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/introduction_to_data_goods.html">Introduction to Data Goods</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Understanding Lebanon's Economy through Alternative Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/foundational_datasets_and_data_products.html">Foundational Datasets, Data Products, &amp; Sample Indicators</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data Products</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../population/README.html">Population and Demographics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../population/population.html">Demographics of Lebanon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../population/refugee-estimates.html">National Refugee Statistics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../population/population-density-estimation.html">Estimating Population Density based on Mobility Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../population/population-displacement-estimation.html">Estimating Population Displacement based on Mobility Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../movement/movement-range.html">Commuting Zones in Lebanon</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ntl-analysis/README.html">Night Time Lights in Lebanon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conflict/conflict.html">Conflict in Lebanon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../air-pollution/air-pollution.html">Air Pollution in Lebanon</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ais-analysis/README.html">Seaborn Trade Activity Estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aviation-trends/aviation.html">Tourism, Air Travel and Hotel Occupancy in Lebanon</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Monitoring crop growing status</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acknowledgements</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/team.html">Data Goods Team and Acknowledgements</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/edit/main/notebooks/crop-growing-status/README.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/datapartnership/lebanon-economic-monitor/issues/new?title=Issue%20on%20page%20%2Fnotebooks/crop-growing-status/README.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/notebooks/crop-growing-status/README.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Monitoring crop growing status</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crop-extent">Crop extent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vegetation-indices">Vegetation Indices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#climate">Climate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-assumptions">Limitations and Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-approach">General approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vegetation-derived-anomaly">Vegetation-derived anomaly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenological-metrics">Phenological Metrics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-and-vegetation-condition">Anomaly and Vegetation Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crop-growing-stages">Crop Growing Stages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-evidence-and-visual-insights">Supporting Evidence and Visual Insights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-maps-of-cultivation-extent">Comparative Maps of Cultivation Extent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-agricultural-changes-trends-and-anomalies-in-planting-and-harvest">Visualization of Agricultural Changes: Trends and Anomalies in Planting and Harvest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporal-aggregation-of-crop-cycles-and-climate-a-multi-level-analysis">Temporal Aggregation of Crop Cycles and Climate: A Multi-Level Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planting-and-harvesting-trends-national-regional-perspectives-and-anomalies">Planting and Harvesting Trends: National-Regional Perspectives and Anomalies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-application">Potential Application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="monitoring-crop-growing-status">
+<h1>Monitoring crop growing status<a class="headerlink" href="#monitoring-crop-growing-status" title="Permalink to this heading">#</a></h1>
+<p><img alt="Boundary" src="../../_images/lbn_bnd_administrative.png" /></p>
+<p><strong>Figure 1.</strong> Administrative boundary.</p>
+<p>In Lebanon, where diverse climatic zones and varied topography greatly influence agricultural practices, monitoring crop growth is essential. The country’s distinct geographical features create unique microclimates that impact vegetation and crop cycles. Regular observation of crop growth not only informs agricultural management but also aids in understanding and adapting to environmental changes [1]. This monitoring is crucial for sustaining Lebanon’s rich biodiversity, supporting its agricultural economy, and managing land resources effectively. By keeping a close eye on crop conditions, Lebanon can ensure food security, optimize resource use, and maintain ecological balance.</p>
+<p><img alt="WorldCover" src="../../_images/lbn_worldcover.png" /></p>
+<p><strong>Figure 2.</strong> Land cover.</p>
+<p>Remote sensing techniques have revolutionized vegetation monitoring. Tools like the Moderate Resolution Imaging Spectroradiometer (<a class="reference external" href="https://modis.gsfc.nasa.gov/about/">MODIS</a>) Terra (<a class="reference external" href="https://lpdaac.usgs.gov/products/mod13q1v061/">MOD13Q1</a>) and Aqua (<a class="reference external" href="https://lpdaac.usgs.gov/products/myd13q1v061/">MYD13Q1</a>) Vegetation Indices 16-day L3 Global 250m time series data allow for comprehensive analysis of vegetation conditions. By deriving variables such as standardized anomaly and vegetation condition index, we can quantify vegetation changes over time and across different regions [2].</p>
+<p>Consistent monitoring of crop growth in Lebanon brings a multitude of benefits. It facilitates the early identification and management of agricultural challenges such as land degradation, as well as the tracking of crop health, crucial for informed agricultural decision-making [3]. This process is vital in guiding policymakers to develop strategies and environmental policies tailored to Lebanon’s unique landscape and agricultural needs, promoting a sustainable future for the nation and its people.</p>
+<p>In Lebanon, where agriculture is a cornerstone of the economy and essential for food security, a comprehensive understanding of crop growth patterns is indispensable. Utilizing phenological analysis through data from sources like MODIS MOD13Q1 and MYD13Q1, we can gain precise and up-to-date insights into crop development stages. This information is critical for enhancing agricultural management, optimizing resource distribution, and bolstering the resilience of the farming sector [4].</p>
+<p>To achieve this, the <a class="reference external" href="https://web.nateko.lu.se/timesat/timesat.asp">TIMESAT</a> software, specializing in time series data analysis, is employed to extract vital phenological parameters, such as the Start of Season (SOS) and End of Season (EOS), from Vegetation Index (VI) data. By concentrating this analysis on the crop-growing regions of Lebanon, we ensure that the insights are highly relevant and applicable to local agricultural conditions [5].</p>
+<p>This detailed phenological data empowers Lebanese farmers and agricultural stakeholders to make well-informed decisions about critical farming activities, including planting, irrigation, and harvesting schedules. It also aids in anticipating and addressing potential risks to crop health and yield, such as diseases, pests, or the impacts of climate variability. Integrating this phenological perspective into broader crop monitoring initiatives offers a thorough and practical understanding of the factors influencing agricultural productivity and environmental health in Lebanon.</p>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<p>In this exercise, we utilize various high-quality datasets to analyze vegetation conditions and phenology within Lebanon’s cropland areas. The Data section introduces the sources of information used, setting the stage for the methodologies and results discussed later in the exercise. Our analysis incorporates VI data from the MOD13Q1 and MYD13Q1 products and the cropland extent provided by the ESA WorldCover 2021 dataset. This combination allows for a nuanced assessment of Lebanon’s agricultural landscape, enhancing our understanding of factors that influence agricultural productivity and environmental sustainability in the country.</p>
+<section id="crop-extent">
+<h3>Crop extent<a class="headerlink" href="#crop-extent" title="Permalink to this heading">#</a></h3>
+<p>With only about 8.72 percent of Lebanon’s total land area dedicated to agriculture, the effective monitoring and management of these croplands are paramount. This relatively small portion of agricultural land necessitates meticulous stewardship to ensure maximum productivity and sustainable practices. Focused attention on these areas is essential for optimizing land utilization, contributing significantly to national food security and the agricultural economy. Such dedicated management is key to maintaining a balance between achieving high agricultural yields and preserving Lebanon’s natural ecosystems.</p>
+<p><img alt="Cropland" src="../../_images/lbn_phy_cropland.png" /></p>
+<p><strong>Figure 3.</strong> Cropland</p>
+<p>We used the new <a class="reference external" href="https://esa-worldcover.org/en">ESA World Cover</a> map 10m LULC to mask out areas which aren’t of interest in computing the EVI, i.e. built-up, water, forest, etc. The cropland class has value equal to 40, which will be used within Google Earth Engine (<a class="reference external" href="https://earthengine.google.com/">GEE</a>) to generate the mask.</p>
+<p>There are many ways to download the WorldCover, as explained in the WorldCover <a class="reference external" href="https://esa-worldcover.org/en/data-access">Data Access</a> page.</p>
+</section>
+<section id="vegetation-indices">
+<h3>Vegetation Indices<a class="headerlink" href="#vegetation-indices" title="Permalink to this heading">#</a></h3>
+<p>The EVI from both MOD13Q1 and MYD13Q1 downloaded using GEE which involves some process:</p>
+<ul class="simple">
+<li><p>Combine the two 16-day composites into a synthethic 8-day composite containing data from both Aqua and Terra.</p></li>
+<li><p>Applying Quality Control Bitmask, keep only pixels with good quality.</p></li>
+<li><p>Applying cropland mask, keep only pixels identified as a cropland based on ESA WorldCover.</p></li>
+<li><p>Clipped for Lebanon and batch export the collection to Google Drive.</p></li>
+</ul>
+<p><img alt="VI" src="../../_images/lbn_evi_202309.png" /></p>
+<p><strong>Figure 4.</strong> Vegetation indices, September 2023.</p>
+</section>
+<section id="climate">
+<h3>Climate<a class="headerlink" href="#climate" title="Permalink to this heading">#</a></h3>
+<p>Understanding the dynamics of crop growth and development in Lebanon requires a comprehensive approach that includes the analysis of climate data. Monthly temperature and rainfall patterns are pivotal factors influencing agricultural cycles. By integrating time-series data of these climate parameters into our analysis, we can gain deeper insights into how environmental conditions affect crop growth.</p>
+<p>Temperature and rainfall are key drivers of phenological stages such as germination, flowering, and maturation. For instance, variations in monthly temperatures can significantly impact the growth rate and health of crops. Warmer temperatures may accelerate growth in certain crops but can also increase evapotranspiration and water demand. On the other hand, cooler temperatures might slow down growth or even damage sensitive crops.</p>
+<p><img alt="Temperature" src="../../_images/lbn_cli_temperature_202309.png" /></p>
+<p><strong>Figure 5.</strong> Mean temperature, September 2023.</p>
+<p>Similarly, rainfall patterns play a crucial role in determining water availability for crops. Adequate rainfall is essential for crop survival and productivity, but excessive or insufficient rainfall can lead to adverse conditions like flooding or drought, respectively.</p>
+<p><img alt="Rainfall" src="../../_images/lbn_cli_rainfall_202309.png" /></p>
+<p><strong>Figure 6.</strong> Accumulated rainfall, September 2023.</p>
+<p>By analyzing these climate data alongside vegetation indices and phenological information, we can correlate climate trends with vegetation dynamics.</p>
+<p>Monthly temperature derived from <a class="reference external" href="https://doi.org/10.24381/cds.68d2bb30">ERA5-Land</a>, and rainfall data come from <a class="reference external" href="https://www.chc.ucsb.edu/data/chirps">CHRIPS</a>.</p>
+</section>
+</section>
+<section id="limitations-and-assumptions">
+<h2>Limitations and Assumptions<a class="headerlink" href="#limitations-and-assumptions" title="Permalink to this heading">#</a></h2>
+<p>Getting VI data with good quality for all period are challenging (pixels covered with cloud, snow/ice, aerosol quantity, shadow) for optic data (MODIS). Cultivated area year by year are varies, due to MODIS data quality and crop type is not described, so the seasonal parameters are for general cropland.</p>
+<p>At this point, the analysis is also limited to seasonal crops due to difficulty to capture the dynamics of perennial crops within a year. The value may not represent for smaller cropland and presented result are only based upon the most current available remote sensing data. As the climate phenomena is a dynamic situation, the current realities may differ from what is depicted in this document.</p>
+<p>Ground check is necessary to ensure if satellite and field situation data are corresponding.</p>
+</section>
+<section id="general-approach">
+<h2>General approach<a class="headerlink" href="#general-approach" title="Permalink to this heading">#</a></h2>
+<p>We present a summary of the key derived variables employed in our analysis to monitor vegetation conditions and crop growing stages within Lebanon’s cropland areas. These variables, which are derived from the EVI data and the cropland extent, enable a comprehensive understanding of the factors influencing agricultural productivity and environmental sustainability in the region.</p>
+<section id="vegetation-derived-anomaly">
+<h3>Vegetation-derived anomaly<a class="headerlink" href="#vegetation-derived-anomaly" title="Permalink to this heading">#</a></h3>
+<p>We focuses on analyzing various EVI derived products, such as the standardized anomaly and Vegetation Condition Index (VCI). These derived products provide valuable insights into vegetation health, vigor, and responses to environmental factors like climate change and land-use practices. By examining the EVI-derived products, we can assess vegetation dynamics and identify patterns and trends that may impact ecosystems and human livelihoods.</p>
+<p><strong>Standardized Anomaly</strong></p>
+<p>The standardized anomaly is a dimensionless measure that accounts for variations in the mean and standard deviation of the time series data, allowing for a more robust comparison of anomalies across different regions or time periods. This variable can help identify abnormal vegetation conditions that may warrant further analysis or management action.</p>
+<p>The anomaly is calculated based on difference from the average and standard deviation</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;anomaly</span> <span class="pre">(%)&quot;</span> <span class="pre">=</span> <span class="pre">(&quot;evi&quot;</span> <span class="pre">-</span> <span class="pre">&quot;mean_evi&quot;)</span> <span class="pre">/</span> <span class="pre">&quot;std_evi&quot;</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">evi</span></code> is current EVI and <code class="docutils literal notranslate"><span class="pre">mean_evi</span></code> and <code class="docutils literal notranslate"><span class="pre">std_evi</span></code> is the long-term average and standard deviation of EVI.</p>
+<p><strong>Vegetation Condition Index (VCI)</strong></p>
+<p>The Vegetation Condition Index (VCI) is a normalized index calculated from the Enhanced Vegetation Index (EVI) data, which ranges from 0 to 100, with higher values indicating better vegetation health. By providing a concise measure of the overall vegetation condition, the VCI enables the identification of trends and patterns in vegetation dynamics and the evaluation of the effectiveness of management interventions.</p>
+<p>To calculate the VCI, the current EVI value is compared to its long-term minimum and maximum values using the following equation:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;vci&quot;</span> <span class="pre">=</span> <span class="pre">100</span> <span class="pre">*</span> <span class="pre">(&quot;evi&quot;</span> <span class="pre">-</span> <span class="pre">&quot;min_evi&quot;)</span> <span class="pre">/</span> <span class="pre">(&quot;max_evi&quot;</span> <span class="pre">-</span> <span class="pre">&quot;min_evi&quot;)</span></code></p>
+<p>where <code class="docutils literal notranslate"><span class="pre">evi</span></code> is current EVI and <code class="docutils literal notranslate"><span class="pre">min_evi</span></code> and <code class="docutils literal notranslate"><span class="pre">max_evi</span></code> is the long-term minimum and maximum of EVI.</p>
+</section>
+<section id="phenological-metrics">
+<h3>Phenological Metrics<a class="headerlink" href="#phenological-metrics" title="Permalink to this heading">#</a></h3>
+<p>A working example to detect seasonality parameters in Lebanon has been developed based on areas where the majority is a cropland. This approach requires a crop type mask and moderate resolution time series Vegetation Indices (VI).</p>
+<p>State of planting and harvesting estimates are determined by importing Vegetation Indices (VI) data into TIMESAT – an open-source program to analyze time-series satellite sensor data. TIMESAT conducts pixel-by-pixel classification of satellite images to determine whether planting has started or not. This process is followed for all areas over multiple years to evaluate current planting vis-à-vis historical values from 2003 - 2023.</p>
+<p><img alt="TIMESAT" src="../../_images/lbn_timesat_parameters.png" /></p>
+<p><strong>Figure 7.</strong> TIMESAT Parameters</p>
+<p>The main seasonality parameters generated in TIMESAT are (a) beginning of season, (b) end of season, (c) length of season, (d) base value, (e) time of middle of season, (f) maximum value, (g) amplitude, (h) small integrated value, (h+i) large integrated value. The blue line in Figure 11 shows the raw EVI time series, while the red line shows the EVI values after applying a Savitsky-Golay smoothing algorithm. The phenological parameters detected describe key aspects of the timing of agricultural production and are closely related to the amount of available biomass.</p>
+<p>The image below shows a fluctuating trend in the Vegetation Index over time. Green and red dots are used to mark the start and end of the growing seasons, respectively which can be useful for understanding patterns in vegetation growth.</p>
+<p><img alt="GS1" src="../../_images/lbn_crop_growing_stages1.png" /></p>
+<p><strong>Figure 8.</strong> Fluctuating trend in the VI values over time</p>
+<p>The next image is a heatmap that provides a visual representation of the Vegetation Index (VI) values over time and still related with above image. Each cell in the heatmap corresponds to a specific date, and the color of the cell represents the VI value on that date, with lighter colors indicating lower VI values and darker colors indicating higher VI values. This heatmap, along with the line graph, can be used to monitor the growing stages of cropland. By comparing the two images, one can observe how the VI values change over time and identify the start and end of the growing seasons. This information can be crucial for farmers and agricultural scientists for planning and optimizing crop growth.</p>
+<p><img alt="GS2" src="../../_images/lbn_crop_growing_stages2.png" /></p>
+<p><strong>Figure 9.</strong> Heatmap that provides a visual representation of the VI values over time</p>
+<p>The Start of Season (SOS) and End of Season (EOS) are typically derived from VI data. These metrics are calculated using various methods that identify critical points or thresholds in the vegetation index time series data. One common approach is the Timesat software, which fits functions (e.g., logistic, asymmetric Gaussian, Savitsky-Golay, Whittaker) to the time series data to identify these points. Here’s a general overview of the approach:</p>
+<ol class="arabic simple">
+<li><p><strong>Preprocessing:</strong> Detrend and smooth the vegetation index time series data to reduce noise.</p></li>
+<li><p><strong>Model Fitting:</strong> Fit a function (e.g., logistic, asymmetric Gaussian) to the smoothed time series data. The chosen function should adequately represent the seasonal pattern of vegetation growth and senescence.</p></li>
+<li><p><strong>Threshold Determination:</strong> Define thresholds for SOS and EOS. These thresholds may be absolute values, or they may be based on a percentage of the maximum vegetation index value for the season (e.g., 20% for SOS and EOS).</p></li>
+<li><p><strong>Metric Calculation:</strong> Identify the points in the fitted function where the thresholds are met. These points correspond to the SOS and EOS.</p>
+<ul class="simple">
+<li><p><strong>SOS:</strong> The time step where the fitted function first exceeds the lower threshold, marking the start of significant vegetation growth.</p></li>
+<li><p><strong>EOS:</strong> The time step where the fitted function falls below the lower threshold again, signifying the end of significant vegetation growth.</p></li>
+</ul>
+</li>
+</ol>
+<p>Note that these metrics will depend on the choice of function, thresholds, and other methodological details. The equations for calculating SOS and EOS may vary depending on the specific technique employed.</p>
+</section>
+</section>
+<section id="result">
+<h2>Result<a class="headerlink" href="#result" title="Permalink to this heading">#</a></h2>
+<p>We present a summary of the key derived variables employed in our analysis to monitor vegetation conditions and dynamics within Lebanon’s cropland areas.</p>
+<section id="anomaly-and-vegetation-condition">
+<h3>Anomaly and Vegetation Condition<a class="headerlink" href="#anomaly-and-vegetation-condition" title="Permalink to this heading">#</a></h3>
+<p>These variables, which are derived from the EVI data and the cropland extent, enable a comprehensive understanding of the factors influencing agricultural productivity and environmental sustainability in the region.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Standardized Anomaly, Sep 2023</label><div class="sd-tab-content docutils">
+<p><img alt="StdAnom1" src="../../_images/lbn_evi_stdanom_202309.png" /></p>
+<p><strong>Figure 10.</strong> Standardized anomaly, September 2023, compared to the reference 2003-2022</p>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Standardized Anomaly, Jul-Sep 2023</label><div class="sd-tab-content docutils">
+<p><img alt="StdAnom2" src="../../_images/lbn_evi_stdanom_jas_2023.png" /></p>
+<p><strong>Figure 11.</strong> Standardized anomaly, July-September 2023, compared to the reference 2003-2022</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Vegetation Condition Index, Sep 2023</label><div class="sd-tab-content docutils">
+<p><img alt="VCI1" src="../../_images/lbn_evi_vci_202309.png" /></p>
+<p><strong>Figure 12.</strong> Vegetation Condition Index, September 2023, compared to the reference 2003-2022</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+Vegetation Condition Index, Jul-Sep 2023</label><div class="sd-tab-content docutils">
+<p><img alt="VCI2" src="../../_images/lbn_evi_vci_jas_2023.png" /></p>
+<p><strong>Figure 13.</strong> Vegetation Condition Index, July-September 2023, compared to the reference 2003-2022</p>
+</div>
+</div>
+<p>And below is the vegetation condition for the last 3 quarter.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+Standardized Anomaly, Q1-Q3 2023</label><div class="sd-tab-content docutils">
+<p><img alt="StdAnom3" src="../../_images/lbn_evi_stdanom_quarter_2023.png" /></p>
+<p><strong>Figure 14.</strong> Standardized anomaly, Q1-Q3, compared to the reference 2003-2022</p>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
+Vegetation Condition Index, Q1-Q3 2023</label><div class="sd-tab-content docutils">
+<p><img alt="VCI3" src="../../_images/lbn_evi_vci_quarter_2023.png" /></p>
+<p><strong>Figure 15.</strong> Vegetation Condition Index, Q1-Q3 2023, compared to the reference 2003-2022</p>
+</div>
+</div>
+</section>
+<section id="crop-growing-stages">
+<h3>Crop Growing Stages<a class="headerlink" href="#crop-growing-stages" title="Permalink to this heading">#</a></h3>
+<p>In addition to the previously mentioned vegetation indices and derived products, this study also focuses on analyzing key phenological metrics, such as the Start of Season (SOS), Mid of Season (MOS), and End of Season (EOS). These metrics provide essential information on the timing and progression of the growing season, offering valuable insights into plant growth and development. By examining SOS, MOS, and EOS, we can assess the impacts of environmental factors, such as climate change and land-use practices, on vegetation dynamics. Furthermore, understanding these phenological patterns can help inform agricultural management strategies, conservation efforts, and policies for sustainable resource management.</p>
+<p><strong>Start of Season (SOS)</strong></p>
+<p>The SOS is a critical phenological metric that represents the onset of the growing season. By analyzing the timing of SOS, we can gain insights into how environmental factors, such as temperature and precipitation, impact vegetation growth and development. Understanding the SOS is vital for agricultural planning, as it can inform planting and harvesting schedules, irrigation management, and help predict potential yield outcomes.</p>
+<p><img alt="SOS1" src="../../_images/lbn_pheno_sos_2023.png" /></p>
+<p><strong>Figure 16.</strong> Start of Season, Jan - Sep 2023</p>
+<p><strong>End of Season (EOS)</strong></p>
+<p>The EOS is an important phenological marker signifying the conclusion of the growing season. Investigating the timing of EOS can reveal valuable information about the duration of the growing season and the overall performance of vegetation. EOS trends can help us understand how factors such as temperature, precipitation, and human-induced land-use changes impact ecosystems and their productivity. Information on EOS is also crucial for agricultural management, as it aids in planning harvest schedules and post-harvest activities, and supports the development of informed land management and conservation policies.</p>
+<p><img alt="EOS" src="../../_images/lbn_pheno_eos_2023.png" /></p>
+<p><strong>Figure 17.</strong> End of Season, Jan - Sep 2023</p>
+</section>
+</section>
+<section id="supporting-evidence-and-visual-insights">
+<h2>Supporting Evidence and Visual Insights<a class="headerlink" href="#supporting-evidence-and-visual-insights" title="Permalink to this heading">#</a></h2>
+<p>This section offers a comprehensive visual exploration of agricultural activities, emphasizing the spatial and temporal dynamics of cultivation in Lebanon. This chapter presents a series of maps and charts that elucidate the extent of cultivated areas in comparison to historical crop extents, as well as the patterns and timelines of crop planting and harvesting on both monthly and annual scales.</p>
+<p>Our analysis includes a historical perspective, showcasing the changes in agricultural practices over three distinct periods: 2011-2015, 2016-2020, and 2021-2023. This temporal segmentation allows us to observe trends and shifts in agricultural activities, providing insights into how external factors like climate change, policy shifts, and economic conditions may have influenced farming practices over the last decade.</p>
+<p>The visualizations are presented at both the national level and the administrative level 1 (admin1), offering a broad overview as well as more localized insights. While our data extends to admin3 level, allowing for detailed, granular analysis, the focus on higher administrative levels ensures clarity and accessibility in understanding the broader trends and patterns.</p>
+<p>Key features of this section include:</p>
+<ol class="arabic simple">
+<li><p><strong>Comparative Maps of Cultivation Extent:</strong> These maps compare the actual cultivated areas with the historical extents of crops, highlighting regions of expansion or reduction in agricultural land use.</p></li>
+<li><p><strong>Visualization of Agricultural Changes:</strong> The use of maps to visualize agricultural data across different time periods, aiding in the identification of spatial patterns and regional differences in agricultural activities.</p></li>
+<li><p><strong>Temporal Aggregation of Crop Cycles and Climate:</strong> Charts that aggregate planting and harvesting data on monthly and annual bases and the trend of rainfall and temperature over the area, providing a clear view of the agricultural calendar and its variations over the years.</p></li>
+<li><p><strong>Analysis of Planting and Harvesting Trends:</strong> An examination of how the timing of planting and harvesting deviates from historical averages, offering insights into the evolving nature of agricultural practices in response to various influencing factors.</p></li>
+</ol>
+<p>This section serves as a valuable supplement to the primary results, offering an enriched perspective on the state and evolution of agriculture in Lebanon. It is intended to support researchers, policymakers, and stakeholders in understanding the complex dynamics of agricultural land use and management.</p>
+<section id="comparative-maps-of-cultivation-extent">
+<h3>Comparative Maps of Cultivation Extent<a class="headerlink" href="#comparative-maps-of-cultivation-extent" title="Permalink to this heading">#</a></h3>
+<p>The analysis encompasses a detailed examination of the annual cultivated land in Lebanon over three distinct periods: 2011-2015, 2016-2020, and 2021-2023. These comparative maps provide a visual representation of the temporal changes in agricultural practices, focusing on both planting and harvest phases.</p>
+<p><strong>Planting Phase Analysis (2011-2023):</strong> The map for this period reveals the spatial distribution and extent of land preparation and planting activities. It helps in understanding the initial stages of agricultural cycles and how they have evolved over time.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-6">
+2011-2015</label><div class="sd-tab-content docutils">
+<p><img alt="CL1" src="../../_images/lbn_sos_historical_2011_2015.png" /></p>
+<p><strong>Figure 18.</strong> Cultivated land, 2011-2015</p>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-7">
+2016-2020</label><div class="sd-tab-content docutils">
+<p><img alt="CL2" src="../../_images/lbn_sos_historical_2016_2020.png" /></p>
+<p><strong>Figure 19.</strong> Cultivated land, 2016-2020</p>
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-8">
+2021-2023</label><div class="sd-tab-content docutils">
+<p><img alt="CL3" src="../../_images/lbn_sos_historical_2021_2023.png" /></p>
+<p><strong>Figure 20.</strong> Cultivated land, 2021-2023</p>
+</div>
+</div>
+<p><strong>Harvest Phase Analysis (2011-2023):</strong> This map illustrates the areas where harvesting activities were predominant, offering insights into the culmination of agricultural cycles. It aids in assessing the productivity and end results of farming practices during this period.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-9">
+2011-2015</label><div class="sd-tab-content docutils">
+<p><img alt="CL1" src="../../_images/lbn_eos_historical_2011_2015.png" /></p>
+<p><strong>Figure 21.</strong> Cultivated land, 2011-2015</p>
+</div>
+<input id="sd-tab-item-10" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-10">
+2016-2020</label><div class="sd-tab-content docutils">
+<p><img alt="CL2" src="../../_images/lbn_eos_historical_2016_2020.png" /></p>
+<p><strong>Figure 22.</strong> Cultivated land, 2016-2020</p>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-11">
+2021-2023</label><div class="sd-tab-content docutils">
+<p><img alt="CL3" src="../../_images/lbn_eos_historical_2021_2023.png" /></p>
+<p><strong>Figure 23.</strong> Cultivated land, 2021-2023</p>
+</div>
+</div>
+</section>
+<section id="visualization-of-agricultural-changes-trends-and-anomalies-in-planting-and-harvest">
+<h3>Visualization of Agricultural Changes: Trends and Anomalies in Planting and Harvest<a class="headerlink" href="#visualization-of-agricultural-changes-trends-and-anomalies-in-planting-and-harvest" title="Permalink to this heading">#</a></h3>
+<p>This section delves into the annual trends and anomalies in planting and harvest areas across Lebanon for the periods 2011-2015, 2016-2020, and 2021-2023, with a particular focus on the admin3 level. By examining these trends, we gain a nuanced understanding of how agricultural activities have evolved over time in specific regions.</p>
+<p><strong>Annual Trends in Planting and Harvest Areas:</strong> These visualizations showcase the yearly fluctuations in the extent of cultivated lands during the planting and harvesting phases. They reveal patterns, consistencies, or irregularities in agricultural practices across different regions, providing insights into the stability and adaptability of the agricultural sector.</p>
+<ul>
+<li><p>Planting areas</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-12">
+2011-2015</label><div class="sd-tab-content docutils">
+<p><img alt="PA1" src="../../_images/lbn_sos_historical_2011_2015_areas.png" /></p>
+<p><strong>Figure 24.</strong> Planting areas, 2011-2015</p>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-13">
+2016-2020</label><div class="sd-tab-content docutils">
+<p><img alt="PA2" src="../../_images/lbn_sos_historical_2016_2020_areas.png" /></p>
+<p><strong>Figure 25.</strong> Planting areas, 2016-2020</p>
+</div>
+<input id="sd-tab-item-14" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-14">
+2021-2023</label><div class="sd-tab-content docutils">
+<p><img alt="PA3" src="../../_images/lbn_sos_historical_2021_2023_areas.png" /></p>
+<p><strong>Figure 26.</strong> Planting areas, 2021-2023</p>
+</div>
+</div>
+</li>
+<li><p>Harvest areas</p>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">2011-2015</p>
+<div class="sd-tab-content docutils">
+<p><img alt="HA1" src="../../_images/lbn_eos_historical_2011_2015_areas.png" /></p>
+<p><strong>Figure 27.</strong> Harvest areas, 2011-2015</p>
+</div>
+</div>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">2016-2020</p>
+<div class="sd-tab-content docutils">
+<p><img alt="HA2" src="../../_images/lbn_eos_historical_2016_2020_areas.png" /></p>
+<p><strong>Figure 28.</strong> Harvest areas, 2016-2020</p>
+</div>
+</div>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">2021-2023</p>
+<div class="sd-tab-content docutils">
+<p><img alt="HA3" src="../../_images/lbn_eos_historical_2021_2023_areas.png" /></p>
+<p><strong>Figure 29.</strong> Harvest areas, 2021-2023</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>Percent Anomalies in Planting and Harvest Areas:</strong> The analysis of anomalies offers a deeper perspective on the deviations from expected or average agricultural activities. By highlighting regions with significant deviations, these charts help in identifying areas that may be experiencing changes due to environmental factors, policy shifts, or other influences.</p>
+<ul>
+<li><p>Planting anomaly</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-15" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-15">
+2011-2015</label><div class="sd-tab-content docutils">
+<p><img alt="PA1" src="../../_images/lbn_sos_historical_2011_2015_anomaly.png" /></p>
+<p><strong>Figure 30.</strong> Planting anomaly, 2011-2015</p>
+</div>
+<input id="sd-tab-item-16" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-16">
+2016-2020</label><div class="sd-tab-content docutils">
+<p><img alt="PA2" src="../../_images/lbn_sos_historical_2016_2020_anomaly.png" /></p>
+<p><strong>Figure 31.</strong> Planting anomaly, 2016-2020</p>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-17">
+2021-2023</label><div class="sd-tab-content docutils">
+<p><img alt="PA3" src="../../_images/lbn_sos_historical_2021_2023_anomaly.png" /></p>
+<p><strong>Figure 32.</strong> Planting anomaly, 2021-2023</p>
+</div>
+</div>
+</li>
+<li><p>Harvest anomaly</p>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">2011-2015</p>
+<div class="sd-tab-content docutils">
+<p><img alt="HA1" src="../../_images/lbn_eos_historical_2011_2015_anomaly.png" /></p>
+<p><strong>Figure 33.</strong> Harvest anomaly, 2011-2015</p>
+</div>
+</div>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">2016-2020</p>
+<div class="sd-tab-content docutils">
+<p><img alt="HA2" src="../../_images/lbn_eos_historical_2016_2020_anomaly.png" /></p>
+<p><strong>Figure 34.</strong> Harvest anomaly, 2016-2020</p>
+</div>
+</div>
+<div class="sd-tab-item docutils">
+<p class="sd-tab-label rubric">2021-2023</p>
+<div class="sd-tab-content docutils">
+<p><img alt="HA3" src="../../_images/lbn_eos_historical_2021_2023_anomaly.png" /></p>
+<p><strong>Figure 35.</strong> Harvest anomaly, 2021-2023</p>
+</div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="temporal-aggregation-of-crop-cycles-and-climate-a-multi-level-analysis">
+<h3>Temporal Aggregation of Crop Cycles and Climate: A Multi-Level Analysis<a class="headerlink" href="#temporal-aggregation-of-crop-cycles-and-climate-a-multi-level-analysis" title="Permalink to this heading">#</a></h3>
+<p>This section presents a comprehensive analysis of planting and harvest cycles in conjunction with climate data, spanning from 2003 to 2023. The focus is on both national (admin0) and governorate (admin1) levels, offering a layered understanding of agricultural patterns in relation to environmental factors.</p>
+<p><strong>Annual and Monthly Planting and Harvest Trends:</strong> Line plots illustrate the fluctuations in the areas of planting and harvest throughout the years. These visualizations trace the seasonal and annual variations, providing a clear picture of the agricultural calendar and its evolution over the past two decades.</p>
+<ul>
+<li><p>National aggregate</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
+Annual Harvest and Planting</label><div class="sd-tab-content docutils">
+<p><img alt="AHP36" src="../../_images/plot_lbn_adm0_annual_pheno.png" /></p>
+<p><strong>Figure 36.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
+Monthly Harvest and Planting</label><div class="sd-tab-content docutils">
+<p><img alt="MHP37" src="../../_images/plot_lbn_adm0_monthly_pheno.png" /></p>
+<p><strong>Figure 37.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+</div>
+</li>
+<li><p>Governorate aggregate</p>
+<ul>
+<li><p>Annual Harvest and Planning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-20">
+Beirut</label><div class="sd-tab-content docutils">
+<p><img alt="AHP38" src="../../_images/plot_lbn_adm1_Beirut_annual_pheno.png" /></p>
+<p><strong>Figure 38.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-21" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-21">
+Bekaa</label><div class="sd-tab-content docutils">
+<p><img alt="AHP39" src="../../_images/plot_lbn_adm1_Bekaa_annual_pheno.png" /></p>
+<p><strong>Figure 39.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-22" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-22">
+Mount Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="AHP40" src="../../_images/plot_lbn_adm1_Mount_Lebanon_annual_pheno.png" /></p>
+<p><strong>Figure 40.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-23" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key4" for="sd-tab-item-23">
+El Nabatieh</label><div class="sd-tab-content docutils">
+<p><img alt="AHP41" src="../../_images/plot_lbn_adm1_El_Nabatieh_annual_pheno.png" /></p>
+<p><strong>Figure 41.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-24" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key5" for="sd-tab-item-24">
+North</label><div class="sd-tab-content docutils">
+<p><img alt="AHP42" src="../../_images/plot_lbn_adm1_North_annual_pheno.png" /></p>
+<p><strong>Figure 42.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-25" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key6" for="sd-tab-item-25">
+South</label><div class="sd-tab-content docutils">
+<p><img alt="AHP43" src="../../_images/plot_lbn_adm1_South_annual_pheno.png" /></p>
+<p><strong>Figure 43.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-26" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key7" for="sd-tab-item-26">
+Akkar</label><div class="sd-tab-content docutils">
+<p><img alt="AHP44" src="../../_images/plot_lbn_adm1_Akkar_annual_pheno.png" /></p>
+<p><strong>Figure 44.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-27" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key8" for="sd-tab-item-27">
+Baalbek-El Hermel</label><div class="sd-tab-content docutils">
+<p><img alt="AHP45" src="../../_images/plot_lbn_adm1_Baalbek-El_Hermel_annual_pheno.png" /></p>
+<p><strong>Figure 45.</strong> Annual Harvest and Planting, 2003-2023</p>
+</div>
+</div>
+</li>
+<li><p>Monthly Harvest and Planning</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-28" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-28">
+Beirut</label><div class="sd-tab-content docutils">
+<p><img alt="MHP46" src="../../_images/plot_lbn_adm1_Beirut_monthly_pheno.png" /></p>
+<p><strong>Figure 46.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-29" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-29">
+Bekaa</label><div class="sd-tab-content docutils">
+<p><img alt="MHP47" src="../../_images/plot_lbn_adm1_Bekaa_monthly_pheno.png" /></p>
+<p><strong>Figure 47.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-30" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-30">
+Mount Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="MHP48" src="../../_images/plot_lbn_adm1_Mount_Lebanon_monthly_pheno.png" /></p>
+<p><strong>Figure 48.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-31" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key4" for="sd-tab-item-31">
+El Nabatieh</label><div class="sd-tab-content docutils">
+<p><img alt="MHP49" src="../../_images/plot_lbn_adm1_El_Nabatieh_monthly_pheno.png" /></p>
+<p><strong>Figure 49.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-32" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key5" for="sd-tab-item-32">
+North</label><div class="sd-tab-content docutils">
+<p><img alt="MHP50" src="../../_images/plot_lbn_adm1_North_monthly_pheno.png" /></p>
+<p><strong>Figure 50.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-33" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key6" for="sd-tab-item-33">
+South</label><div class="sd-tab-content docutils">
+<p><img alt="MHP51" src="../../_images/plot_lbn_adm1_South_monthly_pheno.png" /></p>
+<p><strong>Figure 51.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-34" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key7" for="sd-tab-item-34">
+Akkar</label><div class="sd-tab-content docutils">
+<p><img alt="MHP52" src="../../_images/plot_lbn_adm1_Akkar_monthly_pheno.png" /></p>
+<p><strong>Figure 52.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+<input id="sd-tab-item-35" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key8" for="sd-tab-item-35">
+Baalbek-El Hermel</label><div class="sd-tab-content docutils">
+<p><img alt="MHP53" src="../../_images/plot_lbn_adm1_Baalbek-El_Hermel_monthly_pheno.png" /></p>
+<p><strong>Figure 53.</strong> Monthly Harvest and Planting, 2003-2023</p>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Correlation with Precipitation and Temperature:</strong> By integrating climate data, specifically monthly and annual records of precipitation and temperature, the analysis draws connections between climatic conditions and agricultural activities. This aspect is crucial in understanding how changing weather patterns impact the timing and success of crop cycles.</p>
+<ul>
+<li><p>National aggregate</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-36" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-36">
+Annual Rainfall and Temperature</label><div class="sd-tab-content docutils">
+<p><img alt="ART54" src="../../_images/plot_lbn_adm0_annual_preciptavg.png" /></p>
+<p><strong>Figure 54.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-37" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-37">
+Monthly Rainfall and Temperature</label><div class="sd-tab-content docutils">
+<p><img alt="MRT55" src="../../_images/plot_lbn_adm0_monthly_preciptavg.png" /></p>
+<p><strong>Figure 55.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+</div>
+</li>
+<li><p>Governorate aggregate</p>
+<ul>
+<li><p>Annual Rainfall and Temperature</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-38" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-38">
+Beirut</label><div class="sd-tab-content docutils">
+<p><img alt="ART56" src="../../_images/plot_lbn_adm1_Beirut_annual_preciptavg.png" /></p>
+<p><strong>Figure 56.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-39" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-39">
+Bekaa</label><div class="sd-tab-content docutils">
+<p><img alt="ART57" src="../../_images/plot_lbn_adm1_Bekaa_annual_preciptavg.png" /></p>
+<p><strong>Figure 57.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-40" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-40">
+Mount Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="ART58" src="notebooks/crop-growing-status/images/plot_lbn_adm1__annual_preciptavg.png" /></p>
+<p><strong>Figure 58.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-41" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key4" for="sd-tab-item-41">
+El Nabatieh</label><div class="sd-tab-content docutils">
+<p><img alt="ART59" src="notebooks/crop-growing-status/images/plot_lbn_adm1__annual_preciptavg.png" /></p>
+<p><strong>Figure 59.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-42" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key5" for="sd-tab-item-42">
+North</label><div class="sd-tab-content docutils">
+<p><img alt="ART60" src="../../_images/plot_lbn_adm1_North_annual_preciptavg.png" /></p>
+<p><strong>Figure 60.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-43" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key6" for="sd-tab-item-43">
+South</label><div class="sd-tab-content docutils">
+<p><img alt="ART61" src="../../_images/plot_lbn_adm1_South_annual_preciptavg.png" /></p>
+<p><strong>Figure 61.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-44" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key7" for="sd-tab-item-44">
+Akkar</label><div class="sd-tab-content docutils">
+<p><img alt="ART62" src="../../_images/plot_lbn_adm1_Akkar_annual_preciptavg.png" /></p>
+<p><strong>Figure 62.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-45" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key8" for="sd-tab-item-45">
+Baalbek-El Hermel</label><div class="sd-tab-content docutils">
+<p><img alt="ART63" src="../../_images/plot_lbn_adm1_Baalbek-El_Hermel_annual_preciptavg.png" /></p>
+<p><strong>Figure 63.</strong> Annual Rainfall and Temperature, 2003-2023</p>
+</div>
+</div>
+</li>
+<li><p>Monthly Rainfall and Temperature</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-46" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-46">
+Beirut</label><div class="sd-tab-content docutils">
+<p><img alt="MRT64" src="../../_images/plot_lbn_adm1_Beirut_monthly_preciptavg.png" /></p>
+<p><strong>Figure 64.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-47" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-47">
+Bekaa</label><div class="sd-tab-content docutils">
+<p><img alt="MRT65" src="../../_images/plot_lbn_adm1_Bekaa_monthly_preciptavg.png" /></p>
+<p><strong>Figure 65.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-48" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-48">
+Mount Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="MRT66" src="../../_images/plot_lbn_adm1_Mount_Lebanon_monthly_preciptavg.png" /></p>
+<p><strong>Figure 66.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-49" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key4" for="sd-tab-item-49">
+El Nabatieh</label><div class="sd-tab-content docutils">
+<p><img alt="MRT67" src="../../_images/plot_lbn_adm1_El_Nabatieh_monthly_preciptavg.png" /></p>
+<p><strong>Figure 67.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-50" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key5" for="sd-tab-item-50">
+North</label><div class="sd-tab-content docutils">
+<p><img alt="MRT68" src="../../_images/plot_lbn_adm1_North_monthly_preciptavg.png" /></p>
+<p><strong>Figure 68.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-51" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key6" for="sd-tab-item-51">
+South</label><div class="sd-tab-content docutils">
+<p><img alt="MRT69" src="../../_images/plot_lbn_adm1_South_monthly_preciptavg.png" /></p>
+<p><strong>Figure 69.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-52" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key7" for="sd-tab-item-52">
+Akkar</label><div class="sd-tab-content docutils">
+<p><img alt="MRT70" src="../../_images/plot_lbn_adm1_Akkar_monthly_preciptavg.png" /></p>
+<p><strong>Figure 70.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+<input id="sd-tab-item-53" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key8" for="sd-tab-item-53">
+Baalbek-El Hermel</label><div class="sd-tab-content docutils">
+<p><img alt="MRT71" src="../../_images/plot_lbn_adm1_Baalbek-El_Hermel_monthly_preciptavg.png" /></p>
+<p><strong>Figure 71.</strong> Monthly Rainfall and Temperature, 2003-2023</p>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="planting-and-harvesting-trends-national-regional-perspectives-and-anomalies">
+<h3>Planting and Harvesting Trends: National-Regional Perspectives and Anomalies<a class="headerlink" href="#planting-and-harvesting-trends-national-regional-perspectives-and-anomalies" title="Permalink to this heading">#</a></h3>
+<p>This section delves into the analysis of annual and monthly trends in planting and harvesting across Lebanon from 2003 to 2023. It employs a dual approach of bar plots and heatmaps to convey the nuances of agricultural activities over two decades.</p>
+<p><strong>Annual Trends in Planting and Harvesting:</strong> Bar plots are utilized to illustrate the year-on-year variations in planting and harvesting areas. These visual representations offer a clear, comparative view of the annual changes, highlighting any significant increases or decreases in agricultural activities.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-54" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-54">
+Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="AA72" src="../../_images/plot_lbn_adm0_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 72.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-55" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-55">
+Beirut</label><div class="sd-tab-content docutils">
+<p><img alt="AA73" src="../../_images/plot_lbn_adm1_Beirut_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 73.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-56" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-56">
+Bekaa</label><div class="sd-tab-content docutils">
+<p><img alt="AA74" src="../../_images/plot_lbn_adm1_Bekaa_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 74.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-57" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key4" for="sd-tab-item-57">
+Mount Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="AA75" src="../../_images/plot_lbn_adm1_Mount_Lebanon_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 75.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-58" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key5" for="sd-tab-item-58">
+El Nabatieh</label><div class="sd-tab-content docutils">
+<p><img alt="AA76" src="../../_images/plot_lbn_adm1_El_Nabatieh_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 76.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-59" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key6" for="sd-tab-item-59">
+North</label><div class="sd-tab-content docutils">
+<p><img alt="AA77" src="../../_images/plot_lbn_adm1_North_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 77.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-60" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key7" for="sd-tab-item-60">
+South</label><div class="sd-tab-content docutils">
+<p><img alt="AA78" src="../../_images/plot_lbn_adm1_South_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 78.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-61" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key8" for="sd-tab-item-61">
+Akkar</label><div class="sd-tab-content docutils">
+<p><img alt="AA79" src="../../_images/plot_lbn_adm1_Akkar_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 79.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-62" name="sd-tab-set-12" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key9" for="sd-tab-item-62">
+Baalbek-El Hermel</label><div class="sd-tab-content docutils">
+<p><img alt="AA80" src="../../_images/plot_lbn_adm1_Baalbek-El_Hermel_annual_pheno_anomaly.png" /></p>
+<p><strong>Figure 80.</strong> Annual Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+</div>
+<p><strong>Monthly Anomaly Heatmaps:</strong> To capture the subtleties of monthly fluctuations, heatmaps are presented, showcasing the anomalies in planting and harvesting areas. These heatmaps provide a visual representation of the deviations from the average, making it easier to spot patterns, irregularities, or shifts in the agricultural calendar.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-63" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key1" for="sd-tab-item-63">
+Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="MA81" src="../../_images/plot_lbn_adm0_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 81.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-64" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key2" for="sd-tab-item-64">
+Beirut</label><div class="sd-tab-content docutils">
+<p><img alt="MA82" src="../../_images/plot_lbn_adm1_Beirut_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 82.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-65" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key3" for="sd-tab-item-65">
+Bekaa</label><div class="sd-tab-content docutils">
+<p><img alt="MA83" src="../../_images/plot_lbn_adm1_Bekaa_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 83.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-66" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key4" for="sd-tab-item-66">
+Mount Lebanon</label><div class="sd-tab-content docutils">
+<p><img alt="MA84" src="../../_images/plot_lbn_adm1_Mount_Lebanon_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 84.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-67" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key5" for="sd-tab-item-67">
+El Nabatieh</label><div class="sd-tab-content docutils">
+<p><img alt="MA85" src="../../_images/plot_lbn_adm1_El_Nabatieh_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 85.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-68" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key6" for="sd-tab-item-68">
+North</label><div class="sd-tab-content docutils">
+<p><img alt="MA86" src="../../_images/plot_lbn_adm1_North_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 86.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-69" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key7" for="sd-tab-item-69">
+South</label><div class="sd-tab-content docutils">
+<p><img alt="MA87" src="../../_images/plot_lbn_adm1_South_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 87.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-70" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key8" for="sd-tab-item-70">
+Akkar</label><div class="sd-tab-content docutils">
+<p><img alt="MA88" src="../../_images/plot_lbn_adm1_Akkar_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 88.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+<input id="sd-tab-item-71" name="sd-tab-set-13" type="radio">
+</input><label class="sd-tab-label" data-sync-id="key9" for="sd-tab-item-71">
+Baalbek-El Hermel</label><div class="sd-tab-content docutils">
+<p><img alt="MA89" src="../../_images/plot_lbn_adm1_Baalbek-El_Hermel_monthly_pheno_anomaly_heatmap.png" /></p>
+<p><strong>Figure 89.</strong> Monthly Harvest and Planting Anomaly, 2003-2023</p>
+</div>
+</div>
+</section>
+</section>
+<section id="potential-application">
+<h2>Potential Application<a class="headerlink" href="#potential-application" title="Permalink to this heading">#</a></h2>
+<p>Above products provides an important starting point for continuous monitoring of the crop planting status. Continuous monitoring could inform the following assessments:</p>
+<ol class="arabic simple">
+<li><p>How many districts are behind in planting? If there is a delay in some districts, and is planting acceleration necessary?</p></li>
+<li><p>How many hectares are available for the next season?</p></li>
+<li><p>Is the current harvest enough for domestic consumption?</p></li>
+</ol>
+<p>Decision makers also need phonological data to decide on resource allocation issues or policy design:</p>
+<ol class="arabic simple">
+<li><p>Planting potential for the next months: assigning the distribution of agricultural inputs.</p></li>
+<li><p>Mobilization of extension workers to monitor and implement mitigation strategies: adjustment of irrigation system in anticipation of drought or flood, pest control of infestation/disease to avoid crop failure, reservoir readiness for planting season.</p></li>
+<li><p>Preparation of policy recommendations: assess ongoing situation, harvest estimate, price protection.</p></li>
+</ol>
+<p>This information is necessary for both policy makers, farmers, and other agricultural actors (cooperatives, rural businesses). Negative consequences can be anticipated months ahead and resources can be prioritized on areas with higher risk or greater potential.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>David B. Lobell, Gregory P. Asner,C limate and Management Contributions to Recent Trends in U.S. Agricultural Yields. Science 299,1032-1032(2003).<a class="reference external" href="https://doi.org/10.1126/science.1078475">https://doi.org/10.1126/science.1078475</a></p></li>
+<li><p>Friedl, M. A., &amp; Brodley, C. E. (1997). Decision tree classification of land cover from remotely sensed data. Remote Sensing of Environment, 61(3), 399–409. <a class="reference external" href="https://doi.org/10.1016/S0034-4257(97)00049-7">https://doi.org/10.1016/S0034-4257(97)00049-7</a></p></li>
+<li><p>Turner, B. L., Skole, D., Sanderson, S., Fischer, G., Fresco, L., &amp; Leemans, R. (1995). Land-Use and Land-Cover Change Science/Research Plan. IGBP Report No. 35, HDP Report No. 7. <a class="reference external" href="https://lcluc.umd.edu/sites/default/files/lcluc_documents/strategy-igbp-report35_0.pdf">https://lcluc.umd.edu/sites/default/files/lcluc_documents/strategy-igbp-report35_0.pdf</a></p></li>
+<li><p>Roy, D. P., Wulder, M. A., Loveland, T. R., C.E., W., Allen, R. G., Anderson, M. C., … Zhu, Z. (2014). Landsat-8: Science and product vision for terrestrial global change research. Remote Sensing of Environment, 145, 154–172. <a class="reference external" href="https://doi.org/10.1016/j.rse.2014.02.001">https://doi.org/10.1016/j.rse.2014.02.001</a></p></li>
+<li><p>Jönsson, P., &amp; Eklundh, L. (2004). TIMESAT—a program for analyzing time-series of satellite sensor data. Computers &amp; Geosciences, 30(8), 833–845. <a class="reference external" href="https://doi.org/10.1016/j.cageo.2004.05.006">https://doi.org/10.1016/j.cageo.2004.05.006</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks/crop-growing-status"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../aviation-trends/aviation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Tourism, Air Travel and Hotel Occupancy in Lebanon</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../docs/team.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Data Goods Team and Acknowledgements</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crop-extent">Crop extent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vegetation-indices">Vegetation Indices</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#climate">Climate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations-and-assumptions">Limitations and Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-approach">General approach</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vegetation-derived-anomaly">Vegetation-derived anomaly</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#phenological-metrics">Phenological Metrics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#result">Result</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anomaly-and-vegetation-condition">Anomaly and Vegetation Condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#crop-growing-stages">Crop Growing Stages</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supporting-evidence-and-visual-insights">Supporting Evidence and Visual Insights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparative-maps-of-cultivation-extent">Comparative Maps of Cultivation Extent</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-of-agricultural-changes-trends-and-anomalies-in-planting-and-harvest">Visualization of Agricultural Changes: Trends and Anomalies in Planting and Harvest</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporal-aggregation-of-crop-cycles-and-climate-a-multi-level-analysis">Temporal Aggregation of Crop Cycles and Climate: A Multi-Level Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#planting-and-harvesting-trends-national-regional-perspectives-and-anomalies">Planting and Harvesting Trends: National-Regional Perspectives and Anomalies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#potential-application">Potential Application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By World Bank Development Data Group
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    <p class="last-updated">
+  Last updated on Nov 22, 2023.
+  <br/>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <div>
+    <b>All content (unless otherwise specified) is subject to the <a href="https://raw.githubusercontent.com/worldbank/template/main/LICENSE">World Bank Master Community License Agreement.</a></b>
+</div>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
