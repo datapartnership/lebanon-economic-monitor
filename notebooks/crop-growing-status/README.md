@@ -324,6 +324,7 @@ This section delves into the annual trends and anomalies in planting and harvest
 
 * Harvest areas
 
+	::::{tab-set}
 	:::{tab-item} 2011-2015
 	:sync: key1
 	![HA1](./images/lbn_eos_historical_2011_2015_areas.png)
@@ -374,6 +375,7 @@ This section delves into the annual trends and anomalies in planting and harvest
 
 * Harvest anomaly
 
+	::::{tab-set}
 	:::{tab-item} 2011-2015
 	:sync: key1
 	![HA1](./images/lbn_eos_historical_2011_2015_anomaly.png)
@@ -579,14 +581,14 @@ This section presents a comprehensive analysis of planting and harvest cycles in
 
 		:::{tab-item} Mount Lebanon
 		:sync: key3
-		![ART58](./images/plot_lbn_adm1__annual_preciptavg.png)
+		![ART58](./images/plot_lbn_adm1_Mount_Lebanon_annual_preciptavg.png)
 
 		**Figure 58.** Annual Rainfall and Temperature, 2003-2023
 		:::
 
 		:::{tab-item} El Nabatieh
 		:sync: key4
-		![ART59](./images/plot_lbn_adm1__annual_preciptavg.png)
+		![ART59](./images/plot_lbn_adm1_El_Nabatieh_annual_preciptavg.png)
 
 		**Figure 59.** Annual Rainfall and Temperature, 2003-2023
 		:::
