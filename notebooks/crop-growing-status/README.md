@@ -54,15 +54,15 @@ The EVI from both MOD13Q1 and MYD13Q1 downloaded using GEE which involves some p
 
 ### Climate
 
-Understanding the dynamics of crop growth and development in Lebanon requires a comprehensive approach that includes the analysis of climate data. Monthly temperature and rainfall patterns are pivotal factors influencing agricultural cycles. By integrating time-series data of these climate parameters into our analysis, we can gain deeper insights into how environmental conditions affect crop growth.
+Understanding the dynamics of crop growth and development in Lebanon requires a comprehensive approach that includes the analysis of climate data. Monthly temperature and rainfall patterns are pivotal factors influencing agricultural cycles. By integrating time-series data of these climate parameters into our analysis, we can gain deeper insights into how environmental conditions affect crop growth [6].
 
-Temperature and rainfall are key drivers of phenological stages such as germination, flowering, and maturation. For instance, variations in monthly temperatures can significantly impact the growth rate and health of crops. Warmer temperatures may accelerate growth in certain crops but can also increase evapotranspiration and water demand. On the other hand, cooler temperatures might slow down growth or even damage sensitive crops.
+Temperature and rainfall are key drivers of phenological stages such as germination, flowering, and maturation. For instance, variations in monthly temperatures can significantly impact the growth rate and health of crops [7]. Warmer temperatures may accelerate growth in certain crops but can also increase evapotranspiration and water demand. On the other hand, cooler temperatures might slow down growth or even damage sensitive crops.
 
 ![Temperature](./images/lbn_cli_temperature_202309.png)
 
 **Figure 5.** Mean temperature, September 2023.
 
-Similarly, rainfall patterns play a crucial role in determining water availability for crops. Adequate rainfall is essential for crop survival and productivity, but excessive or insufficient rainfall can lead to adverse conditions like flooding or drought, respectively.
+Similarly, rainfall patterns play a crucial role in determining water availability for crops. Adequate rainfall is essential for crop survival and productivity, but excessive or insufficient rainfall can lead to adverse conditions like flooding or drought, respectively [8].
 
 ![Rainfall](./images/lbn_cli_rainfall_202309.png)
 
@@ -820,6 +820,10 @@ This section delves into the analysis of annual and monthly trends in planting a
 :::
 ::::
 
+## Sharepoint Data
+
+The aggregate data in admin0, 1, 2 and 3 level, along with the maps and charts are available in the Sharepoint: [link](https://worldbankgroup.sharepoint.com/:f:/r/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Projects/Data%20Lab/Lebanon%20Economic%20Analytics/Data/crop-growing-stages?csf=1&web=1&e=xAIolt) - accessible from internal network.
+
 ## Potential Application 
 
 Above products provides an important starting point for continuous monitoring of the crop planting status. Continuous monitoring could inform the following assessments:
@@ -843,3 +847,6 @@ This information is necessary for both policy makers, farmers, and other agricul
 3. Turner, B. L., Skole, D., Sanderson, S., Fischer, G., Fresco, L., & Leemans, R. (1995). Land-Use and Land-Cover Change Science/Research Plan. IGBP Report No. 35, HDP Report No. 7. https://lcluc.umd.edu/sites/default/files/lcluc_documents/strategy-igbp-report35_0.pdf
 4. Roy, D. P., Wulder, M. A., Loveland, T. R., C.E., W., Allen, R. G., Anderson, M. C., … Zhu, Z. (2014). Landsat-8: Science and product vision for terrestrial global change research. Remote Sensing of Environment, 145, 154–172. https://doi.org/10.1016/j.rse.2014.02.001
 5. Jönsson, P., & Eklundh, L. (2004). TIMESAT—a program for analyzing time-series of satellite sensor data. Computers & Geosciences, 30(8), 833–845. https://doi.org/10.1016/j.cageo.2004.05.006
+6. Peel, M. C., Finlayson, B. L., and McMahon, T. A.: Updated world map of the Köppen-Geiger climate classification, Hydrol. Earth Syst. Sci., 11, 1633–1644, https://doi.org/10.5194/hess-11-1633-2007, 2007
+7. Porter John R and Semenov Mikhail A 2005Crop responses to climatic variation. Phil. Trans. R. Soc. B. 360:2021–2035. http://doi.org/10.1098/rstb.2005.1752
+8. Rockström, J., & Falkenmark, M. (2000). Semiarid crop production from a hydrological perspective: Gap between potential and actual yields. Critical Reviews in Plant Sciences, 19(4), 319-346. https://doi.org/10.1080/07352680091139259
