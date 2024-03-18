@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Population and Demographics" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Mar 07, 2024"/>
+    <meta name="docbuild:last-update" content="Mar 18, 2024"/>
   </head>
   
   
@@ -184,7 +184,10 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../ntl-analysis/README.html">Night Time Lights in Lebanon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../conflict/conflict.html">Conflict in Lebanon</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../air-pollution/air-pollution.html">Air Pollution in Lebanon</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../air-pollution/README.html">Air Pollution in Lebanon</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../air-pollution/air-pollution.html">NO2 Trends in Lebanon</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../ais-analysis/README.html">Seaborn Trade Activity Estimation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../aviation-trends/aviation.html">Tourism, Air Travel and Hotel Occupancy in Lebanon</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../crop-growing-status/README.html">Monitoring crop growing status</a></li>
@@ -404,24 +407,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">Data Description</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-resolution-population-density">High Resolution Population Density</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-data">Accessing the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-access">Data Access</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-wealth-index">Relative Wealth Index</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Accessing the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Data Access</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation">Methodology and Implementation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findings">Findings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insights">Insights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Observations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
             </nav>
@@ -436,17 +438,20 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="demographics-of-lebanon">
 <h1>Demographics of Lebanon<a class="headerlink" href="#demographics-of-lebanon" title="Permalink to this heading">#</a></h1>
-<section id="assignment">
-<h2>Assignment<a class="headerlink" href="#assignment" title="Permalink to this heading">#</a></h2>
-<p>To overcome gaps in official demographic statistics, the team has turned to private sector data sources. The Data Lab used algorithmically generated data such as that released by <a class="reference external" href="https://dataforgood.facebook.com/dfg/docs/methodology-high-resolution-population-density-maps">Meta</a>.</p>
-<p>Additionally, the team also extracted the <a class="reference external" href="https://dataforgood.facebook.com/dfg/tools/relative-wealth-index">Relative Wealth Index</a> data from Meta which helps identify differences in standard of living in the population.</p>
-</section>
-<section id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<p>To overcome gaps in official demographic statistics, the team has turned to private sector data sources. The Data Lab used algorithmically generated data such as that released by <a class="reference external" href="https://dataforgood.facebook.com/dfg/docs/methodology-high-resolution-population-density-maps">Meta</a>. Additionally, the team also extracted the <a class="reference external" href="https://dataforgood.facebook.com/dfg/tools/relative-wealth-index">Relative Wealth Index</a> data from Meta which helps identify differences in standard of living in the population.</p>
+<section id="data-description">
+<h2>Data Description<a class="headerlink" href="#data-description" title="Permalink to this heading">#</a></h2>
 <section id="high-resolution-population-density">
 <h3>High Resolution Population Density<a class="headerlink" href="#high-resolution-population-density" title="Permalink to this heading">#</a></h3>
-<p>In partnership with the Center for International Earth Science Information Network (CIESIN) at Columbia University, Meta uses state-of-the-art computer vision techniques to identify buildings from publicly accessible mapping services to create these population datasets. These maps are available at 30-meter resolution. These maps aren’t built using Facebook data and instead rely on applying machine vision AI to satellite imagery and census information. This data is publicly accessible on their <a class="reference external" href="https://registry.opendata.aws/dataforgood-fb-hrsl/">AWS Server</a> and detailed documentation can be found <a class="reference external" href="https://dataforgood.facebook.com/dfg/docs/methodology-high-resolution-population-density-maps">here</a>.</p>
-<p>The Population Data is demographically disaggregated into the following categories</p>
+<p>In partnership with the Center for International Earth Science Information Network (CIESIN) at Columbia University, Meta uses state-of-the-art computer vision techniques to identify buildings from publicly accessible mapping services to create these population datasets. These maps are available at 30-meter resolution. These maps aren’t built using Facebook data and instead rely on applying machine vision AI to satellite imagery and census information (latest available). The analysis was validated in 18 countries (Tiecke, <a class="reference external" href="http://et.al">et.al</a>., 2017). For Lebanon, the sources that went into the creation of this dataset are -</p>
+<ul class="simple">
+<li><p>Population data: Population data was used by the [estimates released by UNOCHA in 2002](<a class="reference external" href="https://cod.humanitarianresponse.info/fr/search/field_country_region/138">https://cod.humanitarianresponse.info/fr/search/field_country_region/138</a>, Accessed 05/01/2014). The lowest admin level at which data was available is admin 3.</p></li>
+<li><p>Sex variables: Sex variables were derived from UN Urban and Rural Population by Age and Sex (URPAS) 2010 estimates, generated using URPAS, <a class="reference external" href="http://esa.un.org/unpd/popdev/urpas/urpas2014.aspx">http://esa.un.org/unpd/popdev/urpas/urpas2014.aspx</a>, Accessed 03/27/2015 at a national level.</p></li>
+<li><p>Age variables: Age variables were obtained from UN Urban and Rural Population by Age and Sex (URPAS) 2010 estimates, generated using URPAS, <a class="reference external" href="http://esa.un.org/unpd/popdev/urpas/urpas2014.aspx">http://esa.un.org/unpd/popdev/urpas/urpas2014.aspx</a>, Accessed 03/27/2015 at a national level.</p></li>
+<li><p>Boundaries:Boundaries were obtained from UN Office for the Coordination of Humanitarian Affairs (UN OCHA), <a class="reference external" href="http://www.humanitarianresponse.info/applications/data">http://www.humanitarianresponse.info/applications/data</a>, Accessed 01/05/2011.</p></li>
+<li><p>Growth Rate: The growth rate start year was 1996 until 2002 at admin 2 level.</p></li>
+</ul>
+<p>This dataset, along with population density estimates, also has the following demographic disaggregations -</p>
 <ul class="simple">
 <li><p>Men</p></li>
 <li><p>Women</p></li>
@@ -456,24 +461,42 @@ document.write(`
 <li><p>Youth (15-24)</p></li>
 <li><p>Senior</p></li>
 </ul>
-<section id="accessing-the-data">
-<h4>Accessing the Data<a class="headerlink" href="#accessing-the-data" title="Permalink to this heading">#</a></h4>
-<p>The High Resolution Population Density Layer can be accessed through two ways - either through Meta’s <a class="reference external" href="https://registry.opendata.aws/dataforgood-fb-hrsl/">AWS Server</a> or through <a class="reference external" href="https://data.humdata.org/dataset/lebanon-high-resolution-population-density-maps-demographic-estimates">HdX</a>. Both the links will provide additional instructions on how to access the data. Shapefiles are also obtained from <a class="reference external" href="https://data.humdata.org/dataset/cod-ab-lbn?">HdX website</a>.</p>
+<section id="data-access">
+<h4>Data Access<a class="headerlink" href="#data-access" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Dataset: <a class="reference external" href="https://data.humdata.org/dataset/lebanon-high-resolution-population-density-maps-demographic-estimates?">Lebanon High Resolution Population Density Maps</a></p></li>
+<li><p>Dataset Provider: <a class="reference external" href="https://dataforgood.facebook.com/">Data for Good at Meta</a></p></li>
+<li><p>Granularity: 30 meter resolution</p></li>
+<li><p>Frequency: The dataset was created in 2020.</p></li>
+<li><p>License: Creative Commons Attribution International</p></li>
+<li><p><strong>Data Access</strong>: Data can be downloaded directly from <a class="reference external" href="https://data.humdata.org/dataset/lebanon-high-resolution-population-density-maps-demographic-estimates?">HDX</a> or using their AWS Server. <a class="reference external" href="https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&amp;web=1&amp;e=Yvwh8r&amp;cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&amp;FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&amp;id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Fpopulation%2Fmeta%2Dhigh%2Dresolution%2Dpopulation%2Ddensity%2F2020&amp;viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5">The Project SharePoint</a> also hosts the raw data and can be accessed by all project team members.</p></li>
+</ul>
 </section>
 </section>
 <section id="relative-wealth-index">
 <h3>Relative Wealth Index<a class="headerlink" href="#relative-wealth-index" title="Permalink to this heading">#</a></h3>
-<p>The Meta Relative Wealth Index predicts the relative standard of living within countries using privacy protecting connectivity data, satellite imagery, and other novel data sources. To calculate this index, Meta uses measurements of household wealth collected through <em>face-to-face surveys conducted by the United States Agency for International Development</em> with 1,457,315 unique households living in 66,819 villages in 56 different LMICs around the world. Following this, they use spatial markers to link villages to non-traditional data sources , including satellite imagery, cellular network data, topographic maps, and <em>privacy protecting connectivity data from Facebook</em>. They process the non-traditional data using deep learning and other computational algorithms, which convert the raw data to a set of quantitative features for each village. They use these features to train a supervised machine learning model that predicts the relative wealth of each populated 2.4km2 grid cell on the planet, even in regions where no ground truth data exists (Chi et. al., 2022).</p>
-<p>The Relative Wealth Index is a number that compared the wealth within the country where negative RWI implies poorer areas and positive RWI implies richer areas.</p>
+<p>The Relative Wealth Index (RWI) is a number that compares the wealth within the country where negative RWI implies poorer areas and positive RWI implies relatively richer areas. The Meta Relative Wealth Index predicts the relative standard of living within countries using privacy protecting connectivity data, satellite imagery, and other novel data sources. To calculate this index, Meta uses measurements of household wealth collected through <em>face-to-face surveys conducted by the United States Agency for International Development</em> with 1,457,315 unique households living in 66,819 villages in 56 different LMICs around the world. Following this, they use spatial markers to link villages to non-traditional data sources , including satellite imagery, cellular network data, topographic maps, and <em>privacy protecting connectivity data from Facebook</em>. They process the non-traditional data using deep learning and other computational algorithms, which convert the raw data to a set of quantitative features for each village. They use these features to train a supervised machine learning model that predicts the relative wealth of each populated 2.4km2 grid cell on the planet, even in regions where no ground truth data exists (Chi et. al., 2022).</p>
+<p>The model was validated in 30 high-income countries (OECD Countries). They found that models trained using data in one country are most accurate when applied to neighboring countries and countries with similar attributes. The country level attributes on which similarity is assessed are - area, population, island, landlocked, distance to the closest country with DHS, number of neighboring countries with DHS, GDP per capita, and Gini coefficient.</p>
+<section id="limitations">
+<h4>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">#</a></h4>
+<p>For Lebanon, there is very limited census data available. It also does not have an accessible ground truth DHS survey dataset. The estimated mean error of the predicated model results in Lebanon is reported to be 0.470, median error is 0.480 and standard deviation is 0.042.</p>
+</section>
 <section id="id1">
-<h4>Accessing the Data<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
-<p>Relative Wealth Index dataset has been obtained through the Development Data Partnership. This raw data has been made accessible via <a class="reference external" href="https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&amp;web=1&amp;e=Yvwh8r&amp;cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&amp;FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&amp;id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Frelative%5Fwealth&amp;viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5">SharePoint</a>.</p>
+<h4>Data Access<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<p>Relative Wealth Index dataset was obtained through the <a class="reference external" href="https://datapartnership.org/">Development Data Partnership</a>. Given the sensitiivty of the region, the otherwise publicly available dataset, can only be accessed through a signed agreement between the World Bank and Meta. All project team members who need to access this data must agree to the terms of the dataset and must be part of the proposal - <a class="reference external" href="https://portal.datapartnership.org/readableproposal/478">Understanding Lebanon’s Economy though Alternative Data</a>.</p>
+<ul class="simple">
+<li><p>Dataset: Lebanon Relative Wealth Index</p></li>
+<li><p>Dataset Provider: <a class="reference external" href="https://dataforgood.facebook.com/">Data for Good at Meta</a></p></li>
+<li><p>Granularity: 2.4km2 grid cell</p></li>
+<li><p>Frequency: The dataset was released in 2020. The data is entirely predicted because of lack of ground truth survey information.</p></li>
+<li><p>License: The use of this data is restricted to project members who are part of the proposal with the <a class="reference external" href="https://datapartnership.org/">Development Data Partnership</a>.</p></li>
+<li><p><strong>Data Access</strong>: Data has been made available for project team members on <a class="reference external" href="https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&amp;web=1&amp;e=Yvwh8r&amp;cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&amp;FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&amp;id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Frelative%5Fwealth&amp;viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5">SharePoint</a>. If you would like to request access please write to <a class="reference external" href="mailto:datapartnership&#37;&#52;&#48;worldbank&#46;org">datapartnership<span>&#64;</span>worldbank<span>&#46;</span>org</a></p></li>
+</ul>
 </section>
 </section>
 </section>
-<section id="methodology-and-implementation">
-<h2>Methodology and Implementation<a class="headerlink" href="#methodology-and-implementation" title="Permalink to this heading">#</a></h2>
-<p>The data extracted from Meta was then aggregated to different admin levels using the shapefiles available on <a class="reference external" href="https://data.humdata.org/dataset/cod-ab-lbn?">HdX</a>. These datasets are made available on <a class="reference external" href="https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&amp;web=1&amp;e=Yvwh8r&amp;cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&amp;FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&amp;id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Fpopulation%2Fmeta%2Dhigh%2Dresolution%2Dpopulation%2Ddensity%2F2023&amp;viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5">SharePoint</a>. Relative Wealth Index is accessible to the project team via the Development Data Partnership.</p>
+<section id="insights">
+<h2>Insights<a class="headerlink" href="#insights" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -489,7 +512,7 @@ document.write(`
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Total population by admin 3 region&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
 
 <span class="n">subtitle_text</span> <span class="o">=</span> <span class="s2">&quot;Source: Population estimates from Meta&#39;s HRSL aggregated to admin regions from HdX&quot;</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">subtitle_text</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">subtitle_text</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -501,8 +524,8 @@ document.write(`
 <img alt="../../_images/e474d47afecf466735a3477b2e885c9bffc604bded6b99c891fd1391c42bfa80.png" src="../../_images/e474d47afecf466735a3477b2e885c9bffc604bded6b99c891fd1391c42bfa80.png" />
 </div>
 </div>
-<section id="findings">
-<h3>Findings<a class="headerlink" href="#findings" title="Permalink to this heading">#</a></h3>
+<section id="observations">
+<h3>Observations<a class="headerlink" href="#observations" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The area around Beirut is substantially more populated than the rest of the country.</p></li>
 <li><p>The areas sharing a border with Syria also have a higher population.</p></li>
@@ -535,20 +558,19 @@ document.write(`
 </div>
 </section>
 <section id="id2">
-<h3>Findings<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Observations<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The northern border shared with Syria includes some of the poorest regions in the country</p></li>
 <li><p>The area around Beirut is the wealthiest in the country</p></li>
 </ul>
 </section>
 </section>
-<section id="limitations">
-<h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">#</a></h2>
-<p>The Meta datasets are using deep learning algorithms on existing data/last avalable data, especially for the population numbers. Given the underlying numbers are likely outdated, the confidence level of the population figures is uncertain.</p>
-</section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this heading">#</a></h2>
-<p>Chi, Guanghua, Han Fang, Sourav Chatterjee, and Joshua E. Blumenstock. “Microestimates of wealth for all low-and middle-income countries.” Proceedings of the National Academy of Sciences 119, no. 3 (2022): e2113658119.</p>
+<ul class="simple">
+<li><p>Chi, G., Fang, H., Chatterjee, S., &amp; Blumenstock, J. E. (2022). Microestimates of wealth for all low-and middle-income countries. Proceedings of the National Academy of Sciences, 119(3), e2113658119.</p></li>
+<li><p>Tiecke, T. G., Liu, X., Zhang, A., Gros, A., Li, N., Yetman, G., … &amp; Dang, H. A. H. (2017). Mapping the world population one building at a time. arXiv preprint arXiv:1712.05839.</p></li>
+</ul>
 </section>
 </section>
 
@@ -616,24 +638,23 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment">Assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-description">Data Description</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#high-resolution-population-density">High Resolution Population Density</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-the-data">Accessing the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-access">Data Access</a></li>
 </ul>
 </li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relative-wealth-index">Relative Wealth Index</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Accessing the Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Data Access</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology-and-implementation">Methodology and Implementation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#findings">Findings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Findings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#insights">Insights</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observations">Observations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Observations</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
 </ul>
   </nav></div>
@@ -661,7 +682,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 07, 2024.
+  Last updated on Mar 18, 2024.
   <br/>
 </p>
   </div>
