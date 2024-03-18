@@ -20,7 +20,9 @@ parts:
           - file: notebooks/movement/movement-range.ipynb
       - file: notebooks/ntl-analysis/README
       - file: notebooks/conflict/conflict.ipynb
-      - file: notebooks/air-pollution/air-pollution.ipynb
+      - file: notebooks/air-pollution/README
+        sections:
+          - file: notebooks/air-pollution/air-pollution.ipynb
       - file: notebooks/ais-analysis/README
       - file: notebooks/aviation-trends/aviation.ipynb
       - file: notebooks/crop-growing-status/README
