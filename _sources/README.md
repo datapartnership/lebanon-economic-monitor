@@ -13,4 +13,4 @@ Restrictions may apply to the data that support the findings of this study. Data
 
 ## License
 
-The repository is licensed under the [World Bank Master Community License Agreement](https://raw.githubusercontent.com/worldbank/template/main/LICENSE).
+This project is licensed under the [**Mozilla Public License**](https://opensource.org/license/mpl-2-0/) - see the [LICENSE](LICENSE) file for details.
