@@ -2,7 +2,7 @@
 
 The MENA MTI team is leading two analytical projects for Lebanon -- the Lebanon Country Economic Memorandum (CEM) (P178305) and 'Revisiting the Syrian Conflict's Impact on Lebanon (P178302). Data constraints are a major concern for both projects. This repository includes an exploration of alternative data sources that could support analysis of Lebanon's economic growth, conflict, demographics, and refugee dynamics.
 
-### Contents
+## Contents
 
 ```{tableofcontents}
 ```
