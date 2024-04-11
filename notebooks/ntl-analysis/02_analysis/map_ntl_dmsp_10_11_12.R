@@ -5,7 +5,7 @@
 # Load data --------------------------------------------------------------------
 roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_adm_cdr_20200810", "lbn_admbnda_adm0_cdr_20200810.shp"))
 
-r10 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2010_calDMSP.tif")) 
+r10 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2010_calDMSP.tif"))
 r11 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2011_calDMSP.tif"))
 r12 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2012_calDMSP.tif"))
 
@@ -44,15 +44,15 @@ names(r11_df) <- c("value", "x", "y")
 # Map --------------------------------------------------------------------------
 ## Plot
 p <- ggplot() +
-  geom_raster(data = r10_df[r10_df$value == 0,], 
+  geom_raster(data = r10_df[r10_df$value == 0,],
               aes(x = x, y = y,
                   fill = "No Change"),
               alpha = 0.8) +
-  geom_raster(data = r10_df[r10_df$value == 1,], 
+  geom_raster(data = r10_df[r10_df$value == 1,],
               aes(x = x, y = y,
                   fill = "New Lights"),
               alpha = 0.8) +
-  geom_raster(data = r10_df[r10_df$value == -1,], 
+  geom_raster(data = r10_df[r10_df$value == -1,],
               aes(x = x, y = y,
                   fill = "Lights Lost"),
               alpha = 0.8) +
@@ -63,7 +63,7 @@ p <- ggplot() +
        title = "2010 to 2012") +
   theme_void() +
   theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 10)) +
-  scale_fill_manual(values = c("firebrick3", "green3", "dodgerblue")) 
+  scale_fill_manual(values = c("firebrick3", "green3", "dodgerblue"))
 
 ggsave(p,
        filename = file.path(figures_dir, "ntl_change_2010_2012_bin.png"),
@@ -72,15 +72,15 @@ ggsave(p,
 # Map --------------------------------------------------------------------------
 ## Plot
 p <- ggplot() +
-  geom_raster(data = r11_df[r11_df$value == 0,], 
+  geom_raster(data = r11_df[r11_df$value == 0,],
               aes(x = x, y = y,
                   fill = "No Change"),
               alpha = 0.8) +
-  geom_raster(data = r11_df[r11_df$value == 1,], 
+  geom_raster(data = r11_df[r11_df$value == 1,],
               aes(x = x, y = y,
                   fill = "New Lights"),
               alpha = 0.8) +
-  geom_raster(data = r11_df[r11_df$value == -1,], 
+  geom_raster(data = r11_df[r11_df$value == -1,],
               aes(x = x, y = y,
                   fill = "Lights Lost"),
               alpha = 0.8) +
@@ -91,9 +91,8 @@ p <- ggplot() +
        title = "2011 to 2012") +
   theme_void() +
   theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 10)) +
-  scale_fill_manual(values = c("firebrick3", "green3", "dodgerblue")) 
+  scale_fill_manual(values = c("firebrick3", "green3", "dodgerblue"))
 
 ggsave(p,
        filename = file.path(figures_dir, "ntl_change_2011_2012_bin.png"),
        height = 2.25, width = 6)
-

@@ -4,9 +4,9 @@ Nighttime lights have become a commonly used resource to estimate changes in loc
 
 ## Data
 
-We use nighttime lights data from two sources: for data from 1992 to 2012, we use data from DMSP-OLS; for data from 2013 to present, we use VIIRS Black Marble data. Raw nighttime lights data requires correction due to cloud cover and stray light, such as lunar light. Both nighttime lights datasets apply algorithms to correct raw nighttime light values and calibrate data so that trends in lights over time can be meaningfully analyzed. 
+We use nighttime lights data from two sources: for data from 1992 to 2012, we use data from DMSP-OLS; for data from 2013 to present, we use VIIRS Black Marble data. Raw nighttime lights data requires correction due to cloud cover and stray light, such as lunar light. Both nighttime lights datasets apply algorithms to correct raw nighttime light values and calibrate data so that trends in lights over time can be meaningfully analyzed.
 
-The raw values of nighttime lights are radiance of lights, and the values themselves are not readily interpretable in an economic context. Nighttime light values should be viewed as an index, with larger values reflecting brighter lights---and more economic activity. 
+The raw values of nighttime lights are radiance of lights, and the values themselves are not readily interpretable in an economic context. Nighttime light values should be viewed as an index, with larger values reflecting brighter lights---and more economic activity.
 
 For further information, please refer to {ref}`foundational_datasets`.
 

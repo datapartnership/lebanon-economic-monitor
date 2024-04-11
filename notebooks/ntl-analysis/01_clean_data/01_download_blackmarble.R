@@ -29,5 +29,3 @@ bm_raster(roi_sf = roi_sf,
           quality_flag_rm = c(255,1),
           output_location_type = "file",
           file_dir = file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual"))
-
-
