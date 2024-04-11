@@ -1,6 +1,6 @@
 # VIIRS and DMSP
 
-ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0", 
+ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0",
                             paste0("lbn_adm0", "_annual_ntl.Rds")))
 
 ntl_long_df <- ntl_df %>%
@@ -16,7 +16,7 @@ ntl_long_df$value[(ntl_long_df$name == "ntl_dmsp_mean") & (ntl_long_df$year >= 2
 
 ntl_long_df %>%
   ggplot() +
-  geom_line(aes(x = year, 
+  geom_line(aes(x = year,
                y = value,
                color = name_clean,
                size = name_clean)) +
@@ -29,7 +29,7 @@ ntl_long_df %>%
   scale_y_continuous(limits = c(0, 50)) +
   scale_size_manual(values = c(2, 2, 0.5)) +
   scale_color_manual(values = c("dodgerblue", "orange", "black")) +
-  theme_classic2() 
+  theme_classic2()
 
 ggsave(filename = file.path(figures_dir, "viirs_dmsp_adm0.png"),
        height = 2.25, width = 6)

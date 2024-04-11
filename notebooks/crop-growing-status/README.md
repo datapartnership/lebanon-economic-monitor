@@ -32,7 +32,7 @@ With only about 8.72 percent of Lebanon's total land area dedicated to agricultu
 
 **Figure 3.** Cropland
 
-We used the new [ESA World Cover](https://esa-worldcover.org/en) map 10m LULC to mask out areas which aren't of interest in computing the EVI, i.e. built-up, water, forest, etc. The cropland class has value equal to 40, which will be used within Google Earth Engine ([GEE](https://earthengine.google.com/)) to generate the mask. 
+We used the new [ESA World Cover](https://esa-worldcover.org/en) map 10m LULC to mask out areas which aren't of interest in computing the EVI, i.e. built-up, water, forest, etc. The cropland class has value equal to 40, which will be used within Google Earth Engine ([GEE](https://earthengine.google.com/)) to generate the mask.
 
 There are many ways to download the WorldCover, as explained in the WorldCover [Data Access](https://esa-worldcover.org/en/data-access) page.
 
@@ -68,13 +68,13 @@ Similarly, rainfall patterns play a crucial role in determining water availabili
 
 **Figure 6.** Accumulated rainfall, September 2023.
 
-By analyzing these climate data alongside vegetation indices and phenological information, we can correlate climate trends with vegetation dynamics. 
+By analyzing these climate data alongside vegetation indices and phenological information, we can correlate climate trends with vegetation dynamics.
 
 Monthly temperature derived from [ERA5-Land](https://doi.org/10.24381/cds.68d2bb30), and rainfall data come from [CHRIPS](https://www.chc.ucsb.edu/data/chirps).
 
 ## Limitations and Assumptions
 
-Getting VI data with good quality for all period are challenging (pixels covered with cloud, snow/ice, aerosol quantity, shadow) for optic data (MODIS). Cultivated area year by year are varies, due to MODIS data quality and crop type is not described, so the seasonal parameters are for general cropland. 
+Getting VI data with good quality for all period are challenging (pixels covered with cloud, snow/ice, aerosol quantity, shadow) for optic data (MODIS). Cultivated area year by year are varies, due to MODIS data quality and crop type is not described, so the seasonal parameters are for general cropland.
 
 At this point, the analysis is also limited to seasonal crops due to difficulty to capture the dynamics of perennial crops within a year. The value may not represent for smaller cropland and presented result are only based upon the most current available remote sensing data. As the climate phenomena is a dynamic situation, the current realities may differ from what is depicted in this document.
 
@@ -110,7 +110,7 @@ where `evi` is current EVI and `min_evi` and `max_evi` is the long-term minimum 
 
 ### Phenological Metrics
 
-A working example to detect seasonality parameters in Lebanon has been developed based on areas where the majority is a cropland. This approach requires a crop type mask and moderate resolution time series Vegetation Indices (VI). 
+A working example to detect seasonality parameters in Lebanon has been developed based on areas where the majority is a cropland. This approach requires a crop type mask and moderate resolution time series Vegetation Indices (VI).
 
 State of planting and harvesting estimates are determined by importing Vegetation Indices (VI) data into TIMESAT – an open-source program to analyze time-series satellite sensor data. TIMESAT conducts pixel-by-pixel classification of satellite images to determine whether planting has started or not. This process is followed for all areas over multiple years to evaluate current planting vis-à-vis historical values from 2003 - 2023.
 
@@ -126,7 +126,7 @@ The image below shows a fluctuating trend in the Vegetation Index over time. Gre
 
 **Figure 8.** Fluctuating trend in the VI values over time
 
-The next image is a heatmap that provides a visual representation of the Vegetation Index (VI) values over time and still related with above image. Each cell in the heatmap corresponds to a specific date, and the color of the cell represents the VI value on that date, with lighter colors indicating lower VI values and darker colors indicating higher VI values. This heatmap, along with the line graph, can be used to monitor the growing stages of cropland. By comparing the two images, one can observe how the VI values change over time and identify the start and end of the growing seasons. This information can be crucial for farmers and agricultural scientists for planning and optimizing crop growth. 
+The next image is a heatmap that provides a visual representation of the Vegetation Index (VI) values over time and still related with above image. Each cell in the heatmap corresponds to a specific date, and the color of the cell represents the VI value on that date, with lighter colors indicating lower VI values and darker colors indicating higher VI values. This heatmap, along with the line graph, can be used to monitor the growing stages of cropland. By comparing the two images, one can observe how the VI values change over time and identify the start and end of the growing seasons. This information can be crucial for farmers and agricultural scientists for planning and optimizing crop growth.
 
 ![GS2](./images/lbn_crop_growing_stages2.png)
 
@@ -150,7 +150,7 @@ Note that these metrics will depend on the choice of function, thresholds, and o
 
 ## Result
 
-We present a summary of the key derived variables employed in our analysis to monitor vegetation conditions and dynamics within Lebanon's cropland areas. 
+We present a summary of the key derived variables employed in our analysis to monitor vegetation conditions and dynamics within Lebanon's cropland areas.
 
 ### Anomaly and Vegetation Condition
 
@@ -491,49 +491,49 @@ This section presents a comprehensive analysis of planting and harvest cycles in
 
 		**Figure 46.** Monthly Harvest and Planting, 2003-2023
 		:::
-		
+
 		:::{tab-item} Bekaa
 		:sync: key2
 		![MHP47](./images/plot_lbn_adm1_Bekaa_monthly_pheno.png)
 
 		**Figure 47.** Monthly Harvest and Planting, 2003-2023
 		:::
-		
+
 		:::{tab-item} Mount Lebanon
 		:sync: key3
 		![MHP48](./images/plot_lbn_adm1_Mount_Lebanon_monthly_pheno.png)
 
 		**Figure 48.** Monthly Harvest and Planting, 2003-2023
 		:::
-		
+
 		:::{tab-item} El Nabatieh
 		:sync: key4
 		![MHP49](./images/plot_lbn_adm1_El_Nabatieh_monthly_pheno.png)
 
 		**Figure 49.** Monthly Harvest and Planting, 2003-2023
 		:::
-		
+
 		:::{tab-item} North
 		:sync: key5
 		![MHP50](./images/plot_lbn_adm1_North_monthly_pheno.png)
 
 		**Figure 50.** Monthly Harvest and Planting, 2003-2023
 		:::
-		
+
 		:::{tab-item} South
 		:sync: key6
 		![MHP51](./images/plot_lbn_adm1_South_monthly_pheno.png)
 
 		**Figure 51.** Monthly Harvest and Planting, 2003-2023
 		:::
-		
+
 		:::{tab-item} Akkar
 		:sync: key7
 		![MHP52](./images/plot_lbn_adm1_Akkar_monthly_pheno.png)
 
 		**Figure 52.** Monthly Harvest and Planting, 2003-2023
 		:::
-		
+
 		:::{tab-item} Baalbek-El Hermel
 		:sync: key8
 		![MHP53](./images/plot_lbn_adm1_Baalbek-El_Hermel_monthly_pheno.png)
@@ -631,7 +631,7 @@ This section presents a comprehensive analysis of planting and harvest cycles in
 
 		**Figure 64.** Monthly Rainfall and Temperature, 2003-2023
 		:::
-		
+
 		:::{tab-item} Bekaa
 		:sync: key2
 		![MRT65](./images/plot_lbn_adm1_Bekaa_monthly_preciptavg.png)
@@ -820,7 +820,7 @@ This section delves into the analysis of annual and monthly trends in planting a
 :::
 ::::
 
-## Potential Application 
+## Potential Application
 
 Above products provides an important starting point for continuous monitoring of the crop planting status. Continuous monitoring could inform the following assessments:
 
