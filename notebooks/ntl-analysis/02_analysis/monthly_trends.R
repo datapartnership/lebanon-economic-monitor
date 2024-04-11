@@ -1,12 +1,12 @@
 # Annual Trends in Nighttime Lights
 
 # ADM 0 ------------------------------------------------------------------------
-ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0", 
+ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0",
                             paste0("lbn_adm0", "_monthly_ntl.Rds")))
 
 ntl_df %>%
   ggplot() +
-  geom_col(aes(x = date, 
+  geom_col(aes(x = date,
                y = ntl_bm_mean),
            fill = "gray30") +
   labs(x = NULL,
@@ -19,12 +19,12 @@ ggsave(filename = file.path(figures_dir, "monthly_trends_adm0.png"),
        height = 2, width = 4.5)
 
 # ADM 1 ------------------------------------------------------------------------
-ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm1", 
+ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm1",
                             paste0("lbn_adm1", "_monthly_ntl.Rds")))
 
 ntl_df %>%
   ggplot() +
-  geom_col(aes(x = date, 
+  geom_col(aes(x = date,
                y = ntl_bm_mean),
            fill = "gray30") +
   labs(x = NULL,

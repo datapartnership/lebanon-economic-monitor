@@ -2,7 +2,7 @@
 
 The MENA MTI team is leading two analytical projects for Lebanon -- the Lebanon Country Economic Memorandum (CEM) (P178305) and 'Revisiting the Syrian Conflict's Impact on Lebanon (P178302). Data constraints are a major concern for both projects. This repository includes an exploration of alternative data sources that could support analysis of Lebanon's economic growth, conflict, demographics, and refugee dynamics.
 
-### Contents
+## Contents
 
 ```{tableofcontents}
 ```
@@ -13,4 +13,4 @@ Restrictions may apply to the data that support the findings of this study. Data
 
 ## License
 
-The repository is licensed under the [World Bank Master Community License Agreement](https://raw.githubusercontent.com/worldbank/template/main/LICENSE).
+This project is licensed under the [**Mozilla Public License**](https://opensource.org/license/mpl-2-0/) - see the [LICENSE](LICENSE) file for details.

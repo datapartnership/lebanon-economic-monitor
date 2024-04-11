@@ -3,7 +3,7 @@
 # Load data --------------------------------------------------------------------
 roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_adm_cdr_20200810", "lbn_admbnda_adm0_cdr_20200810.shp"))
 
-r12 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", "VNP46A4_t2012.tif")) 
+r12 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", "VNP46A4_t2012.tif"))
 r22 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", "VNP46A4_t2022.tif"))
 
 r12 <- r12 %>% crop(roi_sf) %>% mask(roi_sf)
@@ -21,7 +21,7 @@ names(r_df) <- c("value", "x", "y")
 # Map --------------------------------------------------------------------------
 ## Plot
 p <- ggplot() +
-  geom_raster(data = r_df, 
+  geom_raster(data = r_df,
               aes(x = x, y = y,
                   fill = value),
               alpha = 0.8) +
@@ -36,7 +36,7 @@ p <- ggplot() +
                        mid = "white",
                        high = "green3",
                        breaks = c(-100,-50,0,50,100),
-                       labels = c("< -100", "-50", "0", "50", "> 100")) 
+                       labels = c("< -100", "-50", "0", "50", "> 100"))
 
 ggsave(p,
        filename = file.path(figures_dir, "ntl_change_2012_2022_percent.png"),

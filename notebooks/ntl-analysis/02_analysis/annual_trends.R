@@ -14,7 +14,7 @@ gdp_long_df <- gdp_df %>%
   pivot_longer(cols = -year)
 
 # ADM 0 ------------------------------------------------------------------------
-ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0", 
+ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0",
                             paste0("lbn_adm0", "_annual_ntl.Rds")))
 
 ntl_df <- ntl_df %>%
@@ -26,7 +26,7 @@ ntl_gdp_df <- bind_rows(ntl_df, gdp_long_df)
 
 ntl_gdp_df %>%
   filter(year >= 1995) %>%
-  ggplot(aes(x = year, 
+  ggplot(aes(x = year,
              y = value)) +
   geom_line(color = "black",
             size = 1) +
@@ -43,13 +43,13 @@ ggsave(filename = file.path(figures_dir, "annual_trends_adm0.png"),
        height = 6, width = 4.5)
 
 # ADM 1 ------------------------------------------------------------------------
-ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm1", 
+ntl_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm1",
                             paste0("lbn_adm1", "_annual_ntl.Rds")))
 
 ntl_df %>%
   filter(year >= 1995) %>%
   ggplot() +
-  geom_col(aes(x = year, 
+  geom_col(aes(x = year,
                y = ntl_mean_add_2012base),
            fill = "gray30") +
   labs(x = NULL,

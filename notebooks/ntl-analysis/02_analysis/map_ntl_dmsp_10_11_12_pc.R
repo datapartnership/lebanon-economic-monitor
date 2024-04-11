@@ -5,7 +5,7 @@
 # Load data --------------------------------------------------------------------
 roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_adm_cdr_20200810", "lbn_admbnda_adm0_cdr_20200810.shp"))
 
-r10 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2010_calDMSP.tif")) 
+r10 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2010_calDMSP.tif"))
 r11 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2011_calDMSP.tif"))
 r12 <- raster(file.path(ntl_dir, "ntl-rasters", "harmonized-dmsp-viirs", "Harmonized_DN_NTL_2012_calDMSP.tif"))
 
@@ -36,7 +36,7 @@ names(r11_df) <- c("value", "x", "y")
 # Map --------------------------------------------------------------------------
 ## Plot
 p <- ggplot() +
-  geom_raster(data = r10_df, 
+  geom_raster(data = r10_df,
               aes(x = x, y = y,
                   fill = value),
               alpha = 0.8) +
@@ -51,7 +51,7 @@ p <- ggplot() +
                        mid = "white",
                        high = "green3",
                        breaks = c(-100,-50,0,50,100),
-                       labels = c("< -100", "-50", "0", "50", "> 100")) 
+                       labels = c("< -100", "-50", "0", "50", "> 100"))
 
 ggsave(p,
        filename = file.path(figures_dir, "ntl_change_2010_2012_pc.png"),
@@ -60,7 +60,7 @@ ggsave(p,
 # Map --------------------------------------------------------------------------
 ## Plot
 p <- ggplot() +
-  geom_raster(data = r11_df, 
+  geom_raster(data = r11_df,
               aes(x = x, y = y,
                   fill = value),
               alpha = 0.8) +
@@ -75,9 +75,8 @@ p <- ggplot() +
                        mid = "white",
                        high = "green3",
                        breaks = c(-100,-50,0,50,100),
-                       labels = c("< -100", "-50", "0", "50", "> 100")) 
+                       labels = c("< -100", "-50", "0", "50", "> 100"))
 
 ggsave(p,
        filename = file.path(figures_dir, "ntl_change_2011_2012_pc.png"),
        height = 2.25, width = 6)
-
