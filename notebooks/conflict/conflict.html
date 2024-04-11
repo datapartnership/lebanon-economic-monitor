@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Night Time Lights in Lebanon" href="../ntl-analysis/README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Mar 18, 2024"/>
+    <meta name="docbuild:last-update" content="Apr 11, 2024"/>
   </head>
   
   
@@ -455,17 +455,28 @@ document.write(`
 <span class="n">bokeh</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">validation</span><span class="o">.</span><span class="n">silence</span><span class="p">(</span><span class="n">MISSING_RENDERERS</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">titles</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Number of conflict events at a national level&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of fatalities at a national level&#39;</span><span class="p">]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Number of conflict events at a national level&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Number of fatalities at a national level&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
-<span class="c1">#df = get_acled_by_admin(myanmar_adm1, acled, columns = [&#39;country&#39;])</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;nrEvents&#39;</span><span class="p">,</span> <span class="s1">&#39;fatalities&#39;</span><span class="p">]):</span>
-
+<span class="c1"># df = get_acled_by_admin(myanmar_adm1, acled, columns = [&#39;country&#39;])</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;nrEvents&quot;</span><span class="p">,</span> <span class="s2">&quot;fatalities&quot;</span><span class="p">]):</span>
     <span class="n">tabs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
         <span class="n">Panel</span><span class="p">(</span>
-        <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span><span class="n">ucdp_adm0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Source: UCDP&quot;</span><span class="p">,</span> <span class="n">earthquakes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;admin0Name&#39;</span><span class="p">,</span> <span class="n">measure</span> <span class="o">=</span> <span class="nb">type</span><span class="p">,</span> <span class="n">event_date</span><span class="o">=</span><span class="s1">&#39;date_start&#39;</span><span class="p">),</span>
-                    <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
-                <span class="p">)</span>  
-                <span class="p">)</span>
+            <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span>
+                <span class="n">ucdp_adm0</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Source: UCDP&quot;</span><span class="p">,</span>
+                <span class="n">earthquakes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="n">category</span><span class="o">=</span><span class="s2">&quot;admin0Name&quot;</span><span class="p">,</span>
+                <span class="n">measure</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span>
+                <span class="n">event_date</span><span class="o">=</span><span class="s2">&quot;date_start&quot;</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="n">Tabs</span><span class="p">(</span><span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;scale_both&quot;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">tabs</span><span class="p">,</span> <span class="n">warn_on_missing_glyphs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -793,17 +804,27 @@ if (force === true) {
 <span class="n">bokeh</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">validation</span><span class="o">.</span><span class="n">silence</span><span class="p">(</span><span class="n">MISSING_RENDERERS</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">titles</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Number of conflict events at a national level&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of fatalities at a national level&#39;</span><span class="p">]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Number of conflict events at a national level&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Number of fatalities at a national level&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
-<span class="c1">#df = get_acled_by_admin(myanmar_adm1, acled, columns = [&#39;country&#39;])</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;nrEvents&#39;</span><span class="p">,</span> <span class="s1">&#39;fatalities&#39;</span><span class="p">]):</span>
-
+<span class="c1"># df = get_acled_by_admin(myanmar_adm1, acled, columns = [&#39;country&#39;])</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;nrEvents&quot;</span><span class="p">,</span> <span class="s2">&quot;fatalities&quot;</span><span class="p">]):</span>
     <span class="n">tabs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
         <span class="n">Panel</span><span class="p">(</span>
-        <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span><span class="n">acled_adm0</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;Source: ACLED&quot;</span><span class="p">,</span> <span class="n">earthquakes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;admin0Name&#39;</span><span class="p">,</span> <span class="n">measure</span> <span class="o">=</span> <span class="nb">type</span><span class="p">),</span>
-                    <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
-                <span class="p">)</span>  
-                <span class="p">)</span>
+            <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span>
+                <span class="n">acled_adm0</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Source: ACLED&quot;</span><span class="p">,</span>
+                <span class="n">earthquakes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="n">category</span><span class="o">=</span><span class="s2">&quot;admin0Name&quot;</span><span class="p">,</span>
+                <span class="n">measure</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="n">Tabs</span><span class="p">(</span><span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;scale_both&quot;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">tabs</span><span class="p">,</span> <span class="n">warn_on_missing_glyphs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1132,15 +1153,22 @@ if (force === true) {
 <span class="n">bokeh</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">validation</span><span class="o">.</span><span class="n">silence</span><span class="p">(</span><span class="n">MISSING_RENDERERS</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">titles</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Number of conflict events&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of fatalities&#39;</span><span class="p">]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Number of conflict events&quot;</span><span class="p">,</span> <span class="s2">&quot;Number of fatalities&quot;</span><span class="p">]</span>
 
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;nrEvents&#39;</span><span class="p">,</span> <span class="s1">&#39;fatalities&#39;</span><span class="p">]):</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;nrEvents&quot;</span><span class="p">,</span> <span class="s2">&quot;fatalities&quot;</span><span class="p">]):</span>
     <span class="n">tabs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
         <span class="n">Panel</span><span class="p">(</span>
-        <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span><span class="n">acled_adm1</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> by admin 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Source: ACLED&quot;</span><span class="p">,</span> <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;admin1Name&#39;</span><span class="p">,</span> <span class="n">measure</span> <span class="o">=</span> <span class="nb">type</span><span class="p">),</span>
-                    <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
-                <span class="p">)</span>
-                <span class="p">)</span>
+            <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span>
+                <span class="n">acled_adm1</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> by admin 1&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Source: ACLED&quot;</span><span class="p">,</span>
+                <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="n">category</span><span class="o">=</span><span class="s2">&quot;admin1Name&quot;</span><span class="p">,</span>
+                <span class="n">measure</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="n">Tabs</span><span class="p">(</span><span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;scale_both&quot;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">tabs</span><span class="p">,</span> <span class="n">warn_on_missing_glyphs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1464,15 +1492,22 @@ if (force === true) {
 <span class="n">bokeh</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">validation</span><span class="o">.</span><span class="n">silence</span><span class="p">(</span><span class="n">MISSING_RENDERERS</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">titles</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Number of conflict events&#39;</span><span class="p">,</span> <span class="s1">&#39;Number of fatalities&#39;</span><span class="p">]</span>
+<span class="n">titles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Number of conflict events&quot;</span><span class="p">,</span> <span class="s2">&quot;Number of fatalities&quot;</span><span class="p">]</span>
 
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;nrEvents&#39;</span><span class="p">,</span> <span class="s1">&#39;fatalities&#39;</span><span class="p">]):</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="nb">type</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s2">&quot;nrEvents&quot;</span><span class="p">,</span> <span class="s2">&quot;fatalities&quot;</span><span class="p">]):</span>
     <span class="n">tabs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
         <span class="n">Panel</span><span class="p">(</span>
-        <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span><span class="n">acled_events</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> by event type&quot;</span><span class="p">,</span> <span class="s2">&quot;Source: ACLED&quot;</span><span class="p">,</span> <span class="n">subtitle</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">category</span> <span class="o">=</span> <span class="s1">&#39;event_type&#39;</span><span class="p">,</span> <span class="n">measure</span> <span class="o">=</span> <span class="nb">type</span><span class="p">),</span>
-                    <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
-                <span class="p">)</span>
-                <span class="p">)</span>
+            <span class="n">child</span><span class="o">=</span><span class="n">visuals</span><span class="o">.</span><span class="n">get_line_plot</span><span class="p">(</span>
+                <span class="n">acled_events</span><span class="p">,</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">titles</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span><span class="si">}</span><span class="s2"> by event type&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Source: ACLED&quot;</span><span class="p">,</span>
+                <span class="n">subtitle</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="n">category</span><span class="o">=</span><span class="s2">&quot;event_type&quot;</span><span class="p">,</span>
+                <span class="n">measure</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span>
+            <span class="p">),</span>
+            <span class="n">title</span><span class="o">=</span><span class="nb">type</span><span class="o">.</span><span class="n">capitalize</span><span class="p">(),</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 
 <span class="n">tabs</span> <span class="o">=</span> <span class="n">Tabs</span><span class="p">(</span><span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">,</span> <span class="n">sizing_mode</span><span class="o">=</span><span class="s2">&quot;scale_both&quot;</span><span class="p">)</span>
 <span class="n">show</span><span class="p">(</span><span class="n">tabs</span><span class="p">,</span> <span class="n">warn_on_missing_glyphs</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1910,7 +1945,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Mar 18, 2024.
+  Last updated on Apr 11, 2024.
   <br/>
 </p>
   </div>

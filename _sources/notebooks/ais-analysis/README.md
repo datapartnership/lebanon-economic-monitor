@@ -26,7 +26,7 @@ We collapse the AIS data into routes. An incoming or outgoing route is captured 
 
 ### Step 2. Data Filtering and Ship Registry Information
 
-There may be routes that are quick because of small movements by vessels located at the edges of the boundaries. To remove the noise, we say that a vessel has fully exited the port when it spends at least 1 day outside of Port Boundary. Otherwise, we treat consecutive routes within 24 hours of each other as one. 
+There may be routes that are quick because of small movements by vessels located at the edges of the boundaries. To remove the noise, we say that a vessel has fully exited the port when it spends at least 1 day outside of Port Boundary. Otherwise, we treat consecutive routes within 24 hours of each other as one.
 
 We then combine the routes data with Ship Registry data to get the finer vessel categories and other information on the vessel required for trade estimation. The matching is done using both MMSI and IMO numbers from both data sources. We validate the match by comparing the vessel names.
 
@@ -51,7 +51,7 @@ $$Disp_r = Cb_rLW\rho d_r$$
 
 We can derive the block coefficent for any given draught as follows:
 
-$$Cb_{r} = \frac{Disp_{r}}{LW\rho*d_{r}}$$ 
+$$Cb_{r} = \frac{Disp_{r}}{LW\rho*d_{r}}$$
 
 Given design draught, and design block coeffient, the block coefficient at reported draught can be estimated as:
 

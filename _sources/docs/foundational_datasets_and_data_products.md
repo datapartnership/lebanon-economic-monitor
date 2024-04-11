@@ -38,4 +38,4 @@ Following is a summary of Data Products used in this Data Good:
 
 **Indicators** can be derived from a combination of **Foundational Datasets** and **Data Products**. By combining Foundational Datasets and Data Products, teams can, on-demand, develop a large array of indicators to meet their project needs. Indicators can presented side-by-side in an Excel workbook -- a format that is generally accessible to the widest audiences.  Because all indicators are based on the same underlying data, they are comparable with each other, across geographies and across time.
 
-For this project, sample indicators have been derived and aggregated at the governorate level and by year, to show changing trends in each governorate over time. 
+For this project, sample indicators have been derived and aggregated at the governorate level and by year, to show changing trends in each governorate over time.
