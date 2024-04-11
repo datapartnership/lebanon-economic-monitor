@@ -1,21 +1,20 @@
 [build-system]
-requires = ["setuptools>=61.0.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling>=1.21.0", "hatch-vcs>=0.3.0"]
+build-backend = "hatchling.build"
 
 [project]
 name = "lebanon-economic-monitor"
-dynamic = ["version"]
 description = "An Python package to support the Lebanon Economic Monitor"
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { file = "LICENSE" }
 keywords = [
-	"world bank",
-	"reproducible research",
 	"economic monitor",
 	"lebanon",
+	"reproducible research",
+	"world bank",
 ]
 authors = [
-	{ name = "World Bank Development Data Group", email = "datalab@worldbank.org" },
+	{ name = "World Bank Data Lab", email = "datalab@worldbank.org" },
 ]
 maintainers = [
 	{ name = "Gabriel Stefanini Vicente", email = "gvicente@worldbank.org" },
@@ -23,9 +22,6 @@ maintainers = [
 ]
 classifiers = [
 	"Programming Language :: Python :: 3",
-	"Programming Language :: Python :: 3.7",
-	"Programming Language :: Python :: 3.8",
-	"Programming Language :: Python :: 3.9",
 	"Programming Language :: Python :: 3.10",
 	"Programming Language :: Python :: 3.11",
 	"Programming Language :: Python :: 3 :: Only",
@@ -33,15 +29,39 @@ classifiers = [
 	"Intended Audience :: Developers",
 	"Operating System :: OS Independent",
 ]
-requires-python = ">=3.7"
-dependencies = ["pandas>=2"]
+dynamic = ["version"]
+requires-python = ">=3.10"
+dependencies = [
+	"bokeh",
+	"geopandas",
+	"matplotlib",
+	"numpy",
+	"pandas>=2",
+	"scipy",
+	"shapely"
+]
 [project.optional-dependencies]
-notebook = ["notebook>=6.5.2"]
+docs = [
+	"docutils==0.17.1",    # https://jupyterbook.org/en/stable/content/citations.html?highlight=docutils#citations-and-bibliographies
+	"jupyter-book >=1,<2",
+]
+
 
 [project.urls]
 "Homepage" = "https://github.com/datapartnership/lebanon-economic-monitor"
 "Bug Reports" = "https://github.com/datapartnership/lebanon-economic-monitor/issues"
 "Source" = "https://github.com/datapartnership/lebanon-economic-monitor"
 
-[tool.setuptools.dynamic]
-version = { attr = "lebanon-economic-monitor.__version__" }
+[tool.codespell]
+skip = 'docs/_build,docs/bibliography.bib,*.png,*.gz,*.whl'
+ignore-regex = '^\s*"image\/png":\s.*'
+ignore-words-list = "gost,"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/lebanon_economic_monitor"]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
