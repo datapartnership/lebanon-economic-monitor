@@ -3,8 +3,10 @@
 # Load data --------------------------------------------------------------------
 roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_adm_cdr_20200810", "lbn_admbnda_adm0_cdr_20200810.shp"))
 
-r12 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", "VNP46A4_t2012.tif")) 
-r22 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", "VNP46A4_t2022.tif"))
+r12 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", 
+                        "VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t2012.tif")) 
+r22 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", 
+                        "VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t2023.tif"))
 
 r12 <- r12 %>% crop(roi_sf) %>% mask(roi_sf)
 r22 <- r22 %>% crop(roi_sf) %>% mask(roi_sf)
@@ -43,7 +45,7 @@ p <- ggplot() +
           fill = NA,
           color = "black") +
   labs(fill = NULL,
-       title = "2012 to 2022") +
+       title = "2012 to 2023") +
   theme_void() +
   theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 10)) +
   scale_fill_manual(values = c("firebrick3", "green3", "dodgerblue")) 

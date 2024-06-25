@@ -51,7 +51,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
     if(!file.exists(OUT_FILE)){
       
       if(year >= 2012){
-        bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", paste0("VNP46A4_t",year,".tif")))
+        bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", paste0("VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t",year,".tif")))
         viirs_r_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_mean_",year,".tif")))
       } else{
         bm_r     <- raster()
@@ -169,7 +169,8 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
       str_replace_all(".*_t", "") %>%
       str_replace_all(".tif", "")
     
-    OUT_FILE <- file.path(ntl_dir, "aggregated-to-polygons", roi_name, "individual-monthly", paste0("ntl_", month_i, ".Rds"))
+    OUT_FILE <- file.path(ntl_dir, "aggregated-to-polygons", roi_name, "individual-monthly", 
+                          paste0("ntl_", month_i, ".Rds"))
     
     if(!file.exists(OUT_FILE)){
       

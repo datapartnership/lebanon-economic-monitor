@@ -26,7 +26,7 @@ ntl_long_df %>%
        color = NULL,
        size = NULL) +
   scale_x_continuous(breaks = seq(1992, 2022, 4)) +
-  scale_y_continuous(limits = c(0, 50)) +
+  scale_y_continuous(limits = c(0, 25)) +
   scale_size_manual(values = c(2, 2, 0.5)) +
   scale_color_manual(values = c("dodgerblue", "orange", "black")) +
   theme_classic2() 
