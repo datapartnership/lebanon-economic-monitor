@@ -43,7 +43,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
   roi_sf$adm_id <- 1:nrow(roi_sf)
 
   # Aggregate annual -------------------------------------------------------------
-  for(year in 1992:2022){
+  for(year in 1992:2023){
 
     ## Only process if file already hasn't been created
     OUT_FILE <- file.path(ntl_dir, "aggregated-to-polygons", roi_name, "individual-annual", paste0("ntl_", year, ".Rds"))
@@ -52,13 +52,19 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
 
       if(year >= 2012){
         bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", paste0("VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t",year,".tif")))
-        viirs_r_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_mean_",year,".tif")))
+        
+        if(year <= 2022){
+          viirs_r_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_mean_",year,".tif")))
+        } else{
+          viirs_r_r <- raster()
+        }
+        
       } else{
         bm_r     <- raster()
         viirs_r_r <- raster()
       }
 
-      if(year >= 2014){
+      if(year %in% 2014:2022){
         viirs_c_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_corrected_mean_",year,".tif")))
       } else{
         viirs_c_r <- raster()

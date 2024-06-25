@@ -4,7 +4,7 @@
 gdp_df <- WDI(country = "LBN",
           indicator = c("NY.GDP.MKTP.KD", "NY.GDP.PCAP.KD"),
           start = 1992,
-          end = 2022,
+          end = 2023,
           extra = TRUE)
 
 gdp_long_df <- gdp_df %>%
@@ -33,7 +33,7 @@ ntl_gdp_df %>%
   labs(x = NULL,
        y = "Nighttime Lights",
        title = "Annual Nighttime Lights and GDP") +
-  scale_x_continuous(breaks = seq(1995, 2022, 4)) +
+  scale_x_continuous(breaks = seq(1995, 2023, 4)) +
   theme_classic2() +
   facet_wrap(~name, scales = "free_y", ncol = 1) +
   theme(strip.background = element_blank(),
@@ -55,7 +55,7 @@ ntl_df %>%
   labs(x = NULL,
        y = "Nighttime Lights",
        title = "Annual Nighttime Lights: Governorate Level") +
-  scale_x_continuous(breaks = seq(1995, 2022, 8)) +
+  scale_x_continuous(breaks = seq(1995, 2023, 8)) +
   theme_classic2() +
   theme(strip.background = element_blank(),
         strip.text = element_text(face = "bold")) +
