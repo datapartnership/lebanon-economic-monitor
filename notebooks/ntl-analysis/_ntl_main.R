@@ -47,8 +47,12 @@ if(F){
   source(file.path(git_ntl_analysis_dir, "annual_trends.R"))
   source(file.path(git_ntl_analysis_dir, "compare_viirs_sources.R"))
   source(file.path(git_ntl_analysis_dir, "map_ntl_annual.R"))
+  source(file.path(git_ntl_analysis_dir, "map_ntl_dmsp_10_11_12_pc.R"))
+  source(file.path(git_ntl_analysis_dir, "map_ntl_dmsp_10_11_12.R"))
   source(file.path(git_ntl_analysis_dir, "monthly_trends.R"))
   source(file.path(git_ntl_analysis_dir, "percent_change_adm.R"))
+  source(file.path(git_ntl_analysis_dir, "pixel_map_change.R"))
+  source(file.path(git_ntl_analysis_dir, "pixel_percent_change.R"))
   source(file.path(git_ntl_analysis_dir, "viirs_dmsp.R"))
 
 }
