@@ -53,14 +53,14 @@ The following code produces the figures:
 
 ### Map of Nighttime Lights
 
-The below figure shows nighttime lights in 2019 and 2022, illustrating the notable reduction in nighttime lights throughout the country.
+The below figure shows nighttime lights in 2019 and 2023, illustrating the notable reduction in nighttime lights throughout the country.
 
 ```{figure} figures/ntl_19_22.png
 ---
 scale: 15%
 align: center
 ---
-Map of Nighttime Lights in 2019 and 2022
+Map of Nighttime Lights in 2019 and 2023
 ```
 
 ### Trends in Nighttime Lights: Annual
@@ -105,9 +105,9 @@ Monthly Trends in Nighttime Lights: Governorate Level
 
 ### Change in Nighttime Lights: Pixel Level
 
-#### 2012 to 2022
+#### 2012 to 2023
 
-The below figures show changes at the 500 meter pixel level from 2012 to 2022.
+The below figures show changes at the 500 meter pixel level from 2012 to 2023.
 
 ```{figure} figures/ntl_change_2012_2022_bin.png
 ---
@@ -167,7 +167,7 @@ Change in Nighttime Lights
 
 ### Change in Nighttime Lights: Different ADM Levels
 
-This section shows the percent change in nighttime lights from 2019, 2020, 2021 until 2022 at different administrative levels. The first set of figures show maps of the percent change, and the second set show tables of percent change. The maps and tables show that administrative regions throughout Lebanaon experienced a sharp reduction in nighttime lights from 2019 to 2022. At the first administrative 1 level, the smallest reduction in nighttime lights from 2019 to 2022 was about 60% (in the South)---while the largest was a 90% reduction (in Akkar). Lebanon's two largest cities---Beirut and Tripoli---saw over a 70% reduction in nighttime lights.
+This section shows the percent change in nighttime lights from 2019, 2020, 2021, 2022 until 2023 at different administrative levels. The first set of figures show maps of the percent change, and the second set show tables of percent change. The maps and tables show that administrative regions throughout Lebanaon experienced a sharp reduction in nighttime lights from 2019 to 2023. At the first administrative 1 level, the smallest reduction in nighttime lights from 2019 to 2023 was about 60% (in the South)---while the largest was a 90% reduction (in Akkar). Lebanon's two largest cities---Beirut and Tripoli---saw over a 70% reduction in nighttime lights.
 
 #### Maps
 
