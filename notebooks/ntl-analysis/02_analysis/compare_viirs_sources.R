@@ -16,8 +16,8 @@ ntl0_df %>%
   ggplot() +
   geom_line(aes(x = year, y = value, color = name),
             linewidth = 1) +
-  scale_x_continuous(breaks = seq(2012,2022,2),
-                     labels = seq(2012,2022,2)) +
+  scale_x_continuous(breaks = seq(2012,2023,2),
+                     labels = seq(2012,2023,2)) +
   labs(title = "VIIRS Nighttime Lights: Different Sources",
        color = "",
        x = "Year",
