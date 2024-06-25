@@ -1,6 +1,6 @@
 # Compare VIIRS Sources
 
-ntl0_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0", 
+ntl0_df <- readRDS(file.path(ntl_dir, "aggregated-to-polygons", "lbn_adm0",
                              paste0("lbn_adm0", "_annual_ntl.Rds")))
 
 ntl0_df %>%

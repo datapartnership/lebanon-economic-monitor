@@ -23,7 +23,7 @@ names(r_df) <- c("value", "x", "y")
 # Map --------------------------------------------------------------------------
 ## Plot
 p <- ggplot() +
-  geom_raster(data = r_df, 
+  geom_raster(data = r_df,
               aes(x = x, y = y,
                   fill = value),
               alpha = 0.8) +
@@ -38,7 +38,7 @@ p <- ggplot() +
                        mid = "white",
                        high = "green3",
                        breaks = c(-100,-50,0,50,100),
-                       labels = c("< -100", "-50", "0", "50", "> 100")) 
+                       labels = c("< -100", "-50", "0", "50", "> 100"))
 
 ggsave(p,
        filename = file.path(figures_dir, "ntl_change_2012_2022_percent.png"),

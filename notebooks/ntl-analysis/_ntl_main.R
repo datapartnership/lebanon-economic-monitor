@@ -4,7 +4,7 @@
 if(Sys.info()[["user"]] == "robmarty"){
   git_dir  <- "~/Documents/Github/lebanon-economic-monitor"
   proj_dir <- "~/Dropbox/World Bank/Side Work/Lebanon Economic Monitor"
-} 
+}
 
 data_dir      <- file.path(proj_dir, "Data")
 ntl_dir       <- file.path(data_dir, "night-time-lights")
@@ -38,11 +38,11 @@ library(WDI)
 
 # Code -------------------------------------------------------------------------
 if(F){
-  
+
   #### Clean data
   source(file.path(git_ntl_clean_dir, "01_download_blackmarble.R"))
   source(file.path(git_ntl_clean_dir, "02_extract_to_polygons.R"))
-  
+
   #### Analysis (figures)
   source(file.path(git_ntl_analysis_dir, "annual_trends.R"))
   source(file.path(git_ntl_analysis_dir, "compare_viirs_sources.R"))

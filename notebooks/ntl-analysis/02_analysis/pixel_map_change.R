@@ -29,15 +29,15 @@ names(r_df) <- c("value", "x", "y")
 # Map --------------------------------------------------------------------------
 ## Plot
 p <- ggplot() +
-  geom_raster(data = r_df[r_df$value == 0,], 
+  geom_raster(data = r_df[r_df$value == 0,],
               aes(x = x, y = y,
                   fill = "No Change"),
               alpha = 0.8) +
-  geom_raster(data = r_df[r_df$value == 1,], 
+  geom_raster(data = r_df[r_df$value == 1,],
               aes(x = x, y = y,
                   fill = "New Lights"),
               alpha = 0.8) +
-  geom_raster(data = r_df[r_df$value == -1,], 
+  geom_raster(data = r_df[r_df$value == -1,],
               aes(x = x, y = y,
                   fill = "Lights Lost"),
               alpha = 0.8) +
@@ -48,7 +48,7 @@ p <- ggplot() +
        title = "2012 to 2023") +
   theme_void() +
   theme(plot.title = element_text(face = "bold", hjust = 0.5, size = 10)) +
-  scale_fill_manual(values = c("firebrick3", "green3", "dodgerblue")) 
+  scale_fill_manual(values = c("firebrick3", "green3", "dodgerblue"))
 
 ggsave(p,
        filename = file.path(figures_dir, "ntl_change_2012_2022_bin.png"),
