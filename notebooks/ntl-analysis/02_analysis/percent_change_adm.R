@@ -54,7 +54,7 @@ for(roi_name in c("lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
 
   roi_sf$pc22[roi_sf$pc22 > 100] <- 100
   roi_sf$pc22[is.na(roi_sf$pc22)] <- 0
-  
+
   # Map --------------------------------------------------------------------------
   city_df <- data.frame(lat = 33.898316, lon = 35.505696, name = "Beirut")
 
