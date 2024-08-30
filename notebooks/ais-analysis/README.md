@@ -6,7 +6,7 @@ A nascent literature has been dedicated to convert raw AIS messages into volumes
 
 For the purposes of the monitor, we implement and adjust the methodology described in “**Tracking trade from space: an application to pacific island countries**” {cite}`TrackingTradefromSpaceAnApplicationtoPacificIslandCountries`, using the same AIS data used by the authors, facilitated by the [UN Global Platform AIS Task Team](https://unstats.un.org/wiki/display/AIS/AIS+Handbook+Outline).
 
-The final data product, Trade Estimation for Lebanon, visualized in the subsequent notebooks, can also be accessed through [Project SharePoint](https://worldbankgroup.sharepoint.com.mcas.ms/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Forms/AllItems.aspx?csf=1&web=1&e=Yvwh8r&cid=fccdf23e%2D94d5%2D48bf%2Db75d%2D0af291138bde&FolderCTID=0x012000CFAB9FF0F938A64EBB297E7E16BDFCFD&id=%2Fteams%2FDevelopmentDataPartnershipCommunity%2DWBGroup%2FShared%20Documents%2FProjects%2FData%20Lab%2FLebanon%20Economic%20Analytics%2FData%2Ftrade&viewid=80cdadb3%2D8bb3%2D47ae%2D8b18%2Dc1dd89c373c5).
+The final data product, Trade Estimation for Lebanon, visualized in the subsequent notebooks, can also be accessed through [Project SharePoint](https://worldbankgroup.sharepoint.com/:x:/r/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Projects/Data%20Lab/Lebanon%20Economic%20Analytics/Data/maritime-trade/Trade_Estimation_Lebanon_08.29.24.xlsx?d=wdb774aa88a9f4eaa82e3a3017534b083&csf=1&web=1&e=j0872H).
 
 ```{note}
 This workflow and notebooks were originally developed by Cherryl Chico in support of the World Bank's Pacific Observatory project. It has been adapted for the Lebanon Monitor by Andres Chamorro.
@@ -64,15 +64,19 @@ $$ Cb_r = 1 - (1 - Cb_d) \frac{d_d}{d_r} ^ \frac{1}{3} $$
 - [03 Backpropagate Departure Draft](./03-lebanon.ipynb)
 - [04 Trade Estimation](./04-lebanon.ipynb)
 
-## Findings
+## Update (August 2024)
 
-We present results of the estimated volume of trade (imports and exports) across all ports in Lebanon. The trade flow is consistently dominated by imports. We find a decrease in trade volume in 2023.
+We present updated estimates of monthly trade volume (imports and exports) across all ports in Lebanon. The trade flow is consistently dominated by imports, and there is some seasonality with higher volume recorded in summer months. In the spring of 2024, trade appeared to slowly recover or at least match the volumes registered in the previous year. Particularly high trade flows are observed in May and June.  
 
-```{figure} ./ais-trade.JPG
+Although there is no official data to validate these estimates, other agencies ([IMF's PortWatch](https://portwatch.imf.org/) and [UN COMTRADE](https://comtrade.un.org/)) have implemented similar methods with AIS data and have reported consistent patterns.  
+
+Our results can be accessed via the [following link](https://worldbankgroup.sharepoint.com/:x:/r/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Projects/Data%20Lab/Lebanon%20Economic%20Analytics/Data/maritime-trade/Trade_Estimation_Lebanon_08.29.24.xlsx?d=wdb774aa88a9f4eaa82e3a3017534b083&csf=1&web=1&e=j0872H).
+
+```{figure} ./ais-trade-update.JPG
 ---
 align: center
 ---
-Estimated Monthly Trade Volume from AIS signal
+Estimated Monthly Trade Volume from AIS signals
 ```
 
 ## Limitations
