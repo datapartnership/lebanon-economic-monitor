@@ -66,9 +66,9 @@ $$ Cb_r = 1 - (1 - Cb_d) \frac{d_d}{d_r} ^ \frac{1}{3} $$
 
 ## Update (August 2024)
 
-We present updated estimates of monthly trade volume (imports and exports) across all ports in Lebanon. The trade flow is consistently dominated by imports, and there is some seasonality with higher volume recorded in summer months. In the spring of 2024, trade appeared to slowly recover or at least match the volumes registered in the previous year. Particularly high trade flows are observed in May and June.  
+We present updated estimates of monthly trade volume (imports and exports) across all ports in Lebanon. The trade flow is consistently dominated by imports, and there is some seasonality with higher volume recorded in summer months. In the spring of 2024, trade appeared to slowly recover or at least match the volumes registered in the previous year. Particularly high trade flows are observed in May and June.
 
-Although there is no official data to validate these estimates, other agencies ([IMF's PortWatch](https://portwatch.imf.org/) and [UN COMTRADE](https://comtrade.un.org/)) have implemented similar methods with AIS data and have reported consistent patterns.  
+Although there is no official data to validate these estimates, other agencies ([IMF's PortWatch](https://portwatch.imf.org/) and [UN COMTRADE](https://comtrade.un.org/)) have implemented similar methods with AIS data and have reported consistent patterns.
 
 Our results can be accessed via the [following link](https://worldbankgroup.sharepoint.com/:x:/r/teams/DevelopmentDataPartnershipCommunity-WBGroup/Shared%20Documents/Projects/Data%20Lab/Lebanon%20Economic%20Analytics/Data/maritime-trade/Trade_Estimation_Lebanon_08.29.24.xlsx?d=wdb774aa88a9f4eaa82e3a3017534b083&csf=1&web=1&e=j0872H).
 

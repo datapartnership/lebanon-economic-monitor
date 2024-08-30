@@ -52,13 +52,13 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
 
       if(year >= 2012){
         bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", paste0("VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t",year,".tif")))
-        
+
         if(year <= 2022){
           viirs_r_r <- raster(file.path(ntl_dir, "ntl-rasters", "viirs", "annual", paste0("LBN_viirs_mean_",year,".tif")))
         } else{
           viirs_r_r <- raster()
         }
-        
+
       } else{
         bm_r     <- raster()
         viirs_r_r <- raster()
