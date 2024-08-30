@@ -3,9 +3,9 @@
 #for(year_i in c(2019, 2022)){
 
 # Load data --------------------------------------------------------------------
-r_mean_19  <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", 
+r_mean_19  <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual",
                                "VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t2019.tif"))
-r_mean_22  <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", 
+r_mean_22  <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual",
                                "VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t2023.tif"))
 
 roi_sp <- read_sf(file.path(admin_bnd_dir, "lbn_adm_cdr_20200810", "lbn_admbnda_adm0_cdr_20200810.shp")) %>%

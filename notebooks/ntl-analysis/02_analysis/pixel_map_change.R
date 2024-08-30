@@ -3,9 +3,9 @@
 # Load data --------------------------------------------------------------------
 roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_adm_cdr_20200810", "lbn_admbnda_adm0_cdr_20200810.shp"))
 
-r12 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", 
-                        "VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t2012.tif")) 
-r22 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual", 
+r12 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual",
+                        "VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t2012.tif"))
+r22 <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual",
                         "VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t2023.tif"))
 
 r12 <- r12 %>% crop(roi_sf) %>% mask(roi_sf)
