@@ -8,7 +8,7 @@ The Data Lab would like to express our sincere gratutude and appreciation for th
 | [Robert Andrew Marty](mailto:rmarty@worldbank.org)         | Data Scientist - Nighttime lights analytics                  | DIME               |
 | [Gabriel Stefanini Vicente](mailto:gvicente@worldbank.org) | Data Scientist - Monitoring migration                        | WB Data Lab, DECDG |
 | [Sahiti Sarva](mailto:ssarva@worldbank.org)                | Data Scientist - Monioring conflict, demographics, air pollution, movement, and aviation trends | WB Data Lab, DECDG |
-| [Andres Chamorro](mailto: achamorroelizond@worldbank.org)  | Geographer - Maritime trade analytics                        | GOST, DECDG        |
+| [Andres Chamorro](mailto:achamorroelizond@worldbank.org)  | Geographer - Maritime trade analytics                        | GOST, DECDG        |
 |                                                            |                                                              |                    |
 |                                                            |                                                              |                    |
 
