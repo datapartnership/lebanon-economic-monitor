@@ -2,9 +2,9 @@ format: jb-book
 root: README
 
 parts:
-  - caption: Introduction to Data Goods
+  - caption: Introduction to the Data Lab
     chapters:
-      - file: docs/introduction_to_data_goods
+      - file: docs/1-intro-to-data-lab
   - caption: Understanding Lebanon's Economy through Alternative Data
     chapters:
       - file: docs/foundational_datasets_and_data_products
