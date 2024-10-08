@@ -98,7 +98,7 @@ for(roi_name in rev(c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3"
       roi_sf$ntl_dmsp_q9    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.9))
       roi_sf$ntl_dmsp_q95   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.95))
       roi_sf$ntl_dmsp_q99   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.99))
-      
+
       if(year >= 2022){
         roi_sf$ntl_dmsp_sum <- NA
         roi_sf$ntl_dmsp_mean <- NA
@@ -116,7 +116,7 @@ for(roi_name in rev(c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3"
 
       roi_sf$ntl_viirs_c_sum <- exact_extract(viirs_c_r, roi_sf, 'sum')
       roi_sf$ntl_viirs_r_sum <- exact_extract(viirs_r_r, roi_sf, 'sum')
-      
+
       roi_sf$year <- year
 
       roi_df <- roi_sf
@@ -184,11 +184,11 @@ for(roi_name in rev(c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3"
 
   # Aggregate monthly ------------------------------------------------------------
   roi_sf <- roi_og_sf
-  
+
   monthly_rasters <- file.path(ntl_dir, "ntl-rasters", "blackmarble", "monthly") %>%
     list.files(pattern = "*.tif") %>%
     rev()
-  
+
   for(r_month_i in monthly_rasters){
 
     ## Only process if file already hasn't been created
@@ -204,7 +204,7 @@ for(roi_name in rev(c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3"
       bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "monthly", r_month_i))
 
       #roi_sf$ntl_bm_mean   <- exact_extract(bm_r, roi_sf, 'mean')
-      
+
       roi_sf$ntl_bm_sum   <- exact_extract(bm_r, roi_sf, 'sum')
       roi_sf$ntl_bm_mean  <- exact_extract(bm_r, roi_sf, 'mean')
       roi_sf$ntl_bm_q5    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.5))
@@ -231,7 +231,7 @@ for(roi_name in rev(c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3"
     list.files(pattern = "*.Rds",
                full.names = T) %>%
     map_df(readRDS)
-  
+
   saveRDS(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.Rds")))
   write_csv(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.csv")))
   write_dta(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.dta")))
