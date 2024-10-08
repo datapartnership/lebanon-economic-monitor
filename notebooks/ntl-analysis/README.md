@@ -103,6 +103,26 @@ align: center
 Monthly Trends in Nighttime Lights: Governorate Level
 ```
 
+### Trends in Nighttime Lights: Daily
+
+The below figures show trends in nighttime lights across the country (top figure) and at the first administrative division level (bottom figure). The figures show nighttime lights increasing across the country from 2015 to 2019, where nighttime lights then started to notably decline each year since.
+
+```{figure} figures/daily_trends_adm0.png
+---
+scale: 40%
+align: center
+---
+Daily Trends in GDP Nighttime Lights: Country Level
+```
+
+```{figure} figures/daily_trends_adm1.png
+---
+scale: 40%
+align: center
+---
+Daily Trends in Nighttime Lights: Governorate Level
+```
+
 ### Change in Nighttime Lights: Pixel Level
 
 #### 2012 to 2023
