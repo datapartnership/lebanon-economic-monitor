@@ -457,7 +457,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#departures_exploded[departures_exploded[&#39;airport_arr&#39;]==&#39;Beirut Rafic Hariri Airport&#39;]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># departures_exploded[departures_exploded[&#39;airport_arr&#39;]==&#39;Beirut Rafic Hariri Airport&#39;]</span>
 </pre></div>
 </div>
 </div>
@@ -473,18 +473,6 @@ document.write(`
 <li><p>Diverted: A flight that has landed or arrived at the gate of an airport where it wasn’t scheduled to arrive.</p></li>
 <li><p>Unknown: We were unable to detect the final arrival status.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departures_exploded</span><span class="p">[</span><span class="n">departures_exploded</span><span class="p">[</span><span class="s1">&#39;airport_arr&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">departures_exploded</span><span class="p">[</span><span class="s1">&#39;airport_dep&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(86, 31)
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html">    <style>
@@ -846,7 +834,9 @@ function(Bokeh) {
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departures_exploded</span><span class="p">[</span><span class="n">departures_exploded</span><span class="p">[</span><span class="s1">&#39;airportcity&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Beirut&#39;</span><span class="p">][[</span><span class="s1">&#39;airport_arr&#39;</span><span class="p">,</span> <span class="s1">&#39;airport_dep&#39;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">departures_exploded</span><span class="p">[</span><span class="n">departures_exploded</span><span class="p">[</span><span class="s2">&quot;airportcity&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Beirut&quot;</span><span class="p">][</span>
+    <span class="p">[</span><span class="s2">&quot;airport_arr&quot;</span><span class="p">,</span> <span class="s2">&quot;airport_dep&quot;</span><span class="p">]</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1297,18 +1287,6 @@ function(Bokeh) {
     }, 10, root)
   }
 })(window);</script></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arrivals_exploded</span><span class="p">[</span><span class="n">arrivals_exploded</span><span class="p">[</span><span class="s1">&#39;iata_dep&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;BEY&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">

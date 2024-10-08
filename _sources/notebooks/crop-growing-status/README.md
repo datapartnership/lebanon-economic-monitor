@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD010 -->
 # Monitoring crop growing status
 
 ![Boundary](./images/lbn_bnd_administrative.png)
