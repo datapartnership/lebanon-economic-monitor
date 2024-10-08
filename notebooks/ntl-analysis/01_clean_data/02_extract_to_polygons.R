@@ -8,7 +8,7 @@
 # -- (c) Simulated DMSP (from VIIRS) [2014 - 2021]
 # 3. Aggregate monthly data, VIIRS Black Marble only [2012 - present]
 
-for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4")){
+for(roi_name in rev(c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "lbn_adm4"))){
 
   # Make Directories -------------------------------------------------------------
   dir.create(file.path(ntl_dir, "aggregated-to-polygons", roi_name))
@@ -41,6 +41,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
   }
 
   roi_sf$adm_id <- 1:nrow(roi_sf)
+  roi_og_sf <- roi_sf
 
   # Aggregate annual -------------------------------------------------------------
   for(year in 1992:2023){
@@ -78,6 +79,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
         dmsp_r <- raster()
       }
 
+      roi_sf$ntl_bm_sum   <- exact_extract(bm_r, roi_sf, 'sum')
       roi_sf$ntl_bm_mean  <- exact_extract(bm_r, roi_sf, 'mean')
       roi_sf$ntl_bm_q5    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.5))
       roi_sf$ntl_bm_q6    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.6))
@@ -87,6 +89,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
       roi_sf$ntl_bm_q95   <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.95))
       roi_sf$ntl_bm_q99   <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.99))
 
+      roi_sf$ntl_dmsp_sum  <- exact_extract(dmsp_r, roi_sf, 'sum')
       roi_sf$ntl_dmsp_mean  <- exact_extract(dmsp_r, roi_sf, 'mean')
       roi_sf$ntl_dmsp_q5    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.5))
       roi_sf$ntl_dmsp_q6    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.6))
@@ -95,10 +98,25 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
       roi_sf$ntl_dmsp_q9    <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.9))
       roi_sf$ntl_dmsp_q95   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.95))
       roi_sf$ntl_dmsp_q99   <- exact_extract(dmsp_r, roi_sf, 'quantile', quantiles = c(0.99))
+      
+      if(year >= 2022){
+        roi_sf$ntl_dmsp_sum <- NA
+        roi_sf$ntl_dmsp_mean <- NA
+        roi_sf$ntl_dmsp_q5 <- NA
+        roi_sf$ntl_dmsp_q6 <- NA
+        roi_sf$ntl_dmsp_q7 <- NA
+        roi_sf$ntl_dmsp_q8 <- NA
+        roi_sf$ntl_dmsp_q9 <- NA
+        roi_sf$ntl_dmsp_q95 <- NA
+        roi_sf$ntl_dmsp_q99 <- NA
+      }
 
       roi_sf$ntl_viirs_c_mean <- exact_extract(viirs_c_r, roi_sf, 'mean')
       roi_sf$ntl_viirs_r_mean <- exact_extract(viirs_r_r, roi_sf, 'mean')
 
+      roi_sf$ntl_viirs_c_sum <- exact_extract(viirs_c_r, roi_sf, 'sum')
+      roi_sf$ntl_viirs_r_sum <- exact_extract(viirs_r_r, roi_sf, 'sum')
+      
       roi_sf$year <- year
 
       roi_df <- roi_sf
@@ -165,9 +183,12 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
   write_dta(ntl_annual_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_annual_ntl.dta")))
 
   # Aggregate monthly ------------------------------------------------------------
+  roi_sf <- roi_og_sf
+  
   monthly_rasters <- file.path(ntl_dir, "ntl-rasters", "blackmarble", "monthly") %>%
-    list.files(pattern = "*.tif")
-
+    list.files(pattern = "*.tif") %>%
+    rev()
+  
   for(r_month_i in monthly_rasters){
 
     ## Only process if file already hasn't been created
@@ -182,7 +203,17 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
 
       bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "blackmarble", "monthly", r_month_i))
 
-      roi_sf$ntl_bm_mean   <- exact_extract(bm_r, roi_sf, 'mean')
+      #roi_sf$ntl_bm_mean   <- exact_extract(bm_r, roi_sf, 'mean')
+      
+      roi_sf$ntl_bm_sum   <- exact_extract(bm_r, roi_sf, 'sum')
+      roi_sf$ntl_bm_mean  <- exact_extract(bm_r, roi_sf, 'mean')
+      roi_sf$ntl_bm_q5    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.5))
+      roi_sf$ntl_bm_q6    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.6))
+      roi_sf$ntl_bm_q7    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.7))
+      roi_sf$ntl_bm_q8    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.8))
+      roi_sf$ntl_bm_q9    <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.9))
+      roi_sf$ntl_bm_q95   <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.95))
+      roi_sf$ntl_bm_q99   <- exact_extract(bm_r, roi_sf, 'quantile', quantiles = c(0.99))
 
       roi_sf$date <- month_i %>%
         str_replace_all("_", "-") %>%
@@ -200,7 +231,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
     list.files(pattern = "*.Rds",
                full.names = T) %>%
     map_df(readRDS)
-
+  
   saveRDS(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.Rds")))
   write_csv(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.csv")))
   write_dta(ntl_monthly_df, file.path(ntl_dir, "aggregated-to-polygons", roi_name, paste0(roi_name, "_monthly_ntl.dta")))

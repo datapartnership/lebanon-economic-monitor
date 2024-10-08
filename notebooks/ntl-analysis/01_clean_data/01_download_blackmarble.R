@@ -6,6 +6,10 @@ bearer <- file.path(ntl_dir, "blackmarble-bearer-token", "bearer_bm.csv") %>%
   read_csv() %>%
   pull("token")
 
+bearer <- file.path("~/Desktop", "bearer_bm.csv") %>%
+  read_csv() %>%
+  pull("token")
+
 # Load Lebanon boundaries
 roi_sf <- read_sf(file.path(admin_bnd_dir, "lbn_adm_cdr_20200810", "lbn_admbnda_adm0_cdr_20200810.shp"))
 
