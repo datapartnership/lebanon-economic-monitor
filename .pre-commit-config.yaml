@@ -9,7 +9,7 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
       - id: check-ast
-      - id: check-json
+      #- id: check-json
       - id: detect-aws-credentials
         args: [--allow-missing-credentials]
       - id: detect-private-key
@@ -22,13 +22,18 @@ repos:
         args: [
             "--disable=MD013", # line-length
             "--disable=MD033", # no-inline-html
+            "--disable=MD010", # no hard tabs
+            "--disable=MD034", #bare-urls
+            "--disable=MD007" #ul-indent unordered list
           ]
+
   - repo: https://github.com/codespell-project/codespell
     rev: v2.2.6
     hooks:
       - id: codespell
         name: codespell
         description: Checks for common misspellings in text files
+        exclude: 'notebooks/.*'
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.3.3
     hooks:

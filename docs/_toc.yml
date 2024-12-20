@@ -2,9 +2,9 @@ format: jb-book
 root: README
 
 parts:
-  - caption: Introduction to Data Goods
+  - caption: Introduction to the Data Lab
     chapters:
-      - file: docs/introduction_to_data_goods
+      - file: docs/1-intro-to-data-lab
   - caption: Understanding Lebanon's Economy through Alternative Data
     chapters:
       - file: docs/foundational_datasets_and_data_products
@@ -25,6 +25,7 @@ parts:
           - file: notebooks/air-pollution/air-pollution.ipynb
       - file: notebooks/ais-analysis/README
       - file: notebooks/aviation-trends/aviation.ipynb
+      - file: notebooks/aviation-trends/aviation_update.ipynb
       - file: notebooks/crop-growing-status/README
   - caption: Acknowledgements
     chapters:
