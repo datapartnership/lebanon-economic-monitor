@@ -138,11 +138,11 @@ if(!file.exists(OUT_PATH)){
 }
 
 #### NTL Months to Download
-ntl_months <- seq.Date(ymd("2012-01-01"), to = ymd("2024-06-01"), by = "month") %>%
+ntl_months <- seq.Date(ymd("2012-01-01"), to = ymd("2024-11-01"), by = "month") %>%
   as.character()
 
 #### NTL Days to Download
-ntl_days <- seq.Date(ymd("2021-01-01"), to = Sys.Date(), by = "day") %>%
+ntl_days <- seq.Date(ymd("2019-01-01"), to = Sys.Date(), by = "day") %>%
   as.character()
 
 #### Colors
@@ -377,12 +377,12 @@ r <- bm_raster(roi_sf = roi_sf,
                output_location_type = "file",
                file_dir = file.path(ntl_bm_dir, "rasters", "monthly"))
 
-r <- bm_raster(roi_sf = roi_sf,
-               product_id = "VNP46A2",
-               date = ntl_days,
-               bearer = nasa_bearer,
-               output_location_type = "file",
-               file_dir = file.path(ntl_bm_dir, "rasters", "daily"))
+# r <- bm_raster(roi_sf = roi_sf,
+#                product_id = "VNP46A2",
+#                date = ntl_days,
+#                bearer = nasa_bearer,
+#                output_location_type = "file",
+#                file_dir = file.path(ntl_bm_dir, "rasters", "daily"))
 
 ```
 
@@ -394,14 +394,15 @@ r <- bm_raster(roi_sf = roi_sf,
 # Individual Files -------------------------------------------------------------
 dir.create(file.path(ntl_bm_dir, "aggregated_individual_files"))
 
+# "cities5km",
+# "cities10km",
+# "citiesbuff"
 #### Setup loops
 for(unit in c("adm0", 
               "adm1", 
               "adm2",
               "adm3",
-              "cities5km",
-              "cities10km",
-              "citiesbuff")){
+              "adm4")){
   for(time_type in c("annual", 
                      "monthly", 
                      "daily")){
@@ -427,6 +428,8 @@ for(unit in c("adm0",
         str_replace_all("_", "-")
     }
     
+    time_vec <- time_vec %>% rev()
+    
     for(time_i in time_vec){
       
       #### Only process if file doesn't exist
@@ -444,11 +447,23 @@ for(unit in c("adm0",
         }
         
         if(unit == "adm1"){
-          roi_sf <- load_gadm(1)
+          roi_sf <- st_read(file.path(data_dir, "boundaries", "lbn_adm_cdr_20200810",
+                                      "lbn_admbnda_adm1_cdr_20200810.shp"))
         }
         
         if(unit == "adm2"){
-          roi_sf <- load_gadm(2)
+          roi_sf <- st_read(file.path(data_dir, "boundaries", "lbn_adm_cdr_20200810",
+                                      "lbn_admbnda_adm2_cdr_20200810.shp"))
+        }
+        
+        if(unit == "adm3"){
+          roi_sf <- st_read(file.path(data_dir, "boundaries", "lbn_adm_cdr_20200810",
+                                      "lbn_admbnda_adm3_cdr_20200810.shp"))
+        }
+        
+        if(unit == "adm4"){
+          roi_sf <- st_read(file.path(data_dir, "boundaries", "lbn_beirut_adm4_mapaction_pcoded",
+                                      "lbn_beirut_adm4_MapAction_Pcoded.shp"))
         }
         
         if(unit == "cities5km"){
@@ -550,9 +565,7 @@ for(unit in c("adm0",
               "adm1", 
               "adm2",
               "adm3",
-              "cities5km",
-              "cities10km",
-              "citiesbuff")){
+              "adm4")){
   for(time_type in c("annual", "monthly", "daily")){
     
     ntl_df <- file.path(ntl_bm_dir, "aggregated_individual_files", unit, time_type) %>%
@@ -568,6 +581,146 @@ for(unit in c("adm0",
 }
 
 ```
+
+## Aggregate Daily to Monthly
+
+```{r}
+### ADM 0
+ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm0_daily.Rds")))
+
+ntl_df <- ntl_df %>%
+  mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
+  group_by(GID_0, COUNTRY, date) %>%
+  dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
+                   ntl_mean = mean(ntl_mean, na.rm = T)) %>%
+  ungroup()
+
+saveRDS(ntl_df,   file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm0", "_", "monthly_from_daily", ".Rds")))
+write_csv(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm0", "_", "monthly_from_daily", ".csv")))
+write_dta(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm0", "_", "monthly_from_daily", ".dta")))
+
+### ADM 1
+ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm1_daily.Rds")))
+
+ntl_df <- ntl_df %>%
+  mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
+  group_by(OBJECTID_1,
+           OBJECTID,
+           admin1Name,
+           admin1Na_1,
+           admin1Pcod,
+           admin1RefN,       
+           admin1AltN,       
+           admin1Al_1, 
+           admin1Al_2,   
+           admin1Al_3,   
+           admin0Name,     
+           admin0Na_1,        
+           admin0Pcod, date) %>%
+  dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
+                   ntl_mean = mean(ntl_mean, na.rm = T)) %>%
+  ungroup()
+
+saveRDS(ntl_df,   file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm1", "_", "monthly_from_daily", ".Rds")))
+write_csv(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm1", "_", "monthly_from_daily", ".csv")))
+write_dta(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm1", "_", "monthly_from_daily", ".dta")))
+
+
+### ADM 2
+ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm2_daily.Rds")))
+
+ntl_df <- ntl_df %>%
+  mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
+  group_by(OBJECTID_1,
+           OBJECTID,        
+           admin2Name,       
+           admin2Na_1,     
+           admin2Pcod,    
+           admin2RefN,        
+           admin2AltN, 
+           admin2Al_1,     
+           admin2Al_2,      
+           admin2Al_3,  
+           admin1Name,      
+           admin1Na_1,        
+           admin1Pcod,  
+           admin0Name,      
+           admin0Na_1,  
+           admin0Pcod , date) %>%
+  dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
+                   ntl_mean = mean(ntl_mean, na.rm = T)) %>%
+  ungroup()
+
+saveRDS(ntl_df,   file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm2", "_", "monthly_from_daily", ".Rds")))
+write_csv(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm2", "_", "monthly_from_daily", ".csv")))
+write_dta(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm2", "_", "monthly_from_daily", ".dta")))
+
+ntl_ml_df <- ntl_df[ntl_df$admin1Name %in% "Mount Lebanon",]
+saveRDS(ntl_ml_df,   file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm2", "_", "monthly_from_daily_mt_lebanon", ".Rds")))
+write_csv(ntl_ml_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm2", "_", "monthly_from_daily_mt_lebanon", ".csv")))
+write_dta(ntl_ml_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm2", "_", "monthly_from_daily_mt_lebanon", ".dta")))
+
+### ADM 3
+ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm3_daily.Rds")))
+
+ntl_df <- ntl_df %>%
+  mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
+  group_by(OBJECTID_1,     
+           OBJECTID,       
+           admin3Name,     
+           admin3Na_1,     
+           admin3Pcod,      
+           admin3RefN,        
+           admin3AltN,     
+           admin3Al_1,     
+           admin3Al_2,     
+           admin3Al_3,     
+           admin2Name,     
+           admin2Na_1,        
+           admin2Pcod,     
+           admin1Name,     
+           admin1Na_1,      
+           admin1Pcod,       
+           admin0Name,       
+           admin0Na_1,        
+           admin0Pcod , date) %>%
+  dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
+                   ntl_mean = mean(ntl_mean, na.rm = T)) %>%
+  ungroup()
+
+saveRDS(ntl_df,   file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm3", "_", "monthly_from_daily", ".Rds")))
+write_csv(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm3", "_", "monthly_from_daily", ".csv")))
+write_dta(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm3", "_", "monthly_from_daily", ".dta")))
+
+ntl_ml_df <- ntl_df[ntl_df$admin1Name %in% "Mount Lebanon",]
+saveRDS(ntl_ml_df,   file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm3", "_", "monthly_from_daily_mt_lebanon", ".Rds")))
+write_csv(ntl_ml_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm3", "_", "monthly_from_daily_mt_lebanon", ".csv")))
+write_dta(ntl_ml_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm3", "_", "monthly_from_daily_mt_lebanon", ".dta")))
+
+### ADM 4
+ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm4_daily.Rds")))
+
+ntl_df <- ntl_df %>%
+  mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
+  group_by(Governorat,      
+           Quarter,         
+           Sector,          
+           Sector_AR,       
+           Quart_AR,       
+           ADM0_PCODE,        
+           ADM1_PCODE,  
+           ADM2_PCODE,        
+           ADM3_PCODE,         
+           ADM4_PCODE, date) %>%
+  dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
+                   ntl_mean = mean(ntl_mean, na.rm = T)) %>%
+  ungroup()
+
+saveRDS(ntl_df,   file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm4", "_", "monthly_from_daily", ".Rds")))
+write_csv(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm4", "_", "monthly_from_daily", ".csv")))
+write_dta(ntl_df, file.path(ntl_bm_dir, "aggregated", paste0("ntl_", "adm4", "_", "monthly_from_daily", ".dta")))
+```
+
 
 # Maps of Nighttime Lights
 
