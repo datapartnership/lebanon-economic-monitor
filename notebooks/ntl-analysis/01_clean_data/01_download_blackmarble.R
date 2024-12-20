@@ -2,11 +2,15 @@
 
 # Setup ------------------------------------------------------------------------
 # Load bearer token
-bearer <- file.path(ntl_dir, "blackmarble-bearer-token", "bearer_bm.csv") %>%
-  read_csv() %>%
-  pull("token")
+# bearer <- file.path(ntl_dir, "blackmarble-bearer-token", "bearer_bm.csv") %>%
+#   read_csv() %>%
+#   pull("token")
+# 
+# bearer <- file.path("~/Desktop", "bearer_bm.csv") %>%
+#   read_csv() %>%
+#   pull("token")
 
-bearer <- file.path("~/Desktop", "bearer_bm.csv") %>%
+bearer <- file.path("~/Dropbox", "bearer_bm.csv") %>%
   read_csv() %>%
   pull("token")
 
