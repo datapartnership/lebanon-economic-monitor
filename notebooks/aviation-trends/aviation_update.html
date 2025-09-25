@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Tourism, Air Travel and Hotel Occupancy in Lebanon" href="aviation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Dec 20, 2024"/>
+    <meta name="docbuild:last-update" content="Sep 25, 2025"/>
   </head>
   
   
@@ -2276,15 +2276,15 @@ function(Bokeh) {
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">output_notebook</span><span class="p">()</span>
-<span class="kn">from</span> <span class="nn">bokeh.layouts</span> <span class="kn">import</span> <span class="n">column</span>
-<span class="kn">from</span> <span class="nn">bokeh.models</span> <span class="kn">import</span> <span class="n">Div</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.layouts</span><span class="w"> </span><span class="kn">import</span> <span class="n">column</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bokeh.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Div</span>
 
 <span class="c1"># Example datasets stored in a dictionary</span>
 <span class="n">datasets</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;Most Changed Arrivals&quot;</span><span class="p">:</span> <span class="n">most_changed_arrivals</span><span class="p">,</span>
     <span class="s2">&quot;Most Cancelled Arrivals&quot;</span><span class="p">:</span> <span class="n">most_cancelled_arrivals</span><span class="p">,</span>
     <span class="s2">&quot;Most Scheduled Arrivals&quot;</span><span class="p">:</span> <span class="n">most_scheduled_arrivals</span><span class="p">,</span>
-    <span class="s2">&quot;Most Diverted Arrivals&quot;</span><span class="p">:</span> <span class="n">most_diverted_arrivals</span>
+    <span class="s2">&quot;Most Diverted Arrivals&quot;</span><span class="p">:</span> <span class="n">most_diverted_arrivals</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="c1"># Initialize an empty list to store the tabs</span>
@@ -2300,14 +2300,36 @@ function(Bokeh) {
     <span class="n">source</span> <span class="o">=</span> <span class="n">ColumnDataSource</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
     <span class="c1"># Create a figure for each dataset</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">y_range</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;airportcity&#39;</span><span class="p">],</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span> <span class="o">+</span> <span class="s2">&quot; in 2024&quot;</span><span class="p">,</span> <span class="n">tools</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="p">,</span> <span class="n">toolbar_location</span><span class="o">=</span><span class="s2">&quot;above&quot;</span><span class="p">)</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">hbar</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;airportcity&#39;</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">)</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span>
+        <span class="n">y_range</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;airportcity&quot;</span><span class="p">],</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span>
+        <span class="n">title</span><span class="o">=</span><span class="n">title</span> <span class="o">+</span> <span class="s2">&quot; in 2024&quot;</span><span class="p">,</span>
+        <span class="n">tools</span><span class="o">=</span><span class="s2">&quot;save&quot;</span><span class="p">,</span>
+        <span class="n">toolbar_location</span><span class="o">=</span><span class="s2">&quot;above&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">hbar</span><span class="p">(</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;airportcity&quot;</span><span class="p">,</span>
+        <span class="n">right</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span>
+        <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="c1"># Add text inside the bars (5 points inside the bar)</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;airportcity&#39;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span> 
-           <span class="n">x_offset</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>  <span class="c1"># This places the text 5 units inside the bar</span>
-           <span class="n">y_offset</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span>  <span class="c1"># Vertical alignment</span>
-           <span class="n">text_align</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">text_baseline</span><span class="o">=</span><span class="s1">&#39;middle&#39;</span><span class="p">,</span> <span class="n">text_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">text_font_size</span><span class="o">=</span><span class="s2">&quot;10pt&quot;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="s2">&quot;airportcity&quot;</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+        <span class="n">x_offset</span><span class="o">=-</span><span class="mi">5</span><span class="p">,</span>  <span class="c1"># This places the text 5 units inside the bar</span>
+        <span class="n">y_offset</span><span class="o">=-</span><span class="mi">3</span><span class="p">,</span>  <span class="c1"># Vertical alignment</span>
+        <span class="n">text_align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">,</span>
+        <span class="n">text_baseline</span><span class="o">=</span><span class="s2">&quot;middle&quot;</span><span class="p">,</span>
+        <span class="n">text_color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
+        <span class="n">text_font_size</span><span class="o">=</span><span class="s2">&quot;10pt&quot;</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="c1"># Customize plot (optional)</span>
     <span class="n">p</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
@@ -2315,23 +2337,29 @@ function(Bokeh) {
     <span class="n">p</span><span class="o">.</span><span class="n">xgrid</span><span class="o">.</span><span class="n">visible</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">major_tick_line_color</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># No major ticks</span>
     <span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">minor_tick_line_color</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># No minor ticks</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_line_color</span> <span class="o">=</span> <span class="kc">None</span>  
+    <span class="n">p</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">axis_line_color</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">p</span><span class="o">.</span><span class="n">outline_line_color</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="n">subtitle</span> <span class="o">=</span> <span class="n">Div</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;&lt;p style=&#39;font-size:12px; color:gray;&#39;&gt;Source: AviationStack. Acessed October 7th 2024.&lt;/p&gt;&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
+    <span class="n">subtitle</span> <span class="o">=</span> <span class="n">Div</span><span class="p">(</span>
+        <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&lt;p style=&#39;font-size:12px; color:gray;&#39;&gt;Source: AviationStack. Acessed October 7th 2024.&lt;/p&gt;&quot;</span><span class="p">,</span>
+        <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
+    <span class="p">)</span>
 
     <span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">subtitle</span><span class="p">)</span>
 
     <span class="c1"># Create a panel with the plot and the corresponding title</span>
     <span class="n">tab</span> <span class="o">=</span> <span class="n">TabPanel</span><span class="p">(</span><span class="n">child</span><span class="o">=</span><span class="n">layout</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">)</span>
-    
+
     <span class="c1"># Append the panel to the list of tabs</span>
     <span class="n">tabs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tab</span><span class="p">)</span>
 
 <span class="c1"># Arrange the tabs in a Tabs layout</span>
 <span class="n">tabs_layout</span> <span class="o">=</span> <span class="n">Tabs</span><span class="p">(</span><span class="n">tabs</span><span class="o">=</span><span class="n">tabs</span><span class="p">)</span>
 
-<span class="n">main_title</span> <span class="o">=</span> <span class="n">Div</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;&lt;h2&gt;Top 10 Destinations with Changes in Arrivals to BEY in 2024&lt;/h2&gt;&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+<span class="n">main_title</span> <span class="o">=</span> <span class="n">Div</span><span class="p">(</span>
+    <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&lt;h2&gt;Top 10 Destinations with Changes in Arrivals to BEY in 2024&lt;/h2&gt;&quot;</span><span class="p">,</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="c1"># Use column layout to stack the title on top of the tabs</span>
 <span class="n">layout</span> <span class="o">=</span> <span class="n">column</span><span class="p">(</span><span class="n">main_title</span><span class="p">,</span> <span class="n">tabs_layout</span><span class="p">)</span>
@@ -2802,7 +2830,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Dec 20, 2024.
+  Last updated on Sep 25, 2025.
   <br/>
 </p>
   </div>
