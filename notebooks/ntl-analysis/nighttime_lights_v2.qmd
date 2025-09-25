@@ -403,8 +403,8 @@ for(unit in c("adm0",
               "adm2",
               "adm3",
               "adm4")){
-  for(time_type in c("annual", 
-                     "monthly", 
+  for(time_type in c("annual",
+                     "monthly",
 
                      "daily")){
 
@@ -429,9 +429,9 @@ for(unit in c("adm0",
         str_replace_all("_", "-")
     }
 
-    
+
     time_vec <- time_vec %>% rev()
-    
+
 
     for(time_i in time_vec){
 
@@ -458,12 +458,12 @@ for(unit in c("adm0",
           roi_sf <- st_read(file.path(data_dir, "boundaries", "lbn_adm_cdr_20200810",
                                       "lbn_admbnda_adm2_cdr_20200810.shp"))
         }
-        
+
         if(unit == "adm3"){
           roi_sf <- st_read(file.path(data_dir, "boundaries", "lbn_adm_cdr_20200810",
                                       "lbn_admbnda_adm3_cdr_20200810.shp"))
         }
-        
+
         if(unit == "adm4"){
           roi_sf <- st_read(file.path(data_dir, "boundaries", "lbn_beirut_adm4_mapaction_pcoded",
                                       "lbn_beirut_adm4_MapAction_Pcoded.shp"))
@@ -612,13 +612,13 @@ ntl_df <- ntl_df %>%
            admin1Name,
            admin1Na_1,
            admin1Pcod,
-           admin1RefN,       
-           admin1AltN,       
-           admin1Al_1, 
-           admin1Al_2,   
-           admin1Al_3,   
-           admin0Name,     
-           admin0Na_1,        
+           admin1RefN,
+           admin1AltN,
+           admin1Al_1,
+           admin1Al_2,
+           admin1Al_3,
+           admin0Name,
+           admin0Na_1,
            admin0Pcod, date) %>%
   dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
                    ntl_mean = mean(ntl_mean, na.rm = T)) %>%
@@ -635,20 +635,20 @@ ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm2_daily.Rds
 ntl_df <- ntl_df %>%
   mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
   group_by(OBJECTID_1,
-           OBJECTID,        
-           admin2Name,       
-           admin2Na_1,     
-           admin2Pcod,    
-           admin2RefN,        
-           admin2AltN, 
-           admin2Al_1,     
-           admin2Al_2,      
-           admin2Al_3,  
-           admin1Name,      
-           admin1Na_1,        
-           admin1Pcod,  
-           admin0Name,      
-           admin0Na_1,  
+           OBJECTID,
+           admin2Name,
+           admin2Na_1,
+           admin2Pcod,
+           admin2RefN,
+           admin2AltN,
+           admin2Al_1,
+           admin2Al_2,
+           admin2Al_3,
+           admin1Name,
+           admin1Na_1,
+           admin1Pcod,
+           admin0Name,
+           admin0Na_1,
            admin0Pcod , date) %>%
   dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
                    ntl_mean = mean(ntl_mean, na.rm = T)) %>%
@@ -668,24 +668,24 @@ ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm3_daily.Rds
 
 ntl_df <- ntl_df %>%
   mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
-  group_by(OBJECTID_1,     
-           OBJECTID,       
-           admin3Name,     
-           admin3Na_1,     
-           admin3Pcod,      
-           admin3RefN,        
-           admin3AltN,     
-           admin3Al_1,     
-           admin3Al_2,     
-           admin3Al_3,     
-           admin2Name,     
-           admin2Na_1,        
-           admin2Pcod,     
-           admin1Name,     
-           admin1Na_1,      
-           admin1Pcod,       
-           admin0Name,       
-           admin0Na_1,        
+  group_by(OBJECTID_1,
+           OBJECTID,
+           admin3Name,
+           admin3Na_1,
+           admin3Pcod,
+           admin3RefN,
+           admin3AltN,
+           admin3Al_1,
+           admin3Al_2,
+           admin3Al_3,
+           admin2Name,
+           admin2Na_1,
+           admin2Pcod,
+           admin1Name,
+           admin1Na_1,
+           admin1Pcod,
+           admin0Name,
+           admin0Na_1,
            admin0Pcod , date) %>%
   dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
                    ntl_mean = mean(ntl_mean, na.rm = T)) %>%
@@ -705,15 +705,15 @@ ntl_df <- readRDS(file.path(ntl_bm_dir, "aggregated", paste0("ntl_adm4_daily.Rds
 
 ntl_df <- ntl_df %>%
   mutate(date = date %>% ymd() %>% floor_date(unit = "months")) %>%
-  group_by(Governorat,      
-           Quarter,         
-           Sector,          
-           Sector_AR,       
-           Quart_AR,       
-           ADM0_PCODE,        
-           ADM1_PCODE,  
-           ADM2_PCODE,        
-           ADM3_PCODE,         
+  group_by(Governorat,
+           Quarter,
+           Sector,
+           Sector_AR,
+           Quart_AR,
+           ADM0_PCODE,
+           ADM1_PCODE,
+           ADM2_PCODE,
+           ADM3_PCODE,
            ADM4_PCODE, date) %>%
   dplyr::summarise(ntl_sum  = mean(ntl_sum, na.rm = T),
                    ntl_mean = mean(ntl_mean, na.rm = T)) %>%
