@@ -28,8 +28,14 @@
         flex: 1;
       }
 
-      .navbar {
-        background-color: transparent !important;
+      .logo-banner {
+        background-color: #0e165e;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .logo-banner .navbar {
+        background-color: transparent;
         box-shadow: none;
         border-bottom: none;
         padding: 0;
@@ -88,21 +94,23 @@
   <body>
     <div class="content-wrapper">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg">
-        <div class="container d-flex justify-content-center">
-          <a
-            class="navbar-brand"
-            href="https://datapartnership.org/"
-            target="_blank"
-          >
-            <img
-              src="/datapartnership/lebanon-economic-monitor/images/ddp.png"
-              alt="DDP Logo"
-              class="logo-img"
-            />
-          </a>
-        </div>
-      </nav>
+      <div class="logo-banner">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container d-flex justify-content-center">
+            <a
+              class="navbar-brand"
+              href="https://datapartnership.org/"
+              target="_blank"
+            >
+              <img
+                src="https://datapartnership.org/images/logo-title.png"
+                alt="DDP Logo"
+                class="logo-img"
+              />
+            </a>
+          </div>
+        </nav>
+      </div>
 
       <!-- Main Content -->
       <main
