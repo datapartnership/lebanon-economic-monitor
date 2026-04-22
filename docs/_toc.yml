@@ -19,6 +19,7 @@ parts:
           - file: notebooks/population/population-displacement-estimation.ipynb
           - file: notebooks/movement/movement-range.ipynb
       - file: notebooks/ntl-analysis/README
+      - file: notebooks/ntl-analysis/ntl-analysis.ipynb
       - file: notebooks/conflict/conflict.ipynb
       - file: notebooks/air-pollution/README
         sections:
