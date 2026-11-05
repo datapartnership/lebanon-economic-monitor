@@ -72,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Estimating Population Density based on Mobility Data" href="population-density-estimation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 22, 2026"/>
+    <meta name="docbuild:last-update" content="Nov 05, 2026"/>
   </head>
   
   
@@ -458,8 +458,8 @@ document.write(`
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">LBN</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span>
-    <span class="s2">&quot;../../data/shapefiles/lbn_adm_cdr_20200810/lbn_admbnda_adm3_cdr_20200810.shp&quot;</span><span class="p">,</span>
-    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
+    <span class="s2">"../../data/shapefiles/lbn_adm_cdr_20200810/lbn_admbnda_adm3_cdr_20200810.shp"</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">"EPSG:4326"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -650,9 +650,9 @@ document.write(`
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ddf</span> <span class="o">=</span> <span class="n">dd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span>
-    <span class="s2">&quot;../../data/interim/panels/v2023.9.4&quot;</span><span class="p">,</span>
-    <span class="n">filters</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="s2">&quot;SY&quot;</span><span class="p">)],</span>
-    <span class="n">dtype_backend</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">,</span>
+    <span class="s2">"../../data/interim/panels/v2023.9.4"</span><span class="p">,</span>
+    <span class="n">filters</span><span class="o">=</span><span class="p">[(</span><span class="s2">"country"</span><span class="p">,</span> <span class="s2">"="</span><span class="p">,</span> <span class="s2">"SY"</span><span class="p">)],</span>
+    <span class="n">dtype_backend</span><span class="o">=</span><span class="s2">"pyarrow"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -664,7 +664,7 @@ document.write(`
 <p>From the mobility data panel, we select a (sub) panel of devices. This panel will be composed by the set of devices seen in Syria during the periods of: January/2020, July/2020, January/2021, July/2021, January/2022, July/2022 and January-August/2023.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DEVICES_SYR</span> <span class="o">=</span> <span class="n">ddf</span><span class="p">[</span><span class="s2">&quot;uid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DEVICES_SYR</span> <span class="o">=</span> <span class="n">ddf</span><span class="p">[</span><span class="s2">"uid"</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -675,7 +675,7 @@ document.write(`
 <p>Based on <a class="reference internal" href="population-density-estimation.html#population-density-estimation"><span class="std std-ref">Estimating Population Density based on Mobility Data</span></a>, we import the <strong>stay locations</strong> in Lebanon for the period of <strong>August 1, 2023</strong> to <strong>August 31, 2023</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">STOPS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;../../data/locations.pq&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">STOPS</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">"../../data/locations.pq"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -683,7 +683,7 @@ document.write(`
 <p>Now, we select only <strong>stay locations</strong> of devices that are in the panel of devices that were detected in Syria.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">STOPS</span> <span class="o">=</span> <span class="n">STOPS</span><span class="p">[</span><span class="n">STOPS</span><span class="p">[</span><span class="s2">&quot;uid&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">DEVICES_SYR</span><span class="p">[</span><span class="s2">&quot;uid&quot;</span><span class="p">])]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">STOPS</span> <span class="o">=</span> <span class="n">STOPS</span><span class="p">[</span><span class="n">STOPS</span><span class="p">[</span><span class="s2">"uid"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">DEVICES_SYR</span><span class="p">[</span><span class="s2">"uid"</span><span class="p">])]</span>
 </pre></div>
 </div>
 </div>
@@ -710,7 +710,7 @@ document.write(`
 <h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">locations</span> <span class="o">=</span> <span class="n">STOPS</span><span class="p">[(</span><span class="n">STOPS</span><span class="p">[</span><span class="s2">&quot;isHome&quot;</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">STOPS</span><span class="p">[</span><span class="s2">&quot;home_delta_count&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.25</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">locations</span> <span class="o">=</span> <span class="n">STOPS</span><span class="p">[(</span><span class="n">STOPS</span><span class="p">[</span><span class="s2">"isHome"</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">STOPS</span><span class="p">[</span><span class="s2">"home_delta_count"</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.25</span><span class="p">)]</span>
 </pre></div>
 </div>
 </div>
@@ -727,18 +727,18 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">locations</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
     <span class="n">locations</span><span class="p">,</span>
-    <span class="n">geometry</span><span class="o">=</span><span class="n">geopandas</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">locations</span><span class="p">[</span><span class="s2">&quot;lng_medoid&quot;</span><span class="p">],</span> <span class="n">locations</span><span class="p">[</span><span class="s2">&quot;lat_medoid&quot;</span><span class="p">]),</span>
-    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="n">geopandas</span><span class="o">.</span><span class="n">points_from_xy</span><span class="p">(</span><span class="n">locations</span><span class="p">[</span><span class="s2">"lng_medoid"</span><span class="p">],</span> <span class="n">locations</span><span class="p">[</span><span class="s2">"lat_medoid"</span><span class="p">]),</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">"EPSG:4326"</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">DENSITY_LOCATIONS</span> <span class="o">=</span> <span class="n">geopandas</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span>
-    <span class="n">locations</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">LBN</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="s2">&quot;within&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;admin3Pcod&quot;</span><span class="p">])[</span><span class="s2">&quot;uid&quot;</span><span class="p">]</span>
+    <span class="n">locations</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">LBN</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="s2">"within"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">"admin3Pcod"</span><span class="p">])[</span><span class="s2">"uid"</span><span class="p">]</span>
     <span class="o">.</span><span class="n">count</span><span class="p">()</span>
-    <span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;count&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">LBN</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;admin3Pcod&quot;</span><span class="p">),</span>
-    <span class="n">geometry</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">,</span>
-    <span class="n">crs</span><span class="o">=</span><span class="s2">&quot;EPSG:4326&quot;</span><span class="p">,</span>
+    <span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">"count"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">LBN</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">"admin3Pcod"</span><span class="p">),</span>
+    <span class="n">geometry</span><span class="o">=</span><span class="s2">"geometry"</span><span class="p">,</span>
+    <span class="n">crs</span><span class="o">=</span><span class="s2">"EPSG:4326"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -752,13 +752,13 @@ document.write(`
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DENSITY_LOCATIONS</span><span class="p">[[</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;geometry&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;geometry&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span>
-    <span class="n">column</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
-    <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;plasma&quot;</span><span class="p">,</span>
-    <span class="n">style_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">},</span>
-    <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;max_labels&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">DENSITY_LOCATIONS</span><span class="p">[[</span><span class="s2">"count"</span><span class="p">,</span> <span class="s2">"geometry"</span><span class="p">]]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">"geometry"</span><span class="p">)</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span>
+    <span class="n">column</span><span class="o">=</span><span class="s2">"count"</span><span class="p">,</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="s2">"plasma"</span><span class="p">,</span>
+    <span class="n">style_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"weight"</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">},</span>
+    <span class="n">legend_kwds</span><span class="o">=</span><span class="p">{</span><span class="s2">"max_labels"</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span>
     <span class="n">vmin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="n">vmax</span><span class="o">=</span><span class="n">DENSITY_LOCATIONS</span><span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
+    <span class="n">vmax</span><span class="o">=</span><span class="n">DENSITY_LOCATIONS</span><span class="p">[</span><span class="s2">"count"</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -1126,7 +1126,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 22, 2026.
+  Last updated on Nov 05, 2026.
   <br/>
 </p>
   </div>

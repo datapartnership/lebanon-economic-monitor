@@ -70,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Nighttime Lights in Lebanon (2026)" href="../ntl-analysis/ntl-analysis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-    <meta name="docbuild:last-update" content="Apr 22, 2026"/>
+    <meta name="docbuild:last-update" content="Nov 05, 2026"/>
   </head>
   
   
@@ -700,28 +700,28 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_prov</span> <span class="o">=</span> <span class="n">acled_adm1</span><span class="p">[</span><span class="n">acled_adm1</span><span class="p">[</span><span class="s2">&quot;adm1_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">worst_fatalities_all_time</span><span class="p">)]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_prov</span> <span class="o">=</span> <span class="n">acled_adm1</span><span class="p">[</span><span class="n">acled_adm1</span><span class="p">[</span><span class="s2">"adm1_name"</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">worst_fatalities_all_time</span><span class="p">)]</span>
 
-<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_prov</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#34A7F2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;event_date:T&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;%Y&quot;</span><span class="p">,</span> <span class="n">labelAngle</span><span class="o">=-</span><span class="mi">45</span><span class="p">)),</span>
-    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;nrEvents:Q&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Events&quot;</span><span class="p">),</span>
-    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;event_date:T&quot;</span><span class="p">,</span> <span class="s2">&quot;adm1_name:N&quot;</span><span class="p">,</span> <span class="s2">&quot;nrEvents:Q&quot;</span><span class="p">],</span>
+<span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df_prov</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.85</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">"#34A7F2"</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">"event_date:T"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Axis</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"%Y"</span><span class="p">,</span> <span class="n">labelAngle</span><span class="o">=-</span><span class="mi">45</span><span class="p">)),</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">"nrEvents:Q"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Events"</span><span class="p">),</span>
+    <span class="n">tooltip</span><span class="o">=</span><span class="p">[</span><span class="s2">"event_date:T"</span><span class="p">,</span> <span class="s2">"adm1_name:N"</span><span class="p">,</span> <span class="s2">"nrEvents:Q"</span><span class="p">],</span>
 <span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
     <span class="n">width</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
     <span class="n">height</span><span class="o">=</span><span class="n">FACET_H</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">facet</span><span class="p">(</span>
-    <span class="n">facet</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Facet</span><span class="p">(</span><span class="s2">&quot;adm1_name:N&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+    <span class="n">facet</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">Facet</span><span class="p">(</span><span class="s2">"adm1_name:N"</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
     <span class="n">columns</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span>
-        <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Events in Most Affected Provinces&quot;</span><span class="p">,</span>
-        <span class="n">subtitle</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;Source: ACLED. Accessed: </span><span class="si">{</span><span class="n">extracted_date</span><span class="si">}</span><span class="s2">. Data Available until: </span><span class="si">{</span><span class="n">latest_available</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+        <span class="n">text</span><span class="o">=</span><span class="s2">"Events in Most Affected Provinces"</span><span class="p">,</span>
+        <span class="n">subtitle</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Source: ACLED. Accessed: </span><span class="si">{</span><span class="n">extracted_date</span><span class="si">}</span><span class="s2">. Data Available until: </span><span class="si">{</span><span class="n">latest_available</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span>
     <span class="p">),</span>
-<span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">fontWeight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;start&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">fontWeight</span><span class="o">=</span><span class="s2">"bold"</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">"start"</span>
 <span class="p">)</span><span class="o">.</span><span class="n">configure_header</span><span class="p">(</span>
     <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-    <span class="n">labelFontWeight</span><span class="o">=</span><span class="s2">&quot;bold&quot;</span><span class="p">,</span>
-    <span class="n">labelAlign</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">,</span>
-    <span class="n">labelAnchor</span><span class="o">=</span><span class="s2">&quot;start&quot;</span><span class="p">,</span>
+    <span class="n">labelFontWeight</span><span class="o">=</span><span class="s2">"bold"</span><span class="p">,</span>
+    <span class="n">labelAlign</span><span class="o">=</span><span class="s2">"left"</span><span class="p">,</span>
+    <span class="n">labelAnchor</span><span class="o">=</span><span class="s2">"start"</span><span class="p">,</span>
     <span class="n">labelFontSize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span>
 <span class="p">)</span><span class="o">.</span><span class="n">configure_view</span><span class="p">(</span><span class="n">strokeWidth</span><span class="o">=</span><span class="mi">0</span>
 <span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span><span class="n">gridOpacity</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
@@ -1132,7 +1132,7 @@ By World Bank Development Data Group
   
   <div class="footer-item">
     <p class="last-updated">
-  Last updated on Apr 22, 2026.
+  Last updated on Nov 05, 2026.
   <br/>
 </p>
   </div>
