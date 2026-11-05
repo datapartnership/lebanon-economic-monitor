@@ -1,15 +1,6 @@
 # Download BlackMarble Data
 
 # Setup ------------------------------------------------------------------------
-# Load bearer token
-# bearer <- file.path(ntl_dir, "blackmarble-bearer-token", "bearer_bm.csv") %>%
-#   read_csv() %>%
-#   pull("token")
-#
-# bearer <- file.path("~/Desktop", "bearer_bm.csv") %>%
-#   read_csv() %>%
-#   pull("token")
-
 bearer <- file.path("~/Dropbox", "bearer_bm.csv") %>%
   read_csv() %>%
   pull("token")
@@ -24,12 +15,12 @@ bm_raster(roi_sf = roi_sf,
           bearer = bearer,
           quality_flag_rm = c(255,1),
           output_location_type = "file",
-          file_dir = file.path(ntl_dir, "ntl-rasters", "blackmarble", "monthly"))
+          file_dir = file.path(ntl_dir, "ntl-rasters", "monthly"))
 
 bm_raster(roi_sf = roi_sf,
           product_id = "VNP46A4",
-          date =2012:2023,
+          date =2012:2025,
           bearer = bearer,
           quality_flag_rm = c(255,1),
           output_location_type = "file",
-          file_dir = file.path(ntl_dir, "ntl-rasters", "blackmarble", "annual"))
+          file_dir = file.path(ntl_dir, "ntl-rasters", "annual"))

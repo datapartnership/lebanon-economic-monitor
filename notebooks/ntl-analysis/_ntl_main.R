@@ -1,13 +1,13 @@
 # Nighttime Lights Analysis: Main Script
 
 # Filepaths ---------------------------------------------------------------------
-if(Sys.info()[["user"]] == "robmarty"){
+if(Sys.info()[["user"]] == "rmarty"){
   git_dir  <- "~/Documents/Github/lebanon-economic-monitor"
-  proj_dir <- "~/Dropbox/World Bank/Side Work/Lebanon Economic Monitor"
+  proj_dir <- "/Users/rmarty/Library/CloudStorage/OneDrive-WBG/Development Data Partnership - Lebanon Economic Analytics"
 }
 
 data_dir      <- file.path(proj_dir, "Data")
-ntl_dir       <- file.path(data_dir, "night-time-lights")
+ntl_dir       <- file.path(data_dir, "Nighttime Lights BlackMarble")
 gas_flare_dir <- file.path(data_dir, "gas-flaring")
 admin_bnd_dir <- file.path(data_dir, "shapefiles")
 
