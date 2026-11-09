@@ -13,7 +13,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
   # Make Directories -------------------------------------------------------------
   dir.create(file.path(ntl_dir, "aggregated-individual-files", "annual", roi_name))
   dir.create(file.path(ntl_dir, "aggregated-individual-files", "monthly", roi_name))
-  
+
   #dir.create(file.path(ntl_dir, "aggregated-to-polygons", roi_name, "individual-monthly"))
   #dir.create(file.path(ntl_dir, "aggregated-to-polygons", roi_name, "individual-annual"))
 
@@ -54,14 +54,14 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
     list.files(pattern = ".tif") %>%
     str_replace_all(".tif", "") %>%
     str_replace_all("VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t", "")
-  
+
   for(year in years_vec){
 
     ## Only process if file already hasn't been created
     OUT_FILE <- file.path(ntl_dir, "aggregated-individual-files", "annual", roi_name, paste0("ntl_", year, ".Rds"))
 
     if(!file.exists(OUT_FILE)){
-      
+
       bm_r <- raster(file.path(ntl_dir, "ntl-rasters", "annual", paste0("VNP46A4_NearNadir_Composite_Snow_Free_qflag255_1_t",year,".tif")))
 
       roi_sf$ntl_bm_sum   <- exact_extract(bm_r, roi_sf, 'sum')
@@ -82,14 +82,14 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
     list.files(pattern = "*.Rds",
                full.names = T) %>%
     map_df(readRDS)
-  
+
   ntl_annual_df$ntl_bm_sum[is.na(ntl_annual_df$ntl_bm_sum)] <- 0
   ntl_annual_df$ntl_bm_mean[is.na(ntl_annual_df$ntl_bm_mean)] <- 0
 
   #### Combine DMSP and VIIRS
   write_csv(ntl_annual_df, file.path(ntl_dir, "aggregated", "annual", paste0(roi_name, "_annual_ntl.csv")))
   write_dta(ntl_annual_df, file.path(ntl_dir, "aggregated", "annual", paste0(roi_name, "_annual_ntl.dta")))
-  
+
   # Aggregate monthly ------------------------------------------------------------
   roi_sf <- roi_og_sf
 
@@ -113,7 +113,7 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
 
       roi_sf$ntl_bm_sum   <- exact_extract(bm_r, roi_sf, 'sum')
       roi_sf$ntl_bm_mean  <- exact_extract(bm_r, roi_sf, 'mean')
-      
+
       roi_sf$date <- month_i %>%
         str_replace_all("_", "-") %>%
         paste0("-01") %>%
@@ -130,10 +130,10 @@ for(roi_name in c("cadaster", "lbn_adm0", "lbn_adm1", "lbn_adm2", "lbn_adm3", "l
     list.files(pattern = "*.Rds",
                full.names = T) %>%
     map_df(readRDS)
-  
+
   ntl_monthly_df$ntl_bm_sum[is.na(ntl_monthly_df$ntl_bm_sum)] <- 0
   ntl_monthly_df$ntl_bm_mean[is.na(ntl_monthly_df$ntl_bm_mean)] <- 0
-  
+
   write_csv(ntl_monthly_df, file.path(ntl_dir, "aggregated", "monthly", paste0(roi_name, "_monthly_ntl.csv")))
   write_dta(ntl_monthly_df, file.path(ntl_dir, "aggregated", "monthly", paste0(roi_name, "_monthly_ntl.dta")))
 
