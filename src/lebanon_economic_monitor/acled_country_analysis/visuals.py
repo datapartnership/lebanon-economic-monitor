@@ -1,13 +1,11 @@
 import bokeh
+from bokeh.core.validation.warnings import EMPTY_LAYOUT, MISSING_RENDERERS
 from bokeh.layouts import column
 from bokeh.models import Legend
-
-from bokeh.core.validation.warnings import EMPTY_LAYOUT, MISSING_RENDERERS
 
 bokeh.core.validation.silence(EMPTY_LAYOUT, True)
 bokeh.core.validation.silence(MISSING_RENDERERS, True)
 from bokeh.plotting import figure
-
 
 color_palette = [
     "#4E79A7",  # Blue
